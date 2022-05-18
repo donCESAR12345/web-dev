@@ -1,0 +1,25 @@
+body
+{
+    background-color: white;
+    font-family: "Helvetica", Helvetica, sans-serif;
+}
+
+footer, nav, header
+{
+    font-family: "Helvetica", Helvetica, sans-serif;
+    line-height: 50px;
+    text-align: center;
+    justify-content: center;
+}
+
+h2
+{
+    text-align: center;
+    justify-content: center;
+}
+
+.project-img
+{
+    text-align: center;
+    justify-content: center;
+}
