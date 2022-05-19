@@ -7,11 +7,17 @@ body
     padding-right: 100px;
 }
 
-footer, nav, header, h2
+footer, nav
 {
     line-height: 50px;
     text-align: center;
     justify-content: center;
+}
+
+img
+{
+    max-width: 100%;
+    height: auto;
 }
 
 p
@@ -135,4 +141,37 @@ button:hover span:after
 .email-button span:after
 {
     content: '📨';
+}
+
+/* Title decorations */
+.main-title
+{
+    font-size: 7vw;
+    margin: 0;
+}
+.title-kw
+{
+    color: #1d2d44;
+    font-size: 3vw;
+}
+
+.logo
+{
+    width: 16vw;
+    height: 16vw;
+    vertical-align: text-bottom;
+    margin: auto;
+}
+
+.main-title { grid-area: main-title; }
+.logo { grid-area: logo; }
+.title-kw { grid-area: title-kw; }
+
+.header-grid
+{
+    display: grid;
+    grid-template-areas:
+    'main-title main-title main-title main-title logo'
+    'title-kw title-kw title-kw title-kw logo';
+    justify-content: center;
 }
