@@ -3,7 +3,7 @@
 
   <head>
     <title> Projects 💡 </title>
-    <link rel="icon" href="../img/logo.svg" type="image/x-icon">
+    <link rel="icon" href="../assets/img/logo.svg" type="image/x-icon">
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../styles/style.css">
   </head>
@@ -14,7 +14,7 @@
       <div class="header-grid">
         <a href="index.html" class="header-grid">
           <h2 class="logo-title">
-            donCESAR12345 <img class="logo-icon" src="../img/logo.svg">
+            donCESAR12345 <img class="logo-icon" src="../assets/img/logo.svg">
           </h2>
           <h3 class="logo-kw"> Developer | Gamer | Human </h3>
         </a>
@@ -37,13 +37,16 @@
       </button>
     </nav>
 
+    <h1> Projects </h1>
+
     <!-- Computer networks project -->
     <article>
-      <h2> Lorem Ipsum </h2>
-      <img src="../img/networking.jpg"
+      <h2> Cisco computer networking </h2>
+      <img class="big-img"
+           src="../assets/img/networking.jpg"
            alt="A network of computers"
-           class="project-img"
-           width="50%" height="50%">
+           width=50%
+           height=50%>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Quis risus sed
@@ -52,43 +55,74 @@
         morbi leo urna. Risus at ultrices mi tempus imperdiet nulla. Nisl
         suscipit adipiscing bibendum est ultricies integer. Enim sit amet
         venenatis urna cursus eget nunc scelerisque. Ipsum faucibus vitae
-        aliquet nec ullamcorper sit amet risus. Semper auctor neque vitae tempus
-        quam pellentesque nec nam aliquam. Ut venenatis tellus in metus
-        vulputate eu. Rutrum tellus pellentesque eu tincidunt tortor aliquam
-        nulla facilisi cras. Lacus suspendisse faucibus interdum posuere. Vitae
-        turpis massa sed elementum tempus egestas sed sed. Tempus egestas sed
-        sed risus. Elementum eu facilisis sed odio morbi.
+        aliquet nec ullamcorper sit amet risus.
       </p>
+      <p>
+        In the next video a really nice guy from The House of Routing presents
+        to you an amazing video teaching you the networking fundamentals which I
+        already covered before.
+      </p>
+      <iframe class="project-iframe"
+              width="560" height="315"
+              src="https://www.youtube.com/embed/RRkmu9x1zNI"
+              title="YouTube video player" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write;
+                     encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
     </article>
 
     <!-- Web development project -->
     <article>
-      <h2> Lorem Ipsum </h2>
-      <img src="../img/web.jpg"
-           alt="A web development image"
-           class="project-img"
-           width="50%" height="50%">
+      <h2> How to develop your own web service </h2>
+      <img src="../assets/img/web.jpg"
+          alt="A web development image"
+          class="big-img"
+          width="50%" height="50%">
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Lacus vel facilisis volutpat
-        est velit egestas. Dictum non consectetur a erat nam at. Quis eleifend quam
-        adipiscing vitae. Vel facilisis volutpat est velit egestas dui id ornare. Amet
-        mattis vulputate enim nulla aliquet porttitor lacus. Senectus et netus et
-        malesuada fames. Suspendisse in est ante in nibh. Elit duis tristique
-        sollicitudin nibh sit amet commodo. Quis blandit turpis cursus in hac habitasse
-        platea dictumst quisque. Sagittis vitae et leo duis ut. Massa tincidunt nunc
-        pulvinar sapien et ligula. Diam donec adipiscing tristique risus nec feugiat.
-        Purus ut faucibus pulvinar elementum integer.
+        Today I present to you a guide on how to develop and deploy your own
+        web service, you will see that's actually really easy to do it, just
+        by following the next 10 steps.
+      </p>
+      <p>
+        <ol>
+          <li>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </li>
+          <li>
+          Lacus vel facilisis volutpat est velit egestas. Dictum non
+          consectetur a erat nam at. Quis eleifend quam adipiscing vitae. Vel
+          facilisis volutpat est velit egestas dui id ornare.
+          </li>
+          <li>
+            Amet mattis vulputate enim nulla aliquet porttitor lacus. Senectus
+            et netus et malesuada fames. Suspendisse in est ante in nibh. Elit
+            duis tristique sollicitudin nibh sit amet commodo.
+          <li>
+            Quis blandit turpis cursus in hac habitasse platea dictumst
+            quisque. Sagittis vitae et leo duis ut. Massa tincidunt nunc pulvinar
+            sapien et ligula.
+          </li>
+          <li>
+            Diam donec adipiscing tristique risus nec feugiat. Purus ut
+            faucibus pulvinar elementum integer.
+          </li>
+        </ol>
+      </p>
+      <p>
+        As you can see it's shockingly easy to do this, and the best thing
+        about is that it is crossplatform, you can do this on Linux or macOS
+        too.
       </p>
     </article>
 
     <!-- Machine learning project -->
     <article>
-      <h2> Lorem Ipsum </h2>
-      <img src="../img/tensorflow.jpg"
-           alt="A web development image"
-           class="project-img"
-           width="50%" height="50%">
+      <h2> Using Machine Learning to handle my love rejections </h2>
+      <img src="../assets/img/tensorflow.jpg"
+          alt="A web development image"
+          class="big-img"
+          width="50%" height="50%">
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
         incididunt ut labore et dolore magna aliqua. Nisi quis eleifend quam adipiscing
@@ -120,15 +154,19 @@
           </tr>
         </table>
 
-        Praesent elementum facilisis leo vel fringilla est. Nec dui nunc mattis
-        enim ut tellus elementum sagittis. Auctor augue mauris augue neque
-        gravida in. Nunc mattis enim ut tellus. Vitae suscipit tellus mauris a
-        diam maecenas sed. Non nisi est sit amet facilisis magna etiam tempor
-        orci. Bibendum est ultricies integer quis auctor elit sed. Fermentum et
-        sollicitudin ac orci phasellus. Fames ac turpis egestas sed. Nisl
-        rhoncus mattis rhoncus urna neque viverra justo nec ultrices. Morbi quis
-        commodo odio aenean sed adipiscing diam. Sit amet cursus sit amet
-        dictum. Id diam maecenas ultricies mi eget mauris.
+        Praesent elementum facilisis leo vel fringilla est. Nec dui nunc
+        mattis enim ut tellus elementum sagittis. Auctor augue mauris augue
+        neque gravida in. Nunc mattis enim ut tellus. Vitae suscipit tellus
+        mauris a diam maecenas sed. Non nisi est sit amet facilisis magna
+        etiam tempor orci. Bibendum est ultricies integer quis auctor elit
+        sed. Fermentum et sollicitudin ac orci phasellus. Fames ac turpis
+        egestas sed. Nisl rhoncus mattis rhoncus urna neque viverra justo nec
+        ultrices. Morbi quis commodo odio aenean sed adipiscing diam. Sit amet
+        cursus sit amet dictum. Id diam maecenas ultricies mi eget mauris.
+      </p>
+      <p>
+        That's why ML is doing an excellent job here, I recommend trying it by
+        your own, you will be amazed with the results.
       </p>
     </article>
 
