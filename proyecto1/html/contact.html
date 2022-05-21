@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title> Subscribe to my blog 📈 </title>
+    <link rel="icon" href="../assets/img/logo.svg" type="image/x-icon">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../styles/style.css">
+  </head>
+
+  <body>
+    <!-- Header with main page link -->
+    <header>
+      <div class="header-grid">
+        <a href="index.html" class="header-grid">
+          <h3 class="logo-title">
+            donCESAR12345 <img class="logo-icon" src="../assets/img/logo.svg">
+          </h3>
+          <h3 class="logo-kw"> Developer | Gamer | Human </h3>
+        </a>
+      </div>
+    </header>
+
+    <!-- Navigation bar -->
+    <nav>
+      <button class="aboutme-button">
+        <a href="aboutme.html"><span> About me </span></a>
+      </button>
+      <button class="projects-button">
+        <a href="projects.html"><span> Projects </span></a>
+      </button>
+      <button class="thoughts-button">
+        <a href="thoughts.html"><span> Thoughts </span></a>
+      </button>
+      <button class="gallery-button">
+        <a href="gallery.html"><span> Gallery </span></a>
+      </button>
+    </nav>
+
+    <!-- Subscribe form -->
+    <form action="#" method="get">
+      <label for="nickname">Nickname: </label>
+      <input type="text" id="nickname" name="nickname"
+       required><br><br>
+      <label for="fname">First name: </label>
+      <input type="text" id="fname" name="fname"><br><br>
+      <label for="lname">Last name: </label>
+      <input type="text" id="lname" name="lname"><br><br>
+      <label for="email">e-mail: </label>
+      <input type="email" id="email" name="email"
+       required><br><br>
+      <label for="password">Password: </label>
+      <input type="password" id="password" name="password"
+       required><br><br>
+      <label for="phone">Phone number: </label>
+      <input type="tel" id="phone" name="phone"
+       required><br><br>
+      <label for="address">Address: </label>
+      <input type="text" id="address" name="address"
+       required><br><br>
+      <label for="birthday">Date of birth: </label>
+      <input type="date" id="birthday" name="birthday"><br><br>
+      <label for="age">Age: </label>
+      <input type="number" id="age" name="age"
+             min="1" step="1" required><br><br>
+      <label for="gender">Gender: </label>
+        <div>
+          <input type="radio" id="male" name="gender" value="male">
+          <label for="male">Male</label>
+        </div>
+
+        <div>
+          <input type="radio" id="female" name="gender" value="female">
+          <label for="female">Female</label>
+        </div>
+
+        <div>
+          <input type="radio" id="other" name="gender" value="other">
+          <label for="other">Other</label>
+        </div>
+
+      <label for="avatar"> Choose a profile picture: </label><br/>
+      <input type="file" id="avatar" name="avatar"
+             accept="image/png, image/jpeg" required>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <input type="submit" value="Submit">
+    </form>
+
+    <!-- Footer -->
+    <footer>
+      <button class="gh-button">
+        <a href="https://github.com/donCESAR12345"><span> Github </span></a>
+      </button>
+      <button class="telegram-button">
+        <a href="https://t.me/donCESAR12345"><span> Telegram </span></a>
+      </button>
+      <button class="email-button">
+        <a href="mailto:cesara.montoya1@udea.edu.co"><span> Send me an e-mail </span></a>
+      </button>
+      <button class="contact-button">
+        <a href="contact.html"><span> Contact me! </span></a>
+      </button>
+    </footer>
+
+  </body>
+
+</html>
