@@ -26,11 +26,19 @@ img
 }
 
 /* Justify every paragraph */
-p, h2, h3, ul, blockquote
+p, h2, h3, ul, ol, blockquote
 {
     padding-left: 10vw;
     padding-right: 10vw;
     text-align: justify;
+}
+
+/* Center captions */
+figcaption, audio
+{
+    padding-left: 10vw;
+    padding-right: 10vw;
+    text-align: center;
 }
 
 /* Remove purple color when already clicked */
@@ -90,13 +98,13 @@ button:hover span:after
     color: white;
 }
 
-.email-button, .thoughts-button
+.email-button, .tutorials-button
 {
     background-color: #3e5c76;
     color: white;
 }
 
-.contact-button, .gallery-button
+.contact-button
 {
     background-color: #748cab;
     color: white;
@@ -106,8 +114,7 @@ button:hover span:after
 /* Navigation bar emojis */
 .aboutme-button span::after { content: '😎'; }
 .projects-button span::after { content: '💡'; }
-.thoughts-button span::after { content: '⚖'; }
-.gallery-button span::after { content: '📷'; }
+.tutorials-button span::after { content: '😍'; }
 /* Footer emojis */
 .gh-button span:after { content: '🤖'; }
 .telegram-button span:after { content: '📱'; }
@@ -183,8 +190,8 @@ button:hover span:after
     height: 100%;
 }
 
-/* ML table */
-.ml-table
+/* Nmap table */
+.nmap-table
 {
     display: table;
     border: 1px solid black;
@@ -195,4 +202,20 @@ button:hover span:after
 th, td
 {
     padding: 10px;
+}
+
+.contact-row
+{
+  display: flex;
+  padding-left: 10vw;
+}
+
+.contact-column
+{
+  flex: 50%;
+}
+
+.required
+{
+  color: red;
 }
