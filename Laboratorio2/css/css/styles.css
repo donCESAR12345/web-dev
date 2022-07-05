@@ -1,0 +1,358 @@
+* 
+{
+	box-sizing: border-box;
+}
+
+body 
+{
+	font-family: Montserrat;
+  margin: 0;
+	padding: 10px;
+	background: #F1F1F1;
+}
+
+header 
+{
+  margin-left: -10px;
+  margin-right: -10px;
+  margin-top: -10px;
+	padding: 2vw;
+  background: radial-gradient(circle, rgba(255,255,240,1) 5%, rgba(238,160,14,1) 90%); 
+	text-align: center;
+}
+
+div.clear
+{
+	clear: both;
+}
+
+/* Left side of the header */
+.header-main .logo
+{
+  float: left;
+  width: 25%;
+}
+
+.header-main img 
+{
+	margin: auto;
+	border-radius: 20%;
+  width: 10vw;
+  float: right;
+}
+
+/* Right side of the header */
+.header-main .text
+{
+  float: left;
+  width: 75%;
+}
+
+.header-main h1
+{
+	color: #323337;
+  font-size: 5vw;
+  text-align: middle;
+  margin: 0 15% 0 0;
+}
+
+.header-main h2 
+{
+  color: #A9A08E;
+  font-size: 1.5vw;
+  text-align: middle;
+  margin: 0 15% 0 0;
+}
+
+/* Navigation bar */
+
+nav li 
+{
+	display: inline;
+  font-size: 1.5vw;
+	width: 1vw;
+	margin: auto;
+  padding: 1vw;
+	text-align: center;
+}
+
+nav li:hover 
+{
+	background-color: #323337;
+  border-radius: 10px;
+}
+
+nav li:hover a
+{
+  color: white;
+}
+
+nav a 
+{
+  text-decoration: none;
+  font-weight: bold;
+	color: #323337;
+}
+
+/* Main section */
+.container-main
+{
+  margin-left: -10px;
+  margin-right: -10px;
+  padding: 2vw;
+  padding-bottom: 5vw;
+  background: #FFFFFF;
+}
+
+/* Links section */
+.links
+{
+  float: left;
+  width: 20%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.links h2
+{
+  text-align: center;
+	color: #323337;
+}
+
+.links h4
+{
+  display: inline-block;
+  color: white;
+  font-size: 0.8em;
+  padding: 1vw;
+	background-color: #323337;
+  border-radius: 10px;
+}
+
+.links article
+{
+  font-size: 0.8em;
+  padding-bottom: 1vw;
+  border-bottom: solid 1px #DEDEDE;
+}
+
+.main
+{
+  float: left;
+  width: 40%;
+}
+
+.main h1
+{
+  font-size: 2em;
+	color: #323337;
+  text-align: center;
+}
+
+.main p
+{
+	color: #323337;
+}
+
+.main #more
+{
+  display: none;
+}
+
+.main #read-more
+{
+  display: inline-block;
+  color: white;
+  font-size: 0.8em;
+  padding: 1vw;
+	background-color: #323337;
+  border-radius: 10px;
+}
+
+.news
+{
+  float: right;
+  width: 20%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.news h2
+{
+  text-align: center;
+	color: #323337;
+}
+.news ul
+{
+  list-style-image: url(../icon/check.png);
+  margin: 1vw;
+}
+
+.news li 
+{
+  font-size: 0.8em;
+  padding-top: 2vw;
+  padding-bottom: 2vw;
+  border-bottom: solid 1px #DEDEDE;
+	color: #323337;
+}
+
+.news a
+{
+  text-decoration: none;
+	color: #323337;
+}
+
+.news #more-news
+{
+  display: none;
+}
+
+.news #read-more-news
+{
+  display: inline-block;
+  color: white;
+  font-size: 0.8em;
+  padding: 1vw;
+	background-color: #323337;
+  border-radius: 10px;
+}
+
+#project-info
+{
+  margin-left: -10px;
+  margin-right: -10px;
+  padding: 5vw;
+  padding-bottom: 5vw;
+  background-color: #F3F2ED;
+}
+
+.skills
+{
+  float: left;
+  width: 35%;
+  margin-left: 5%;
+  background-color: #FFFFFF; 
+  padding: 1vw;
+}
+
+.skills h1
+{
+  margin-bottom: 3vw;
+  font-size: 2em;
+  text-align: center;
+}
+
+.skills li
+{
+  display: block;
+}
+
+.skills label
+{
+  padding-top: 10px;
+  padding-right: 10px;
+  border-top: solid 1px #DEDEDE;
+}
+
+.skills meter
+{
+  display: block;
+  width: 80%;
+  margin-bottom: 2vw;
+}
+
+.info
+{
+  float: right;
+  width: 50%;
+  margin-right: 5%;
+  background-color: #FFFFFF; 
+  padding: 1vw;
+}
+
+.info h1
+{
+  margin-bottom: 3vw;
+  font-size: 2em;
+  text-align: center;
+}
+
+.img-circle 
+{
+	width: 70%;
+	border-radius: 50%;
+	transition: 3s 1s;
+}
+
+#check-menu, .menu 
+{
+	display: none;
+}
+
+@media screen and (max-width: 700px) 
+{
+	p.float-left-3, p.float-left-2 
+{
+		width: 100%;
+	}
+
+	nav li 
+{
+		display: block;
+	}
+}
+
+@media screen and (max-width: 500px) 
+{
+	.float-left, .float-right 
+  {
+		width: 100%;
+	} 
+
+	.img-circle 
+  {
+		width: 50%;
+	}
+
+	.nueva 
+  {
+
+	}
+
+	#check-menu:checked ~ nav
+  {
+		display: block;
+	}
+
+	nav 
+  {
+		display: none;
+		position: fixed;
+		top: 50px;
+		left: -20px;
+		transition: 2s;
+	}
+
+	.menu 
+  {
+		display: block;
+		position: fixed;
+		top: 20px;
+		left: 20px;
+	}
+
+	.img-menu 
+  {
+		background-color: white;
+    border-radius: 25%;
+		width: 5vw;
+	}
+
+	.img-menu:hover 
+  {
+		cursor: pointer;
+		transform: skew(0deg);
+	}
+}
+

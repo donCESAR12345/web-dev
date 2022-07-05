@@ -1,0 +1,149 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Ejercicios prácticos CSS</title>
+    <meta charset="utf-8">
+    <meta name="author" content="César Augusto">
+    <meta name="description" content="Ejercicios prácticos HTML5+CSS">
+    <meta name="keywords" content="Ejercicios, Soluciones, Prácticas, HTML5">
+    <link rel="stylesheet" href="css/styles.css" media="screen" />
+</head>
+
+<body>
+<!-- Contenedor -->
+<div class="contenedor">
+
+	<!-- Cabecera -->
+	<header>
+		<div id="logo">
+			<h1>LOGOTIPO</h1>
+		</div>
+
+		<div id="buscador">
+			<form action="#" method="post">
+				Buscar &nbsp; <input name="busqueda" type="text" />
+			</form>
+		</div>
+	
+	</header>
+	
+	<div class="spacer"></div>
+        
+	<!-- /Cabecera -->
+	<!-- Menu principal -->
+	<nav>
+            <ul id="menu_principal">
+                <li><a href="#">HTML</a></li>
+                <li><a href="#">CSS</a></li>
+                <li><a href="#">JavaScript</a></li>
+                <li><a href="#">PHP</a></li>
+                <li><a href="#">Android</a></li>
+            </ul>
+            <div class="spacer"></div>
+	</nav>
+	
+	<!-- Lateral -->
+	<section class="lateral">
+
+            <!-- Noticias -->
+            <aside class="noticias">
+                <h3><a href="#">Noticias</a></h3>
+                <p><span class="fecha">dd/mm/aaaa</span> <a href="#">noticia#1 noticia#1</a>
+                <p><span class="fecha">dd/mm/aaaa</span> <a href="#">noticia#2 noticia#2</a></p>
+                <p><span class="fecha">dd/mm/aaaa</span> <a href="#">noticia#3 noticia#3</a></p>
+                <p><span class="fecha">dd/mm/aaaa</span> <a href="#">noticia#4 noticia#4</a></p>
+                <p><span class="fecha">dd/mm/aaaa</span> <a href="#">noticia#N noticia#N</a></p>
+
+                <div class="relacionados">
+                    <h3><a href="#">Enlaces relacionados</a></h3>
+                    <ul>
+                        <li><a href="#">Enlaces 1</a></li>
+                        <li><a href="#">Enlaces 2</a></li>
+                        <li><a href="#">Enlaces 3</a></li>
+                    </ul>
+                </div>
+            </aside>
+            <!-- /Noticias -->
+
+            <!-- Publicidad -->
+            <aside class="publicidad">
+                <h3><a href="#">Publicidad</a></h3>
+                <p>Publicidad publicidad publicidad publicidad publicidad publicidad publicidad publicidad publicidad</p>
+                <p>Publicidad2 publicidad2 publicidad2 publicidad2 publicidad2 publicidad2 publicidad2 publicidad2 publicidad2 publicidad2</p>
+                <p><a href="#">Seguir leyendo...</a></p>
+            </aside>
+            <!-- /Publicidad -->
+
+        </section>
+	<!-- /Lateral -->
+	
+	<section class="contenido">
+	
+            <!-- Principal -->
+            <article class="principal">
+
+                <div class="articulo">
+                    <h2>Titulo del articulo numero 1, puede ser algo más largo</h2>
+
+                    <img src="assets/img/img1.jpg" alt="Imagen genérica" />
+
+                    <p>Parrafo1 parrafo1 parrafo1 parrafo1 parrafo1 parrafo1 parrafo1 parrafo1 parrafo1 parrafo1 parrafo1 parrafo1 parrafo1 parrafo1 parrafo1 parrafo1 parrafo1 parrafo1 parrafo1 parrafo1.</p>
+                    <p>Despues del parrafo1 sigue el parrafo2 parrafo2 parrafo2 parrafo2 parrafo2 parrafo2 parrafo2 parrafo2 parrafo2 parrafo2 parrafo2 parrafo2 parrafo2 parrafo2 parrafo2 parrafo2 parrafo2 parrafo2 parrafo2 parrafo2 parrafo2.</p>
+                    <p>Finalmente el parrafo3 parrafo3 parrafo3 parrafo3 parrafo3 parrafo3 parrafo3 parrafo3 parrafo3.</p>
+                    <p><a href="#">Seguir leyendo...</a></p>
+                </div>
+
+                <div class="articulo">
+                    <h2>Titulo del articulo numero 2</h2>
+
+                    <img src="assets/img/img2.jpg" alt="Imagen genérica" />
+
+                    <p>Parrafo1 parrafo1 parrafo1 parrafo1 parrafo1 parrafo1 parrafo1 parrafo1 parrafo1 parrafo1 parrafo1 parrafo1 parrafo1 parrafo1 parrafo1 parrafo1 parrafo1 parrafo1.</p>
+                    <p>Despues del parrafo1 sigue el parrafo2 parrafo2 parrafo2 parrafo2 parrafo2 parrafo2 parrafo2 parrafo2 parrafo2 parrafo2 parrafo2 parrafo2 parrafo2 parrafo2 parrafo2 parrafo2 parrafo2 parrafo2 parrafo2 parrafo2 parrafo2.</p>
+                    <p>Finalmente el parrafo3 parrafo3 parrafo3 parrafo3 parrafo3 parrafo3 parrafo3 parrafo3 parrafo3.</p>
+                    <p><a href="#">Seguir leyendo...</a></p>
+                </div>
+
+            </article>
+            <!-- /Principal -->
+	
+            <!-- Secundario -->
+            <article id="secundario">
+                    <h2>Noticias Secundarias</h2>
+                    <p>Generalmente existe una sección de enlaces a otras noticias secundarias pertenecientes al mismo sitio web. O una sección de publicidad. Ambos casos pueden ubiccarse aqui</p>
+                    <p><a href="#">Seguir leyendo...</a></p>
+
+                    <h2>Noticias Secundarias</h2>
+                    <p>Noticias2 noticias2 noticias2 noticias2 noticias2 noticias2 noticias2 noticias2 noticias2 noticias2 noticias2 noticias2 noticias2</p>
+                    <p><a href="#">Seguir leyendo...</a></p>
+            </article>
+            <!-- /Secundario -->
+
+	</section>
+	<!-- /Contenido -->
+	
+    <div class="spacer"></div>
+	
+    <!-- Pie -->
+    <footer>
+        <span class="enlaces">
+            <a href="#">Enlace1</a> |
+            <a href="#">Enlace2</a> |
+            <a href="#">Enlace3</a> |
+            <a href="#">Enlace4</a> |
+            <a href="#">Enlace5</a> |
+            <a href="#">EnlaceN</a>
+        </span>
+
+        <span class="copyright">
+                &copy; Copyright UdeA - :)
+        </span>
+        <div class="spacer"></div>
+    </footer>
+    <!-- /Pie -->
+    
+</div>
+<!-- /Contenedor -->
+
+</body>

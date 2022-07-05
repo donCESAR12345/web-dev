@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="César Augusto">
+    <meta name="description" content="Laboratorio de CSS">
+    <meta name="keywords" content="Laboratorio, HTML5, CSS">
+    <title>Laboratorio 2</title>
+    <link rel="stylesheet" href="./css/styles.css" media="screen" />
+    <script src="./js/script.js"></script>
+  </head>
+
+  <body>
+    <!-- Encabezado -->
+    <header>
+      <div class="header-main">
+        <div class="logo">
+          <img src="./img/logo.png" alt="Logo image.">
+        </div>
+        <div class="text">
+          <h1>DIMENSIÓN LINUX</h1>
+          <h2>Diseñado por César Augusto Montoya Ocampo</h2>
+        </div>
+      </div>
+
+      <!-- Agrega el botón de menú -->
+      <input type="checkbox" id="check-menu">
+      <label class="menu" for="check-menu"><img src="icon/menu.png" class="img-menu"></label>
+
+      <div class="clear"></div>
+
+      <nav>
+        <ul>
+          <li><a href="#header">Inicio</a></li>
+          <li><a href="#project-info">Acerca de</a></li>
+          <li><a href="">Comprar</a></li>
+          <li><a href="">Contacto</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="container-main">
+      <!-- Enlaces -->
+      <aside class="links">
+        <h2>ENLACES</h2>
+        <h4>¿Cómo instalar Linux?</h4>
+        <article>
+          Instalar Linux es una tarea que para muchos puede parecer complicada,
+          sin embargo averiguarás que no es tan difícil como parece.
+        </article>
+        <h4>¿Qué distribución escoger?</h4>
+        <article>
+          Una preocupación común de los usuarios de Linux es no escoger la
+          distribución adecuada para ellos, sin embargo acá te explicaré que
+          no es tan importante.
+        </article>
+        <h4>¿Linux es mejor que Windows?</h4>
+        <article>
+          Algunos elitistas de Linux afirmarían esto, aunque en mi opinión es
+          más complicado que un sí absoluto, y dependerá de qué tipo de usuario
+          seas.
+        </article>
+      </aside>
+
+      <!-- Artículo principal -->
+      <section class="main">
+        <article>
+          <h1>DIMENSIÓN LINUX</h1>
+          <p>
+            Bienvenidos a Dimensión Linux, un lugar donde podrás explorar el vasto mundo
+            de Linux, aquí podrás ver tutoriales, tanto para novatos como para usuarios
+            avanzados, opiniones de mis experiencias como usuario de Linux, noticias
+            relacionadas con Linux y sus componentes, y una comunidad llena de entusiastas
+            de Linux.
+          </p>
+          <p>
+            Si eres un novato y quieres experimentar lo que es ser usuario de Linux, ya sea
+            por trabajo, estudio o por interés propio, sé bienvenido a los tutoriales, donde
+            aprenderás lo necesario para desenvolverte en cualquier distribución de Linux y
+            poder expander más y más tus conocimientos sobre el kernel monolítico libre más
+            popular de este planeta.
+          </p>
+          <p>
+            Tenemos además cursos con certificación internacional en los cuales podrás además
+            de aprender lo necesario de Linux podrás certificarte y así conseguir un empleo más
+            fácilmente, podrás encontrarlos más abajo, junto con la información relevante, si
+            en cambio no necesitas certificaciones o ya eres un usuario avanzado, 
+            sigue leyendo.
+            <span id="dots"></span>
+          </p>
+          <span id="more">
+            <p>
+              Pero si eres un usuario avanzado pensarás que esto es muy poco para ti, pues no,
+              ya que en esta página también encontrarás tutoriales avanzados, noticias que
+              seguramente te interesen y opiniones personales donde podrás compartir tus
+              conocimientos y debatir sobre nuestra pasión en común.
+            </p>
+          </span>
+          <button onclick="show_more('read-more', 'more', 'dots',
+                            'SEGUIR LEYENDO', 'LEER MENOS')" 
+            id="read-more">SEGUIR LEYENDO</button>
+        </article>
+      </section>
+
+      <!-- Noticias -->
+      <aside class="news">
+        <h2>NOTICIAS</h2>
+        <ul>
+          <li>
+            <a href="https://www.linuxtoday.com/developer/best-free-and-open-source-software-june-2022-updates/">
+              El mejor software libre y de código abierto junio 2022
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linuxtoday.com/developer/how-to-generate-a-strong-pre-shared-key-on-linux/">
+              Cómo generar una PSK segura en Linux
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linuxtoday.com/news/million-kubernetes-instances-exposed/">
+              Casi un millón de instancias de Kubernetes expuestas en Internet
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linuxtoday.com/developer/top-php-hardening-security-tips-for-linux-servers/">
+              Los mejores tips de PHP para fortalecer servidores Linux
+            </a>
+          </li>
+          <span id="dots-news"></span>
+          <span id="more-news">
+            <li>
+              <a href="https://www.linuxtoday.com/developer/top-php-hardening-security-tips-for-linux-servers/">
+                Los mejores tips de PHP para fortalecer servidores Linux
+              </a>
+            </li>
+            <li>
+              <a href="https://www.linuxtoday.com/developer/the-history-of-debian-linux-distribution/">
+                La historia de la distribución Debian
+              </a>
+            </li>
+          </span>
+        </ul>
+        <button onclick="show_more('read-more-news', 'more-news', 'dots-news',
+                'MÁS INFORMACIÓN', 'MENOS INFORMACIÓN')"
+          id="read-more-news">MÁS INFORMACIÓN</button>
+      </aside>
+      <div class="clear"></div>
+    </div>
+
+
+    <section id="project-info">
+      <article class="skills">
+        <h1>HABILIDADES</h1>
+        <ul>
+          <li>
+            <label for="python">Python para procesamiento de datos</label>
+            <meter id="python" min="0" max="100"
+                   low="40" high="60" optimum="80"
+                   value="80">80%
+            </meter>
+          </li>
+          <li>
+            <label for="cpp">C++ para desarrollo de aplicaciones</label>
+            <meter id="cpp" min="0" max="100"
+                   low="40" high="60" optimum="80"
+                   value="60">60%
+            </meter>
+          </li>
+          <li>
+            <label for="web">Desarrollo web</label>
+            <meter id="web" min="0" max="100"
+                   low="40" high="60" optimum="80"
+                   value="50">50%
+            </meter>
+          </li>
+          <li>
+            <label for="git">Git para proyectos colaborativos</label>
+            <meter id="git" min="0" max="100"
+                   low="40" high="60" optimum="80"
+                   value="90">90%
+            </meter>
+          </li>
+        </ul>
+      </article>
+
+      <article class="info">
+        <h1>INFORMACIÓN DE LOS PROYECTOS</h1>
+
+      </article>
+
+      <div class="clear"></div>
+    </section>
+
+      <div class="clear"></div>
+
+      <section class="float-right">
+        <aside>
+          <h2>Acerca del autor</h2>
+          <img src="img/autor.jpg" class="img-circle">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
+        </aside>
+
+        <aside>
+          <h2>Informacion</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua.</p>
+        </aside>
+      </section>
+
+      <div class="clear"></div>
+    </div>
+
+    <footer>
+      <p>Contacto</p>
+    </footer>
+  </body>
+</html>
+

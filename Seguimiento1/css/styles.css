@@ -1,0 +1,299 @@
+* 
+{
+  box-sizing: border-box;
+  /* La fuente base de la página debe ser: color negro, tipo Arial, 
+     tamaño 0.9em, interlineado 1.4 */
+  font-family: Arial;
+  color: black;
+  font-size: 0.9em;
+  line-height: 1.4;
+}
+
+.spacer 
+{
+  clear: both;
+}
+
+header 
+{
+  border: 1px solid black;
+  /* El elemento #cabecera debe tener un relleno de 1em en todos los lados. */
+  padding: 1em;
+}
+
+/* El logotipo del sitio se muestra mediante una imagen de fondo del
+   elemento <h1> contenido en el elemento #cabecera (la imagen se llama
+   logo.gif). */
+header > h1
+{
+  background-image: url("logo.gif")
+}
+
+/* Logotipo y buscador alineados */
+#logo 
+{
+  float: left;
+  margin: -1em;
+  padding: 0.5em;
+  font-size: 12pt;
+}
+
+#logo > * 
+{
+  margin: 0px;
+  padding: 0px;
+}
+
+#buscador 
+{
+  float: right;
+  margin: -1em;
+}
+
+/* Barra de navegación */
+nav
+{
+  border: 1px solid black;
+}
+
+#menu_principal
+{
+  margin-top: 0px;
+  padding-left: 0px;
+  /* El elemento #menu debe tener un relleno de 0.5em en todos los lados y un
+     margen inferior de 0.5em. */
+  padding: 0.5em;
+  margin-bottom: 0.5em;
+  /* El elemento #menu debe tener un borde inferior de 1 píxel y 
+     azul (#004C99). */
+  border-bottom: #004C99 1px solid;
+  /* El fondo del elemento #menu se construye mediante una pequeña
+     imagen llamada fondo_menu.gif. */
+  background-image: url("fondo_menu.gif");
+  /* Debido a que la imagen no existe pondré un color grisaceo */
+  background-color: #C6C6C6;
+  /* Los elementos del #menu deben mostrar un margen a su derecha de 1em 
+     y sus enlaces deben ser de color blanco y tamaño de letra 1.3em. */
+  margin-left: 1em;
+}
+
+/* Los elementos del #menu deben mostrar un margen a su derecha de 1em 
+   y sus enlaces deben ser de color blanco y tamaño de letra 1.3em. */
+#menu_principal a
+{
+  color: white;
+  font-size: 1.3em;
+}
+
+#menu_principal li
+{
+  display: inline;  
+}
+
+/* Menú lateral */
+.lateral
+{
+  float: left;
+  width: 20%;
+  border: black 1px solid;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  /* El tamaño del texto de todos los contenidos de #lateral debe ser de 0.9em.
+     La fecha de cada noticia debe ocupar el espacio de toda su línea y 
+     mostrarse en color gris claro #999. */
+  font-size: 0.9em;
+  
+}
+/* El tamaño del texto de todos los contenidos de #lateral debe ser de 0.9em.
+   La fecha de cada noticia debe ocupar el espacio de toda su línea y 
+   mostrarse en color gris claro #999. */
+.fecha
+{
+  display: block;
+  color: #999;
+}
+
+/* Noticias */
+.noticias
+{
+  margin-top: 0px;
+  margin-bottom: 0px;
+  /* El resto de elementos (#noticias, #publicidad, #principal, #secundario)
+     deben tener 0.5em de relleno en todos sus lados, salvo el elemento #pie,
+     que sólo debe tener relleno en la zona superior e inferior. */
+  padding: 0.5em;
+  /* El elemento #noticias muestra un borde de 1 píxel y 
+     gris claro (#C5C5C5). */
+  border: #C5C5C5 1px solid;
+  /* Los elementos #noticias y #pie tiene un color de fondo gris claro 
+     (#F8F8F8). */
+  background-color: #F8F8F8;
+}
+
+/* El elemento <h3> de #noticias debe mostrarse de color #003366. */
+.noticias h3 > *
+{
+  color: #003366;  
+}
+
+/* Enlaces relacionados */
+.relacionados > *
+{ 
+  padding-left: 0px;
+  margin: 0;
+}
+
+.relacionados > ul > li
+{
+  display: block;
+}
+
+/* Publicidad */
+.publicidad
+{
+  /* El resto de elementos (#noticias, #publicidad, #principal, #secundario)
+     deben tener 0.5em de relleno en todos sus lados, salvo el elemento #pie,
+     que sólo debe tener relleno en la zona superior e inferior. */
+  padding: 0.5em;
+  /* El elemento #publicidad está separado 1em de su elemento superior. */   
+  margin-top: 1em;
+  /* El elemento #publicidad debe mostrar un borde discontinuo de 1
+     píxel y de color #CC6600. */
+  border: #CC6600 1px dashed;
+  /* El elemento #publicidad muestra un color de fondo amarillo claro
+     (#FFF6CD). */
+  background-color: #FFF6CD;
+  /* El texto del elemento #publicidad es de color gris oscuro #555 
+     y todos los enlaces de color #CC6600. */
+  color: #555;
+}
+
+/* El texto del elemento #publicidad es de color gris oscuro #555 
+   y todos los enlaces de color #CC6600. */
+.publicidad a
+{
+  color: #CC6600;
+}
+
+.publicidad p
+{
+  max-width: 22ch;
+}
+
+/* Contenido */
+.contenido
+{
+  float: right;
+  /* Darle 80-1 para regalarle un espacio */
+  width: 79%;
+  border: 1px solid black;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.principal
+{
+  float: left;
+  /* Darle 80-1 para regalarle un espacio */
+  width: 79%;
+  border: 1px solid black;
+  margin-top: 0px;
+  margin-bottom: 0px;    
+  /* El resto de elementos (#noticias, #publicidad, #principal, #secundario) 
+     deben tener 0.5em de relleno en todos sus lados, salvo el elemento #pie,
+     que sólo debe tener relleno en la zona superior e inferior. */
+  padding: 0.5em;
+}
+
+.articulo
+{
+  /* Los elementos .articulo deben mostrar una separación entre ellos de 1em. */
+  padding: 1em 1em;
+}
+
+.articulo img
+{
+  float: left;
+  display: inline;
+  width: 50%;
+  /* Las imágenes de los artículos muestran un margen de 0.5em en todos sus
+     lados. */
+  margin: 0.5em;
+}
+
+/* Los elementos <h2> de .articulo se muestran en color #CC6600,
+   con un tamaño de letra de 1.6em, un interlineado de 1.2 y un margen 
+   inferior de 0.3em. */
+.articulo h2
+{
+  color: #CC6600;
+  font-size: 1.6em;
+  line-height: 1.2;
+  margin-bottom: 0.3em;
+}
+
+/* Los enlaces contenidos dentro de .articulo son de color #CC6600 y
+   todos los párrafos muestran un margen superior e inferior de 0.3em. */
+.articulo a
+{
+  color: #CC6600;
+}
+
+/* Los enlaces contenidos dentro de .articulo son de color #CC6600 y
+   todos los párrafos muestran un margen superior e inferior de 0.3em. */
+.articulo p
+{
+  margin: 0.3em 0.3em;
+}
+
+#secundario
+{
+  float: right;
+  width: 20%;
+  border: 1px solid black;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  /* El resto de elementos (#noticias, #publicidad, #principal, #secundario) deben
+     tener 0.5em de relleno en todos sus lados, salvo el elemento #pie, que sólo debe
+     tener relleno en la zona superior e inferior. */
+  padding: 0.5em;  
+  /* El lateral formado por el elemento #secundario muestra un
+     borde de 1 píxel y de color #CC6600. */
+  border-left: #CC6600 1px solid;  
+}
+
+/* Los elementos <h2> de #secundario muestran un color de fondo
+   #DB905C y un pequeño padding de 0.2em. */
+#secundario > h2
+{
+  background-color: #DB905C;
+  padding: 0.2em;
+}
+
+/* Footer */
+footer
+{
+  /* El resto de elementos (#noticias, #publicidad, #principal, #secundario) deben
+     tener 0.5em de relleno en todos sus lados, salvo el elemento #pie, que sólo debe
+     tener relleno en la zona superior e inferior. */
+  padding: 0.5em 0.5em;
+  /* El elemento #pie debe tener un margen superior de 1em. */
+  margin-top: 1em;
+  /* El elemento #pie debe mostrar un borde superior y otro
+     inferior de 1 píxel y color gris claro #C5C5C5. */
+  border-top: #C5C5C5 1px solid;
+  border-bottom: #C5C5C5 1px solid;
+  /* Los elementos #noticias y #pie tiene un color de fondo gris claro 
+     (#F8F8F8). */
+  background-color: #F8F8F8;
+}
+
+footer > .enlaces
+{
+  float: left;
+}
+
+footer > .copyright
+{
+  float: right;
+}
