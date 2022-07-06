@@ -15,7 +15,7 @@ header
 {
   margin: -10px -10px 0px -10px;
 	padding: 0.5vw;
-  background: radial-gradient(circle, rgba(255,255,240,1) 5%, rgba(238,160,14,1) 90%); 
+  background: radial-gradient(circle, #FFFFFF01 10%, #B4D38EFE 50%); 
 	text-align: center;
 }
 
@@ -116,7 +116,7 @@ h5
 .header-main img 
 {
 	margin: auto;
-	border-radius: 20%;
+	border-radius: 50%;
   width: 10vw;
   float: right;
 }
@@ -502,7 +502,7 @@ footer a
 	display: none;
 }
 
-@media screen and (max-width: 500px) 
+@media screen and (max-width: 700px) 
 {
   /* Logo del encabezado */
   .header-main .logo
@@ -569,6 +569,11 @@ footer a
     box-shadow: 1px 2px 2px black;
     border-radius: 5%;
 	}
+
+  nav li:hover
+  {
+    border-radius: 5%;
+  }
 
   nav a
   {
@@ -650,6 +655,7 @@ footer a
 
   .info p
   {
+    font-size: 0.7em;
     margin-right: 5px;
   }
 
