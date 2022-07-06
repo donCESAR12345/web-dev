@@ -154,16 +154,17 @@ nav a
 	color: #323337;
 }
 
-.main #more
+.more
 {
   display: none;
 }
 
-.main #read-more
+.read-more
 {
   display: inline-block;
   color: white;
   font-size: 0.8em;
+  font-weight: bold;
   padding: 1vw;
 	background-color: #323337;
   border-radius: 10px;
@@ -201,21 +202,6 @@ nav a
 {
   text-decoration: none;
 	color: #323337;
-}
-
-.news #more-news
-{
-  display: none;
-}
-
-.news #read-more-news
-{
-  display: inline-block;
-  color: white;
-  font-size: 0.8em;
-  padding: 1vw;
-	background-color: #323337;
-  border-radius: 10px;
 }
 
 #project-info
@@ -278,11 +264,33 @@ nav a
   text-align: center;
 }
 
-.img-circle 
+.float-3
 {
-	width: 70%;
-	border-radius: 50%;
-	transition: 3s 1s;
+  float: left;
+  width: 28%;
+  margin: 10px;
+}
+
+.float-3 img
+{
+  display: inline-block;
+  max-width: 100%;
+  height: 150px;
+  margin: auto;
+}
+
+.float-3 p
+{
+  font-size: 0.8em;
+}
+
+#prices
+{
+  margin-left: -10px;
+  margin-right: -10px;
+  padding: 2vw;
+  padding-bottom: 5vw;
+  background: #FFFFFF;
 }
 
 #check-menu, .menu 

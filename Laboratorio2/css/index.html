@@ -34,7 +34,7 @@
         <ul>
           <li><a href="#header">Inicio</a></li>
           <li><a href="#project-info">Acerca de</a></li>
-          <li><a href="">Comprar</a></li>
+          <li><a href="#prices">Comprar</a></li>
           <li><a href="">Contacto</a></li>
         </ul>
       </nav>
@@ -80,16 +80,16 @@
             aprenderás lo necesario para desenvolverte en cualquier distribución de Linux y
             poder expander más y más tus conocimientos sobre el kernel monolítico libre más
             popular de este planeta.
+            <span id="dots-main" class="dots"></span>
           </p>
+          <span id="more-main" class="more">
           <p>
             Tenemos además cursos con certificación internacional en los cuales podrás además
             de aprender lo necesario de Linux podrás certificarte y así conseguir un empleo más
             fácilmente, podrás encontrarlos más abajo, junto con la información relevante, si
             en cambio no necesitas certificaciones o ya eres un usuario avanzado, 
             sigue leyendo.
-            <span id="dots"></span>
           </p>
-          <span id="more">
             <p>
               Pero si eres un usuario avanzado pensarás que esto es muy poco para ti, pues no,
               ya que en esta página también encontrarás tutoriales avanzados, noticias que
@@ -97,9 +97,11 @@
               conocimientos y debatir sobre nuestra pasión en común.
             </p>
           </span>
-          <button onclick="show_more('read-more', 'more', 'dots',
-                            'SEGUIR LEYENDO', 'LEER MENOS')" 
-            id="read-more">SEGUIR LEYENDO</button>
+          <button onclick="show_more('read-more-main', 'more-main', 'dots-main',
+                                     'SEGUIR LEYENDO', 'LEER MENOS')" 
+                                  id="read-more-main" class="read-more">
+            SEGUIR LEYENDO
+          </button>
         </article>
       </section>
 
@@ -127,8 +129,8 @@
               Los mejores tips de PHP para fortalecer servidores Linux
             </a>
           </li>
-          <span id="dots-news"></span>
-          <span id="more-news">
+          <span id="dots-news" class="dots"></span>
+          <span id="more-news" class="more">
             <li>
               <a href="https://www.linuxtoday.com/developer/top-php-hardening-security-tips-for-linux-servers/">
                 Los mejores tips de PHP para fortalecer servidores Linux
@@ -142,14 +144,16 @@
           </span>
         </ul>
         <button onclick="show_more('read-more-news', 'more-news', 'dots-news',
-                'MÁS INFORMACIÓN', 'MENOS INFORMACIÓN')"
-          id="read-more-news">MÁS INFORMACIÓN</button>
+                                   'MÁS INFORMACIÓN', 'MENOS INFORMACIÓN')"
+                                id="read-more-news" class="read-more">
+          MÁS INFORMACIÓN
+        </button>
       </aside>
       <div class="clear"></div>
     </div>
 
-
     <section id="project-info">
+      <!-- Habilidades  -->
       <article class="skills">
         <h1>HABILIDADES</h1>
         <ul>
@@ -184,31 +188,151 @@
         </ul>
       </article>
 
+      <!-- Información de los proyectos  -->
       <article class="info">
         <h1>INFORMACIÓN DE LOS PROYECTOS</h1>
+        <!-- Proyecto de Qt -->
+        <div class="float-3">
+          <img src="./img/qt.png" alt="Qt">
+          <p> 
+            En el curso de informática II tuve que desarrollar un juego en Qt, para esto me
+            inspiré de un animal icónico dentro de la universidad,
+            la paloma.<span id="dots-qt" class="dots">..</span>
+          </p>
+          <span id="more-qt" class="more">
+            <p>
+              Para hacerlo utilicé QtCreator, un IDE para desarrollo en este framework bastante
+              ágil y completo, los requisitos del juego era incorporar física, multijugador,
+              guardado y cargado de partidas, menú de pausa, entre otros.
+            </p>
+            <p>
+              Por desgracia el proyecto quedó incompleto y con errores fatales.
+            </p>
+          </span>
+        </div>
+        <!-- Proyecto de Arduino Nano -->
+        <div class="float-3">
+          <img src="./img/nano.jpg" alt="Arduino nano">
+          <p> 
+            En mi antiguo trabajo como personal de mantenimiento tuve la oportunidad de
+            planear y desarrollar un proyecto de automatización de la verificación de elementos
+            plásticos para automóviles.<span id="dots-nano" class="dots">..</span>
+          </p>
+          <span id="more-nano" class="more">
+            <p>
+              El proyecto consistía en unos sensores mecánicos para detectar la
+              inserción del producto en la máquina de verificación, posteriormente se
+              accionaba un mecanismo neumático que realizaba perforaciones.
+            </p>
+          </span>
+        </div>
+        <!-- Proyecto de Electron -->
+        <div class="float-3">
+          <img src="./img/electron.png" alt="Electron">
+          <p> 
+            Debido a que el proyecto de informática II había quedado incompleto
+            decidí llevar a cabo la remasterización del juego como aplicación
+            web, para esto empecé a planear la historia, los gráficos, la
+            jugabilidad y demás aspectos no sistemáticos de 
+            este.<span id="dots-electron" class="dots">..</span>
+          </p>
+          <span id="more-electron" class="more">
+            <p>
+              Sin embargo debido a la falta de motivación, tiempo y conocimientos
+              en el desarrollo de aplicaciones web, decidí desistir del proyecto
+              o por lo menos dejarlo suspendido hasta nuevo aviso.
+            </p>
+          </span>
+        </div>
 
+        <div class="clear"></div>
+
+        <!-- Botones alineados -->
+        <div class="float-3">
+          <button onclick="show_more('read-more-qt', 'more-qt', 'dots-qt',
+                                     'MÁS INFORMACIÓN', 'MENOS INFORMACIÓN')"
+                                  id="read-more-qt" class="read-more">
+            MÁS INFORMACIÓN
+          </button>
+        </div>
+        <div class="float-3">
+          <button onclick="show_more('read-more-nano', 'more-nano', 'dots-nano',
+                                     'MÁS INFORMACIÓN', 'MENOS INFORMACIÓN')"
+                                  id="read-more-nano" class="read-more">
+            MÁS INFORMACIÓN
+          </button>
+        </div>
+        <div class="float-3">
+          <button onclick="show_more('read-more-electron', 'more-electron', 'dots-electron',
+                                     'MÁS INFORMACIÓN', 'MENOS INFORMACIÓN')"
+                                  id="read-more-electron" class="read-more">
+            MÁS INFORMACIÓN
+          </button>
+        </div>
       </article>
-
       <div class="clear"></div>
     </section>
 
+    <div class="clear"></div>
+
+    <section id="prices">
+      <h1>LISTA DE PRECIOS</h1>
+      <div class="float-3">
+        <div class="card">
+          <div id="basic" class="title">BÁSICO</div>
+          <ul class="specs">
+            <li>1 Diseño web</li>
+            <li>1 Diseño electrónico</li>
+            <li>1 Diseño app móvil</li>
+            <li>Soporte 3 meses</li>
+            <li class="price">$10 diarios</li>
+          </ul>
+        </div>
+      </div>
+      <div class="float-3">
+        <div class="card">
+          <div id="pro" class="title">PRO</div>
+          <ul class="specs">
+            <li>2 Diseños web</li>
+            <li>2 Diseños electrónicos</li>
+            <li>1 Diseño app móvil</li>
+            <li>Soporte 1 año</li>
+            <li class="price">$25 diarios</li>
+          </ul>
+        </div>
+      </div>
+      <div class="float-3">
+        <div class="card">
+          <div id="premium" class="title">PREMIUM</div>
+          <ul class="specs">
+            <li>5 Diseños web</li>
+            <li>3 Diseños electrónicos</li>
+            <li>3 Diseños aplicaciones móviles</li>
+            <li>Soporte 2 años</li>
+            <li class="price">$50 diarios</li>
+          </ul>
+        </div>
+      </div>
+
       <div class="clear"></div>
 
-      <section class="float-right">
-        <aside>
-          <h2>Acerca del autor</h2>
-          <img src="img/autor.jpg" class="img-circle">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
-        </aside>
-
-        <aside>
-          <h2>Informacion</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua.</p>
-        </aside>
-      </section>
+      <div class="float-3">
+        <button class="buy">
+          COMPRAR AHORA
+        </button>
+      </div>
+      <div class="float-3">
+        <button class="buy">
+          COMPRAR AHORA
+        </button>
+      </div>
+      <div class="float-3">
+        <button class="buy">
+          COMPRAR AHORA
+        </button>
+      </div>
+      <div class="clear"></div>
+    </section>
 
       <div class="clear"></div>
     </div>
