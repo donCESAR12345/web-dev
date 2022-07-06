@@ -94,6 +94,13 @@ nav a
 	color: #323337;
 }
 
+h1
+{
+  font-size: 2em;
+	color: #323337;
+  text-align: center;
+}
+
 /* Main section */
 .container-main
 {
@@ -140,13 +147,6 @@ nav a
 {
   float: left;
   width: 40%;
-}
-
-.main h1
-{
-  font-size: 2em;
-	color: #323337;
-  text-align: center;
 }
 
 .main p
@@ -222,13 +222,6 @@ nav a
   padding: 1vw;
 }
 
-.skills h1
-{
-  margin-bottom: 3vw;
-  font-size: 2em;
-  text-align: center;
-}
-
 .skills li
 {
   display: block;
@@ -255,13 +248,6 @@ nav a
   margin-right: 5%;
   background-color: #FFFFFF; 
   padding: 1vw;
-}
-
-.info h1
-{
-  margin-bottom: 3vw;
-  font-size: 2em;
-  text-align: center;
 }
 
 .float-3
@@ -293,6 +279,73 @@ nav a
   background: #FFFFFF;
 }
 
+#prices .float-3 
+{
+  margin: 2.5%;
+}
+
+#basic
+{
+  display: block;
+  color: white;
+  font-size: 0.8em;
+  text-align: center;
+  padding: 1vw;
+  margin: 0;
+  background-color: #A27B5C;
+}
+
+#pro
+{
+  display: block;
+  color: white;
+  font-size: 0.8em;
+  text-align: center;
+  padding: 1vw;
+  margin: 0;
+  background-color: #73777B;
+}
+
+#premium
+{
+  display: block;
+  color: white;
+  font-size: 0.8em;
+  text-align: center;
+  padding: 1vw;
+  margin: 0;
+  background-color: #FAC213;
+}
+
+.specs h5
+{
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 1vw;
+  margin: 0;
+  background-color: #EAEDED;
+  border-top: solid 1px #DEDEDE;
+  border-bottom: solid 1px #DEDEDE;
+}
+
+.price-tag
+{
+  font-size: 2em;
+  display: block;
+}
+
+.buy
+{
+  display: block;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  margin: auto;
+  padding: 1vw;
+  background-color: #2A9C8D;
+}
+
 #check-menu, .menu 
 {
 	display: none;
@@ -301,32 +354,22 @@ nav a
 @media screen and (max-width: 700px) 
 {
 	p.float-left-3, p.float-left-2 
-{
+  {
 		width: 100%;
 	}
 
 	nav li 
-{
+  {
 		display: block;
 	}
 }
 
 @media screen and (max-width: 500px) 
 {
-	.float-left, .float-right 
+	.float-3
   {
 		width: 100%;
 	} 
-
-	.img-circle 
-  {
-		width: 50%;
-	}
-
-	.nueva 
-  {
-
-	}
 
 	#check-menu:checked ~ nav
   {
