@@ -35,7 +35,7 @@
           <li><a href="#header">Inicio</a></li>
           <li><a href="#project-info">Acerca de</a></li>
           <li><a href="#prices">Comprar</a></li>
-          <li><a href="">Contacto</a></li>
+          <li><a href="#contact">Contacto</a></li>
         </ul>
       </nav>
     </header>
@@ -275,9 +275,11 @@
 
     <div class="clear"></div>
 
+    <!-- Sección de precios -->
     <section id="prices">
       <h1>LISTA DE PRECIOS</h1>
       <div class="float-3">
+        <!-- Paquete básico -->
         <div class="card">
           <h4 id="basic">BÁSICO</h4>
           <div class="specs">
@@ -293,6 +295,7 @@
         </div>
       </div>
       <div class="float-3">
+        <!-- Paquete pro -->
         <div class="card">
           <h4 id="pro">PRO</h4>
           <div class="specs">
@@ -308,6 +311,7 @@
         </div>
       </div>
       <div class="float-3">
+        <!-- Paquete premium -->
         <div class="card">
           <h4 id="premium">PREMIUM</h4>
           <div class="specs">
@@ -325,6 +329,7 @@
 
       <div class="clear"></div>
 
+      <!-- Botones de comprar alineados -->
       <div class="float-3">
         <button class="buy">
           COMPRAR AHORA
@@ -346,9 +351,46 @@
 
     <div class="clear"></div>
 
+    <!-- Contacto -->
     <section id="contact">
+      <h1>INFORMACIÓN DE CONTACTO</h1> 
+      <div class="contact-info">
+        <div id="email" class="float-3">
+          <img src="./icon/email.png" alt="Email icon">
+          <!-- Correo universitario -->
+          cesara.montoya1@udea.edu.co
+          <!-- Correo personal -->
+          <!-- sprit152009@gmail.com -->
+        </div>
+        <div id="location" class="float-3">
+          <img src="./icon/location.png" alt="Location icon">
+          Medellín, Colombia
+        </div>
+        <div id="phone" class="float-3">
+          <img src="./icon/phone.png" alt="Phone icon">
+          3209321716
+        </div>
+        <div class="clear"></div>
+      </div>
 
+      <!-- Formulario simple que enviará una petición POST -->
+      <form action="" method="post">
+        <label for="POST-name">Nombre</label>
+        <input id="POST-name" type="text" name="name">
+        <label for="POST-email">Correo</label>
+        <input id="POST-email" type="email" name="email">
+        <label for="POST-msg">Mensaje</label>
+        <textarea id="POST-msg" rows="4" cols="50"></textarea>
+        <input class="submit" type="submit" value="ENVIAR MENSAJE">
+      </form>
     </section>
+
+    <footer>
+      <a href="https://www.flaticon.com/free-icons/email" title="email icons">Email icons created by Freepik - Flaticon</a>
+      <a href="https://www.flaticon.com/free-icons/map" title="map icons">Map icons created by Freepik - Flaticon</a>
+      <a href="https://www.flaticon.com/free-icons/smartphone" title="smartphone icons">Smartphone icons created by Freepik - Flaticon</a>
+    </footer>
+
   </body>
 </html>
 

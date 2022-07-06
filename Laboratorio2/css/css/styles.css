@@ -16,7 +16,7 @@ header
   margin-left: -10px;
   margin-right: -10px;
   margin-top: -10px;
-	padding: 2vw;
+	padding: 0.5vw;
   background: radial-gradient(circle, rgba(255,255,240,1) 5%, rgba(238,160,14,1) 90%); 
 	text-align: center;
 }
@@ -344,6 +344,76 @@ h1
   margin: auto;
   padding: 1vw;
   background-color: #2A9C8D;
+}
+
+#contact
+{
+  padding: 2vw 6vw 2vw 6vw;
+}
+
+#contact .float-3
+{
+  display: block;
+  width: 33.3%;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  padding: 1vw;
+  margin: 0;
+  margin-bottom: 2vw;
+}
+
+#email
+{
+  background-color: #69B0EE;
+}
+
+#location
+{
+  background-color: #2CBFAE;
+}
+
+#phone
+{
+  background-color: #2C4351;
+}
+
+#contact img
+{
+  display: block;
+  width: 48px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.contact-info
+{
+  border-bottom: solid 2px #A1A1A0;
+  margin-bottom: 3vw;
+}
+
+#contact label
+{
+  display: block;
+  margin-top: 1vw;
+}
+
+#contact textarea, input
+{
+  width: 100%;
+}
+
+.submit
+{
+  display: block;
+  width: 60%;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  margin: auto;
+  margin-top: 2vw;
+  padding: 1vw;
+	background-color: #323337;
 }
 
 #check-menu, .menu 
