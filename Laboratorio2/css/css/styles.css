@@ -34,6 +34,11 @@ p
   overflow: "-";
 }
 
+button:hover
+{
+  cursor: pointer;
+}
+
 .clear
 {
 	clear: both;
@@ -155,6 +160,8 @@ nav li:hover a
 /* Sección principal */
 #container-main
 {
+  display: flex;
+  flex-direction: row;
   margin-left: -10px;
   margin-right: -10px;
   padding: 2vw;
@@ -165,8 +172,7 @@ nav li:hover a
 /* Apartado de enlaces */
 .links
 {
-  float: left;
-  width: 20%;
+  flex: 20%;
   margin-left: 5%;
   margin-right: 5%;
 }
@@ -187,15 +193,13 @@ nav li:hover a
 /* Artículo principal */
 .main
 {
-  float: left;
-  width: 40%;
+  flex: 40%;
 }
 
 /* Apartado de noticias */
 .news
 {
-  float: right;
-  width: 20%;
+  flex: 20%;
   margin-left: 5%;
   margin-right: 5%;
 }
@@ -223,6 +227,8 @@ nav li:hover a
 /* Información de proyectos */
 #project-info
 {
+  display: flex;
+  flex-direction: row;
   margin-left: -10px;
   margin-right: -10px;
   padding: 5vw;
@@ -233,8 +239,7 @@ nav li:hover a
 /* Sección de habilidades */
 .skills
 {
-  float: left;
-  width: 35%;
+  flex: 40%;
   margin-left: 5%;
   background-color: #FFFFFF; 
   padding: 2vw;
@@ -263,28 +268,49 @@ nav li:hover a
 /* Información de proyectos (ahora sí) */
 .info
 {
-  float: right;
-  width: 50%;
+  flex: 50%;
   margin-right: 5%;
+  margin-left: 5%;
   background-color: #FFFFFF; 
   padding: 1vw;
 }
 
-.float-3
+.flex-container
 {
-  float: left;
-  width: 28%;
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-3
+{
+  display: flex;
+  flex-direction: column;
+  flex: 33%;
   margin: 10px;
 }
 
-.float-3 img
+.flex-img
 {
-  display: inline-block;
+  display: flex;
+  align-self: flex-start;
   max-width: 80%;
   max-height: 80%;
   height: auto;
   width: auto;
   margin: auto;
+}
+
+.flex-text
+{
+  display: flex;
+  align-self: stretch;
+  flex-wrap: wrap;
+}
+
+.flex-btn
+{
+  display: flex;
+  align-self: flex-end;
 }
 
 /* Sección de precios */
@@ -297,9 +323,17 @@ nav li:hover a
   background: #FFFFFF;
 }
 
-#prices .float-3 
+#prices .flex-container 
 {
+  display: flex;
+  flex-direction: row;
   margin: 2.5%;
+}
+
+.card
+{
+  flex: 32%;
+  margin-bottom: 20px;
 }
 
 .card h5
@@ -309,7 +343,7 @@ nav li:hover a
   font-size: 0.8em;
   text-align: center;
   padding: 1vw;
-  margin: 0;
+  margin: 0 10px 0 10px;
   border-radius: 0;
 }
 
@@ -328,14 +362,18 @@ nav li:hover a
   background-color: #FAC213;
 }
 
+.specs
+{
+  margin-bottom: 20px;
+}
+
 .specs h5
 {
-  display: block;
   color: black;
   font-weight: normal;
   text-align: center;
   padding: 1vw;
-  margin: 0;
+  margin: 0 10px 0 10px;
   background-color: #EAEDED;
   border-top: solid 1px #DEDEDE;
   border-bottom: solid 1px #DEDEDE;
@@ -366,10 +404,9 @@ nav li:hover a
   padding: 2vw 6vw 2vw 6vw;
 }
 
-#contact .float-3
+#contact .flex-3
 {
-  display: block;
-  width: 33.3%;
+  flex: 33.3%;
   color: white;
   text-align: center;
   font-weight: bold;
@@ -395,7 +432,7 @@ nav li:hover a
 
 #contact img
 {
-  display: block;
+  align-self: center;
   width: 48px;
   height: auto;
   margin-bottom: 10px;
@@ -431,8 +468,14 @@ nav li:hover a
 	background-color: #323337;
 }
 
+.submit:hover
+{
+  cursor: pointer;
+}
+
 footer
 {
+  display: flex;
   margin-left: -10px;
   margin-right: -10px;
   padding: 1vh 6vw 1vh 6vw;
@@ -556,13 +599,13 @@ footer a
 	}
   
   /* Artículos en múltiples columnas pasan a ser una sola */
-  .float-3, .links, .main, .news, .skills, .info
+  #container-main, #project-info, .flex-container
   {
-    width: 100%;
+    flex-direction: column;
   }
 
-  /* Enlaces */
-  .links
+  /* Enlaces y noticias */
+  .links, .news
   {
     margin: 0;
   }
@@ -582,12 +625,6 @@ footer a
   .main p
   {
     font-size: 0.7em;
-  }
-
-  /* Noticias */
-  .news
-  {
-    margin: 0;
   }
 
   .news li
@@ -614,8 +651,18 @@ footer a
   {
     margin-right: 5px;
   }
-  
+
+  .info .flex-btn
+  {
+    align-self: center;
+  } 
+
   /* Precios */
+  #prices .flex-container 
+  {
+    flex-direction: column;
+  }
+
   .card h5
   {
     margin: 0px 5px 0px 5px;

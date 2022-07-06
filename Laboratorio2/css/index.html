@@ -32,7 +32,7 @@
 
       <nav>
         <ul>
-          <li><a href="#container-main">Inicio</a></li>
+          <li><a href="#start">Inicio</a></li>
           <li><a href="#project-info">Acerca de</a></li>
           <li><a href="#prices">Comprar</a></li>
           <li><a href="#contact">Contacto</a></li>
@@ -72,7 +72,7 @@
       <!-- Artículo principal -->
       <section class="main">
         <article>
-          <h3>DIMENSIÓN LINUX</h3>
+          <h3 id="start">DIMENSIÓN LINUX</h3>
           <p>
             Bienvenidos a Dimensión Linux, un lugar donde podrás explorar el vasto mundo
             de Linux, aquí podrás ver tutoriales, tanto para novatos como para usuarios
@@ -198,74 +198,82 @@
       <article class="info">
         <h4>INFORMACIÓN DE LOS PROYECTOS</h4>
         <!-- Proyecto de Qt -->
-        <div class="float-3">
-          <img src="./img/qt.png" alt="Qt">
-          <p> 
-            En el curso de informática II tuve que desarrollar un juego en Qt, para esto me
-            inspiré de un animal icónico dentro de la universidad,
-            la paloma.<span id="dots-qt" class="dots">..</span>
-          </p>
-          <span id="more-qt" class="more">
-            <p>
-              Para hacerlo utilicé QtCreator, un IDE para desarrollo en este framework bastante
-              ágil y completo, los requisitos del juego era incorporar física, multijugador,
-              guardado y cargado de partidas, menú de pausa, entre otros.
-            </p>
-            <p>
-              Por desgracia el proyecto quedó incompleto y con errores fatales.
-            </p>
-          </span>
-          <button onclick="show_more('read-more-qt', 'more-qt', 'dots-qt',
-                                     'MÁS INFORMACIÓN', 'MENOS INFORMACIÓN')"
-                                  id="read-more-qt" class="read-more">
-            MÁS INFORMACIÓN
-          </button>
+        <div class="flex-container">
+          <div class="flex-3">
+            <img src="./img/qt.png" class="flex-img" alt="Qt">
+            <div class="flex-text">
+              <p> 
+                En el curso de informática II tuve que desarrollar un juego en Qt, para esto me
+                inspiré de un animal icónico dentro de la universidad, que todos hemos visto alguna
+                vez dentro del cámpus,
+                la paloma.<span id="dots-qt" class="dots">..</span>
+              </p>
+              <span id="more-qt" class="more">
+                <p>
+                  Para hacerlo utilicé QtCreator, un IDE para desarrollo en este framework bastante
+                  ágil y completo, los requisitos del juego era incorporar física, multijugador,
+                  guardado y cargado de partidas, menú de pausa, entre otros.
+                </p>
+                <p>
+                  Por desgracia el proyecto quedó incompleto y con errores fatales.
+                </p>
+              </span>
+            </div>
+            <button onclick="show_more('read-more-qt', 'more-qt', 'dots-qt',
+                                       'MÁS INFORMACIÓN', 'MENOS INFORMACIÓN')"
+                                    id="read-more-qt" class="read-more flex-btn">
+              MÁS INFORMACIÓN
+            </button>
+          </div>
+          <!-- Proyecto de Arduino Nano -->
+          <div class="flex-3">
+            <img src="./img/nano.jpg" class="flex-img" alt="Arduino nano">
+            <div class="flex-text">
+              <p> 
+                En mi antiguo trabajo como personal de mantenimiento tuve la oportunidad de
+                planear y desarrollar un proyecto de automatización de la verificación de elementos
+                plásticos para automóviles.<span id="dots-nano" class="dots">..</span>
+              </p>
+              <span id="more-nano" class="more">
+                <p>
+                  El proyecto consistía en unos sensores mecánicos para detectar la
+                  inserción del producto en la máquina de verificación, posteriormente se
+                  accionaba un mecanismo neumático que realizaba perforaciones.
+                </p>
+              </span>
+            </div>
+            <button onclick="show_more('read-more-nano', 'more-nano', 'dots-nano',
+                                       'MÁS INFORMACIÓN', 'MENOS INFORMACIÓN')"
+                                    id="read-more-nano" class="read-more flex-btn">
+              MÁS INFORMACIÓN
+            </button>
+          </div>
+          <!-- Proyecto de Electron -->
+          <div class="flex-3">
+            <img src="./img/electron.png" class="flex-img" alt="Electron">
+            <div class="flex-text">
+              <p> 
+                Debido a que el proyecto en Qt había quedado incompleto
+                decidí llevar a cabo la remasterización del juego como aplicación
+                web, entonces empecé a planear la historia, la
+                jugabilidad y demás aspectos no sistemáticos de 
+                este.<span id="dots-electron" class="dots">..</span>
+              </p>
+              <span id="more-electron" class="more">
+                <p>
+                  Sin embargo debido a la falta de motivación, tiempo y conocimientos
+                  en el desarrollo de aplicaciones web, decidí desistir del proyecto
+                  o por lo menos dejarlo suspendido hasta nuevo aviso.
+                </p>
+              </span>
+            </div>
+            <button onclick="show_more('read-more-electron', 'more-electron', 'dots-electron',
+                                       'MÁS INFORMACIÓN', 'MENOS INFORMACIÓN')"
+                                    id="read-more-electron" class="read-more flex-btn">
+              MÁS INFORMACIÓN
+            </button>
+          </div>
         </div>
-        <!-- Proyecto de Arduino Nano -->
-        <div class="float-3">
-          <img src="./img/nano.jpg" alt="Arduino nano">
-          <p> 
-            En mi antiguo trabajo como personal de mantenimiento tuve la oportunidad de
-            planear y desarrollar un proyecto de automatización de la verificación de elementos
-            plásticos para automóviles.<span id="dots-nano" class="dots">..</span>
-          </p>
-          <span id="more-nano" class="more">
-            <p>
-              El proyecto consistía en unos sensores mecánicos para detectar la
-              inserción del producto en la máquina de verificación, posteriormente se
-              accionaba un mecanismo neumático que realizaba perforaciones.
-            </p>
-          </span>
-          <button onclick="show_more('read-more-nano', 'more-nano', 'dots-nano',
-                                     'MÁS INFORMACIÓN', 'MENOS INFORMACIÓN')"
-                                  id="read-more-nano" class="read-more">
-            MÁS INFORMACIÓN
-          </button>
-        </div>
-        <!-- Proyecto de Electron -->
-        <div class="float-3">
-          <img src="./img/electron.png" alt="Electron">
-          <p> 
-            Debido a que el proyecto de informática II había quedado incompleto
-            decidí llevar a cabo la remasterización del juego como aplicación
-            web, para esto empecé a planear la historia, los gráficos, la
-            jugabilidad y demás aspectos no sistemáticos de 
-            este.<span id="dots-electron" class="dots">..</span>
-          </p>
-          <span id="more-electron" class="more">
-            <p>
-              Sin embargo debido a la falta de motivación, tiempo y conocimientos
-              en el desarrollo de aplicaciones web, decidí desistir del proyecto
-              o por lo menos dejarlo suspendido hasta nuevo aviso.
-            </p>
-          </span>
-          <button onclick="show_more('read-more-electron', 'more-electron', 'dots-electron',
-                                     'MÁS INFORMACIÓN', 'MENOS INFORMACIÓN')"
-                                  id="read-more-electron" class="read-more">
-            MÁS INFORMACIÓN
-          </button>
-        </div>
-
         <div class="clear"></div>
       </article>
       <div class="clear"></div>
@@ -276,7 +284,7 @@
     <!-- Sección de precios -->
     <section id="prices">
       <h4>LISTA DE PRECIOS</h4>
-      <div class="float-3">
+      <div class="flex-container">
         <!-- Paquete básico -->
         <div class="card">
           <h5 id="basic">BÁSICO</h5>
@@ -290,9 +298,10 @@
               diarios
             </h5>
           </div>
+          <button class="buy">
+            COMPRAR AHORA
+          </button>
         </div>
-      </div>
-      <div class="float-3">
         <!-- Paquete pro -->
         <div class="card">
           <h5 id="pro">PRO</h5>
@@ -306,65 +315,54 @@
               diarios
             </h5>
           </div>
+          <button class="buy">
+            COMPRAR AHORA
+          </button>
         </div>
-      </div>
-      <div class="float-3">
         <!-- Paquete premium -->
         <div class="card">
           <h5 id="premium">PREMIUM</h5>
           <div class="specs">
             <h5>5 Diseños web</h5>
             <h5>3 Diseños electrónicos</h5>
-            <h5>3 Diseños aph5caciones móviles</h5>
+            <h5>3 Diseños apps móviles</h5>
             <h5>Soporte 2 años</h5>
             <h5>
               <span class="price-tag">$ 50</span>
               diarios
             </h5>
           </div>
+          <button class="buy">
+            COMPRAR AHORA
+          </button>
         </div>
+      </div>
+    </section>
+    </div>
       </div>
 
       <div class="clear"></div>
 
       <!-- Botones de comprar alineados -->
-      <div class="float-3">
-        <button class="buy">
-          COMPRAR AHORA
-        </button>
-      </div>
-      <div class="float-3">
-        <button class="buy">
-          COMPRAR AHORA
-        </button>
-      </div>
-      <div class="float-3">
-        <button class="buy">
-          COMPRAR AHORA
-        </button>
-      </div>
-      <div class="clear"></div>
-    </section>
-    </div>
 
     <div class="clear"></div>
 
     <!-- Contacto -->
     <section id="contact">
       <h4>INFORMACIÓN DE CONTACTO</h4> 
-      <div class="contact-info">
-        <div id="email" class="float-3">
+      <div class="flex-container">
+        <div id="email" class="flex-3">
           <img src="./icon/email.png" alt="Email icon">
           <!-- Correo universitario -->
           cesara.montoya1@udea.edu.co
           <!-- Correo personal -->
           <!-- sprit152009@gmail.com -->
         </div>
-        <div id="location" class="float-3">
+        <div id="location" class="flex-3">
           <img src="./icon/location.png" alt="Location icon">
           Medellín, Colombia
         </div>
-        <div id="phone" class="float-3">
+        <div id="phone" class="flex-3">
           <img src="./icon/phone.png" alt="Phone icon">
           3209321716
         </div>
@@ -384,19 +382,19 @@
     </section>
 
     <footer>
-      <div class="float-3">
+      <div class="flex-3">
         <h6>CRÉDITOS</h6>
         <a href="https://www.flaticon.com/free-icons/email" title="email icons">Email icons created by Freepik - Flaticon</a>
         <a href="https://www.flaticon.com/free-icons/map" title="map icons">Map icons created by Freepik - Flaticon</a>
         <a href="https://www.flaticon.com/free-icons/smartphone" title="smartphone icons">Smartphone icons created by Freepik - Flaticon</a>
         <a href="https://www.flaticon.com/free-icons/open-menu" title="open menu icons">Open menu icons created by Freepik - Flaticon</a>
       </div>
-      <div class="float-3">
+      <div class="flex-3">
         <h6>REFERENCIAS</h6>
         <a href="https://developer.mozilla.org/es/">Mozilla developers network</a>
         <a href="https://www.w3schools.com/">W3Schools</a>
       </div>
-      <div class="float-3">
+      <div class="flex-3">
         <h6>GITHUB</h6>
         <a href="https://www.github.com/donCESAR12345">GitHub</a>
       </div>
