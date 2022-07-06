@@ -473,6 +473,7 @@ nav li:hover a
   cursor: pointer;
 }
 
+/* Pie de página */
 footer
 {
   display: flex;
@@ -668,4 +669,3 @@ footer a
     margin: 0px 5px 0px 5px;
   }
 }
-
