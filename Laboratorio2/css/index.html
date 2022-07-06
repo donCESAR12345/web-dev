@@ -32,7 +32,7 @@
 
       <nav>
         <ul>
-          <li><a href="#header">Inicio</a></li>
+          <li><a href="#container-main">Inicio</a></li>
           <li><a href="#project-info">Acerca de</a></li>
           <li><a href="#prices">Comprar</a></li>
           <li><a href="#contact">Contacto</a></li>
@@ -40,33 +40,39 @@
       </nav>
     </header>
 
-    <div class="container-main">
+    <div id="container-main">
       <!-- Enlaces -->
       <aside class="links">
-        <h2>ENLACES</h2>
-        <h4>¿Cómo instalar Linux?</h4>
+        <h4>ENLACES</h4>
+        <h5><a href="">¿Cómo instalar Linux?</a></h5>
         <article>
-          Instalar Linux es una tarea que para muchos puede parecer complicada,
-          sin embargo averiguarás que no es tan difícil como parece.
+          <p>
+            Instalar Linux es una tarea que para muchos puede parecer complicada,
+            sin embargo averiguarás que no es tan difícil como parece.
+          </p>
         </article>
-        <h4>¿Qué distribución escoger?</h4>
+        <h5><a href="">¿Qué distribución escoger?</a></h5>
         <article>
-          Una preocupación común de los usuarios de Linux es no escoger la
-          distribución adecuada para ellos, sin embargo acá te explicaré que
-          no es tan importante.
+          <p>
+            Una preocupación común de los usuarios de Linux es no escoger la
+            distribución adecuada para ellos, sin embargo acá te explicaré que
+            no es tan importante.
+          </p>
         </article>
-        <h4>¿Linux es mejor que Windows?</h4>
+        <h5><a href="">¿Linux es mejor que Windows?</a></h5>
         <article>
-          Algunos elitistas de Linux afirmarían esto, aunque en mi opinión es
-          más complicado que un sí absoluto, y dependerá de qué tipo de usuario
-          seas.
+          <p>
+            Algunos elitistas de Linux afirmarían esto, aunque en mi opinión es
+            más complicado que un sí absoluto, y dependerá de qué tipo de usuario
+            seas.
+          </p>
         </article>
       </aside>
 
       <!-- Artículo principal -->
       <section class="main">
         <article>
-          <h1>DIMENSIÓN LINUX</h1>
+          <h3>DIMENSIÓN LINUX</h3>
           <p>
             Bienvenidos a Dimensión Linux, un lugar donde podrás explorar el vasto mundo
             de Linux, aquí podrás ver tutoriales, tanto para novatos como para usuarios
@@ -107,7 +113,7 @@
 
       <!-- Noticias -->
       <aside class="news">
-        <h2>NOTICIAS</h2>
+        <h4>NOTICIAS</h4>
         <ul>
           <li>
             <a href="https://www.linuxtoday.com/developer/best-free-and-open-source-software-june-2022-updates/">
@@ -142,12 +148,12 @@
               </a>
             </li>
           </span>
+          <button onclick="show_more('read-more-news', 'more-news', 'dots-news',
+                                     'MÁS INFORMACIÓN', 'MENOS INFORMACIÓN')"
+                                  id="read-more-news" class="read-more">
+            MÁS INFORMACIÓN
+          </button>
         </ul>
-        <button onclick="show_more('read-more-news', 'more-news', 'dots-news',
-                                   'MÁS INFORMACIÓN', 'MENOS INFORMACIÓN')"
-                                id="read-more-news" class="read-more">
-          MÁS INFORMACIÓN
-        </button>
       </aside>
       <div class="clear"></div>
     </div>
@@ -155,7 +161,7 @@
     <section id="project-info">
       <!-- Habilidades  -->
       <article class="skills">
-        <h1>HABILIDADES</h1>
+        <h4>HABILIDADES</h4>
         <ul>
           <li>
             <label for="python">Python para procesamiento de datos</label>
@@ -190,7 +196,7 @@
 
       <!-- Información de los proyectos  -->
       <article class="info">
-        <h1>INFORMACIÓN DE LOS PROYECTOS</h1>
+        <h4>INFORMACIÓN DE LOS PROYECTOS</h4>
         <!-- Proyecto de Qt -->
         <div class="float-3">
           <img src="./img/qt.png" alt="Qt">
@@ -209,6 +215,11 @@
               Por desgracia el proyecto quedó incompleto y con errores fatales.
             </p>
           </span>
+          <button onclick="show_more('read-more-qt', 'more-qt', 'dots-qt',
+                                     'MÁS INFORMACIÓN', 'MENOS INFORMACIÓN')"
+                                  id="read-more-qt" class="read-more">
+            MÁS INFORMACIÓN
+          </button>
         </div>
         <!-- Proyecto de Arduino Nano -->
         <div class="float-3">
@@ -225,6 +236,11 @@
               accionaba un mecanismo neumático que realizaba perforaciones.
             </p>
           </span>
+          <button onclick="show_more('read-more-nano', 'more-nano', 'dots-nano',
+                                     'MÁS INFORMACIÓN', 'MENOS INFORMACIÓN')"
+                                  id="read-more-nano" class="read-more">
+            MÁS INFORMACIÓN
+          </button>
         </div>
         <!-- Proyecto de Electron -->
         <div class="float-3">
@@ -243,32 +259,14 @@
               o por lo menos dejarlo suspendido hasta nuevo aviso.
             </p>
           </span>
-        </div>
-
-        <div class="clear"></div>
-
-        <!-- Botones alineados -->
-        <div class="float-3">
-          <button onclick="show_more('read-more-qt', 'more-qt', 'dots-qt',
-                                     'MÁS INFORMACIÓN', 'MENOS INFORMACIÓN')"
-                                  id="read-more-qt" class="read-more">
-            MÁS INFORMACIÓN
-          </button>
-        </div>
-        <div class="float-3">
-          <button onclick="show_more('read-more-nano', 'more-nano', 'dots-nano',
-                                     'MÁS INFORMACIÓN', 'MENOS INFORMACIÓN')"
-                                  id="read-more-nano" class="read-more">
-            MÁS INFORMACIÓN
-          </button>
-        </div>
-        <div class="float-3">
           <button onclick="show_more('read-more-electron', 'more-electron', 'dots-electron',
                                      'MÁS INFORMACIÓN', 'MENOS INFORMACIÓN')"
                                   id="read-more-electron" class="read-more">
             MÁS INFORMACIÓN
           </button>
         </div>
+
+        <div class="clear"></div>
       </article>
       <div class="clear"></div>
     </section>
@@ -277,11 +275,11 @@
 
     <!-- Sección de precios -->
     <section id="prices">
-      <h1>LISTA DE PRECIOS</h1>
+      <h4>LISTA DE PRECIOS</h4>
       <div class="float-3">
         <!-- Paquete básico -->
         <div class="card">
-          <h4 id="basic">BÁSICO</h4>
+          <h5 id="basic">BÁSICO</h5>
           <div class="specs">
             <h5>1 Diseño web</h5>
             <h5>1 Diseño electrónico</h5>
@@ -297,7 +295,7 @@
       <div class="float-3">
         <!-- Paquete pro -->
         <div class="card">
-          <h4 id="pro">PRO</h4>
+          <h5 id="pro">PRO</h5>
           <div class="specs">
             <h5>2 Diseños web</h5>
             <h5>2 Diseños electrónicos</h5>
@@ -313,7 +311,7 @@
       <div class="float-3">
         <!-- Paquete premium -->
         <div class="card">
-          <h4 id="premium">PREMIUM</h4>
+          <h5 id="premium">PREMIUM</h5>
           <div class="specs">
             <h5>5 Diseños web</h5>
             <h5>3 Diseños electrónicos</h5>
@@ -353,7 +351,7 @@
 
     <!-- Contacto -->
     <section id="contact">
-      <h1>INFORMACIÓN DE CONTACTO</h1> 
+      <h4>INFORMACIÓN DE CONTACTO</h4> 
       <div class="contact-info">
         <div id="email" class="float-3">
           <img src="./icon/email.png" alt="Email icon">
@@ -386,9 +384,23 @@
     </section>
 
     <footer>
-      <a href="https://www.flaticon.com/free-icons/email" title="email icons">Email icons created by Freepik - Flaticon</a>
-      <a href="https://www.flaticon.com/free-icons/map" title="map icons">Map icons created by Freepik - Flaticon</a>
-      <a href="https://www.flaticon.com/free-icons/smartphone" title="smartphone icons">Smartphone icons created by Freepik - Flaticon</a>
+      <div class="float-3">
+        <h6>CRÉDITOS</h6>
+        <a href="https://www.flaticon.com/free-icons/email" title="email icons">Email icons created by Freepik - Flaticon</a>
+        <a href="https://www.flaticon.com/free-icons/map" title="map icons">Map icons created by Freepik - Flaticon</a>
+        <a href="https://www.flaticon.com/free-icons/smartphone" title="smartphone icons">Smartphone icons created by Freepik - Flaticon</a>
+        <a href="https://www.flaticon.com/free-icons/open-menu" title="open menu icons">Open menu icons created by Freepik - Flaticon</a>
+      </div>
+      <div class="float-3">
+        <h6>REFERENCIAS</h6>
+        <a href="https://developer.mozilla.org/es/">Mozilla developers network</a>
+        <a href="https://www.w3schools.com/">W3Schools</a>
+      </div>
+      <div class="float-3">
+        <h6>GITHUB</h6>
+        <a href="https://www.github.com/donCESAR12345">GitHub</a>
+      </div>
+      <div class="clear"></div>
     </footer>
 
   </body>
