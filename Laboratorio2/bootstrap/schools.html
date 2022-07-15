@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang=es>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="César Augusto">
+    <meta name="description" content="Laboratorio de Bootstrap">
+    <meta name="keywords" content="Laboratorio, HTML5, CSS, BS">
+    <title>Universidad de Antioquia</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <!-- Bootstrap icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <!-- Personal CSS -->
+    <link rel="stylesheet" href="./css/styles.css" media="screen" />
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <!-- Personal JS -->
+    <script src="./js/script.js"></script>
+
+  </head>
+
+  <body>
+    <!-- Encabezado -->
+    <header>
+      <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img src="./assets/icon/udea.png" alt="Logo" class="d-inline-block align-text-middle" 
+                                                         height="40" >
+          </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+              <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="./index.html">Inicio</a>
+                </li>
+                <li class="nav-item dropdown active">
+                  <a class="nav-link dropdown-toggle" href="./schools.html" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Facultades
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <li><a class="dropdown-item" href="#">Artes</a></li>
+                    <li><a class="dropdown-item disabled" href="#">Ciencias agrarias</a></li>
+                    <li><a class="dropdown-item" href="#">Ciencias económicas</a></li>
+                    <li><a class="dropdown-item" href="#">Ciencias exactas y naturales</a></li>
+                    <li><a class="dropdown-item disabled" href="#">Ciencias farmacéuticas y alimentarias</a></li>
+                    <li><a class="dropdown-item" href="#">Ciencias sociales y humanas</a></li>
+                    <li><a class="dropdown-item disabled" href="#">Comunicaciones y filología</a></li>
+                    <li><a class="dropdown-item disabled" href="#">Derecho y ciencias políticas</a></li>
+                    <li><a class="dropdown-item disabled" href="#">Educación</a></li>
+                    <li><a class="dropdown-item disabled" href="#">Enfermería</a></li>
+                    <li><a class="dropdown-item" href="./schools/engineering.html">Ingeniería</a></li>
+                    <li><a class="dropdown-item" href="#">Medicina</a></li>
+                    <li><a class="dropdown-item disabled" href="#">Odontología</a></li>
+                    <li><a class="dropdown-item disabled" href="#">Salud pública</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#footer">Contáctanos</a>
+                </li>
+              </ul>
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                  <button type="button" class="btn btn-success mx-auto" data-bs-toggle="modal" data-bs-target="#ModalForm">
+                    Acceder
+                  </button>
+                  <a href="#register" class="btn btn-success mx-auto">
+                    Registro
+                  </a>
+                </li>
+              </ul>
+            </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Modal Form -->
+    <div class="modal fade" id="ModalForm" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <!-- Login Form -->
+          <form action="">
+            <div class="modal-header">
+              <h5 class="modal-title">Acceder</h5>
+              <button type="button" class="btn-close" id="close-login" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="mb-3">
+                <label for="Username">Nombre de usuario<span class="text-danger">*</span></label>
+                <input type="text" name="username" class="form-control" id="Username" placeholder="Ingrese nombre de usuario">
+              </div>
+
+              <div class="mb-3">
+                <label for="Password">Contraseña<span class="text-danger">*</span></label>
+                <input type="password" name="password" class="form-control" id="Password" placeholder="Ingrese contraseña">
+              </div>
+              <div class="mb-3">
+                <input class="form-check-input" type="checkbox" value="" id="remember" required>
+                <label class="form-check-label" for="remember">Recordar mis datos</label>
+                <a href="#" class="float-end">Olvidé mi contraseña</a>
+              </div>
+            </div>
+            <div class="modal-footer pt-4">                  
+              <button type="button" class="btn btn-success mx-auto w-100">Ingresar</button>
+            </div>
+            <p class="text-center">¿Aún no estás registrado? <a href="#register">Registrarse</a></p> 
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <section class="bg-light py-4 my-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <h2 class="mb-3 text-success">Universidad de Antioquia</h2>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="card my-3">
+              <div class="card-thumbnail">
+                <img src="./assets/img/artes.jpeg" class="img-fluid" alt="Facultad de artes">
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Facultad de Artes</h3>
+                <!-- Tomado de la descripción de la facultad en su propia página -->
+                <p class="card-text">
+                  La Facultad de Artes de la Universidad de Antioquia se ha consolidado a través del tiempo,
+                  como uno de los más importantes centros de estudio, extensión, conservación y difusión de las 
+                  disciplinas de las artes, como: música, artes escénicas y las artes visuales.
+                </p>
+                <a href="https://udea.edu.co/wps/portal/udea/web/inicio/unidades-academicas/artes" class="btn btn-success">Leer más</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <div class="card my-3">
+              <div class="card-thumbnail">
+                <img src="./assets/img/ciencias_exactas.png" class="img-fluid" alt="Facultad de ciencias exactas">
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Facultad de ciencias exactas</h3>
+                <p class="card-text">
+                  Desarrollamos programas académicos de formación en pregrado y posgrado y promovemos 
+                  actividades de investigación, docencia y extensión sobre la base de la 
+                  interdisciplinariedad, la cooperación y la formación integral de sus miembros para 
+                  responder al compromiso de aportar al desarrollo científico, político, social y 
+                  económico de la región y el país.
+                </p>
+                <a href="#" class="btn btn-success">Leer más</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <div class="card my-3">
+              <div class="card-thumbnail">
+                <img src="./assets/img/ciencias_economicas.jpg" class="img-fluid" alt="Facultad de ciencias económicas">
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Facultad de ciencias económicas</h3>
+                <!-- Tomado de la descripción de la facultad en su propia página -->
+                <p class="card-text">
+                  La Facultad de Ciencias Económicas de la Universidad de Antioquia es una de las cuatro 
+                  facultades, en su género, más antigua del país. Fue creada en 1944, momento desde el 
+                  cual ha liderado la iniciativa de formar profesionales que, más allá del conocimiento, 
+                  generen un verdadero valor para la sociedad.
+                </p>
+                <a href="https://udea.edu.co/wps/portal/udea/web/inicio/unidades-academicas/ciencias-economicas" class="btn btn-success">Leer más</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <div class="card my-3">
+              <div class="card-thumbnail">
+                <img src="./assets/img/sociales_humanas.jpg" class="img-fluid" alt="Facultad de ciencias sociales y humanas">
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Facultad de ciencias sociales y humanas</h3>
+                <!-- Tomado de la descripción de la facultad en su propia página -->
+                <p class="card-text">
+                  La Facultad busca fortalecer la formación integral en las ciencias sociales y humanas, 
+                  aportando a la generación y aplicación del conocimiento mediante sus procesos de 
+                  investigación, docencia y extensión.
+                </p>
+                <a href="https://udea.edu.co/wps/portal/udea/web/inicio/unidades-academicas/ciencias-sociales-humanas" class="btn btn-success">Leer más</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <div class="card my-3">
+              <div class="card-thumbnail">
+                <img src="./assets/img/ingenieria.png" class="img-fluid" alt="Facultad de ingeniería">
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Facultad de ingeniería</h3>
+                <!-- Tomado de la descripción de la facultad en su propia página -->
+                <p class="card-text">
+                  La Facultad de Ingeniería de la Universidad de Antioquia tuvo su origen en la
+                  Escuela de Ciencias Químicas creada en febrero de 1943. Su primer plan de estudios 
+                  estaba orientado hacia la química pura, pero más tarde (1944) se cambió hacia la química
+                  industrial. Luego, en 1946, los programas se orientaron hacia la ingeniería química
+                  y se cambió el nombre por el de Escuela de Ingeniería Química. Posteriormente,
+                  en 1958, se transformó en Facultad.
+                </p>
+                <a href="./schools/engineering.html" class="btn btn-success">Leer más</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <div class="card my-3">
+              <div class="card-thumbnail">
+                <img src="./assets/img/medicina.jpg" class="img-fluid" alt="Facultad de medicina">
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Facultad de medicina</h3>
+                <!-- Tomado de la descripción de la facultad en su propia página -->
+                <p class="card-text">
+                  Durante más de 100 años fue la única facultad de medicina en la ciudad, siendo precursora
+                  de las facultades de Salud Pública, Enfermería y de las escuelas de Microbiología y
+                  Bioanálisis, y de Nutrición y Dietética. De sus claustros han egresado importantes
+                  líderes de gran influencia en los ámbitos académico, científico, social y político,
+                  del país.
+                </p>
+                <a href="#" class="btn btn-success">Leer más</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-light pt-5 mt-5" id="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6 col-md-3">
+            <div class="widget-title">
+              <h3 class="mb-4 fs-5 text-secondary text-uppercase">Atención al ciudadano</h3>
+            </div>
+            <ul class="list-inline">
+              <li><a class="link-success" href="https://udea.edu.co/wps/portal/udea/web/inicio/institucional/atencion-ciudadano/canales-atencion/presencial">Atención presencial</a></li>
+              <li><a class="link-success" href="https://udea.edu.co/wps/portal/udea/web/inicio/institucional/atencion-ciudadano/canales-atencion/telefonica">Atención telefónica</a></li>
+              <li><a class="link-success" href="https://udea.edu.co/wps/portal/udea/web/inicio/institucional/atencion-ciudadano/canales-atencion/virtual">Atención virtual</a></li>
+          </div>
+          <div class="col-sm-6 col-md-3">
+            <div class="widget-title">
+              <h3 class="mb-4 fs-5 text-secondary text-uppercase">Redes sociales</h3>
+            </div>
+            <ul class="list-inline">
+              <li><i class="bi bi-linkedin"></i> <a class="link-success" href="https://www.linkedin.com/school/universidad-de-antioquia/?originalSubdomain=co">LinkedIn</a></li>
+              <li><i class="bi bi-youtube"></i> <a class="link-success" href="https://www.youtube.com/user/UniversidadAntioquia">YouTube</a></li>
+              <li><i class="bi bi-twitter"></i> <a class="link-success" href="https://twitter.com/UdeA">Twitter</a></li>
+              <li><i class="bi bi-facebook"></i> <a class="link-success" href="https://www.facebook.com/universidaddeantioquia/?fref=ts">Facebook</a></li>
+              <li><i class="bi bi-instagram"></i> <a class="link-success" href="https://www.instagram.com/udea/">Instagram</a></li>
+            </ul>
+          </div>
+          <div class="col-sm-6 col-md-3">
+            <div class="widget-title">
+              <h3 class="mb-4 fs-5 text-secondary text-uppercase">Servicios en línea</h3>
+            </div>
+            <ul class="list-inline">
+              <li><a class="link-success" href="https://udea.edu.co/wps/portal/udea/web/inicio/institucional/campus">Cámpus UdeA</a></li>
+              <li><a class="link-success" href="https://udea.edu.co/wps/portal/udea/web/inicio/contratacion-convocatorias">Contrataciones y convocatorias</a></li>
+              <li><a class="link-success" href="https://udea.edu.co/wps/myportal/udea/web/inicio/somos-udea/empleados/tramites-servicios-linea/generar-certificados">Generar certificados</a></li>
+              <li><a class="link-success" href="https://udearroba.udea.edu.co/home/">Ude@</a></li>
+            </ul>
+          </div>
+          <div class="col-sm-6 col-md-3">
+            <div class="widget-title">
+              <h3 class="mb-4 fs-5 text-secondary text-uppercase">Suscripción</h3>
+            </div>
+            <form class="row row-cols-lg-auto g-3 align-items-center">
+              <div class="col-12">
+                <label class="visually-hidden">Correo</label>
+                <div class="input-group">
+                  <div class="input-group-text"><i class="bi bi-envelope"></i></div>
+                  <input type="text" class="form-control" placeholder="Correo electrónico">
+                </div>
+              </div>
+              <div class="col-12">
+                <button type="submit" class="btn btn-success w-100">Suscribirse</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col-12">
+        <p class="text-center text-white py-1 mt-5 bg-secondary">© Copyright 2020 Todos los Derechos Reservados</p>
+      </div>
+    </footer>
+  </body>
+</html>
+
