@@ -26,38 +26,38 @@
       <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">
-            <img src="./icon/udea.png" alt="Logo" class="d-inline-block align-text-middle" 
+            <img src="./assets/icon/udea.png" alt="Logo" class="d-inline-block align-text-middle" 
                                                   height="40" >
           </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav mx-auto">
-              <li class="nav-item">
-                <a class="nav-link active" href="#">Inicio</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Universidad</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Noticias</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Contáctanos</a>
-              </li>
-            </ul>
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item">
-                <button type="button" class="btn btn-success mx-auto" data-bs-toggle="modal" data-bs-target="#ModalForm">
-                  Acceder
-                </button>
-                <a href="#register" class="btn btn-success mx-auto">
-                  Registro
-                </a>
-              </li>
-            </ul>
-          </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+              <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                  <a class="nav-link active" href="#">Inicio</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Universidad</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Noticias</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#footer">Contáctanos</a>
+                </li>
+              </ul>
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                  <button type="button" class="btn btn-success mx-auto" data-bs-toggle="modal" data-bs-target="#ModalForm">
+                    Acceder
+                  </button>
+                  <a href="#register" class="btn btn-success mx-auto">
+                    Registro
+                  </a>
+                </li>
+              </ul>
+            </div>
         </div>
       </nav>
     </header>
@@ -66,91 +66,137 @@
     <div class="modal fade" id="ModalForm" tabindex="-1" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
-            <!-- Login Form -->
-            <form action="">
-              <div class="modal-header">
-                <h5 class="modal-title">Acceder</h5>
-                <button type="button" class="btn-close" id="close-login" data-bs-dismiss="modal" aria-label="Close"></button>
+          <!-- Login Form -->
+          <form action="">
+            <div class="modal-header">
+              <h5 class="modal-title">Acceder</h5>
+              <button type="button" class="btn-close" id="close-login" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="mb-3">
+                <label for="Username">Nombre de usuario<span class="text-danger">*</span></label>
+                <input type="text" name="username" class="form-control" id="Username" placeholder="Ingrese nombre de usuario">
               </div>
-              <div class="modal-body">
-                <div class="mb-3">
-                    <label for="Username">Nombre de usuario<span class="text-danger">*</span></label>
-                    <input type="text" name="username" class="form-control" id="Username" placeholder="Ingrese nombre de usuario">
-                </div>
 
-                <div class="mb-3">
-                    <label for="Password">Contraseña<span class="text-danger">*</span></label>
-                    <input type="password" name="password" class="form-control" id="Password" placeholder="Ingrese contraseña">
-                </div>
-                <div class="mb-3">
-                    <input class="form-check-input" type="checkbox" value="" id="remember" required>
-                    <label class="form-check-label" for="remember">Recordar mis datos</label>
-                    <a href="#" class="float-end">Olvidé mi contraseña</a>
-                </div>
+              <div class="mb-3">
+                <label for="Password">Contraseña<span class="text-danger">*</span></label>
+                <input type="password" name="password" class="form-control" id="Password" placeholder="Ingrese contraseña">
               </div>
-              <div class="modal-footer pt-4">                  
-                <button type="button" class="btn btn-success mx-auto w-100">Ingresar</button>
+              <div class="mb-3">
+                <input class="form-check-input" type="checkbox" value="" id="remember" required>
+                <label class="form-check-label" for="remember">Recordar mis datos</label>
+                <a href="#" class="float-end">Olvidé mi contraseña</a>
               </div>
-              <p class="text-center">¿Aún no estás registrado? <a href="#register">Registrarse</a></p> 
+            </div>
+            <div class="modal-footer pt-4">                  
+              <button type="button" class="btn btn-success mx-auto w-100">Ingresar</button>
+            </div>
+            <p class="text-center">¿Aún no estás registrado? <a href="#register">Registrarse</a></p> 
           </form>
         </div>
       </div>
     </div>
 
-    <div class="container mt-5">
+    <section class="container mt-5">
       <!-- Barra de búsqueda -->
       <div class="input-group mb-3">
-          <div class="input-group-text p-0">
-              <select class="form-select form-select-lg shadow-none bg-light border-0">
-                  <option>Todo</option>
-                  <option>Cursos</option>
-                  <option>Profesores</option>
-                  <option>Semilleros</option>
-              </select>
-          </div>
-          <input type="text" class="form-control" placeholder="Buscar">
-          <button class="input-group-text shadow-none px-4 btn-warning">
-              <i class="bi bi-search"></i>
-          </button>
+        <div class="input-group-text p-0">
+          <select class="form-select form-select-lg shadow-none bg-light border-0">
+            <option>Todo</option>
+            <option>Cursos</option>
+            <option>Profesores</option>
+            <option>Semilleros</option>
+          </select>
+        </div>
+        <input type="text" class="form-control" placeholder="Buscar">
+        <button class="input-group-text shadow-none px-4 btn-warning">
+          <i class="bi bi-search"></i>
+        </button>
       </div>
-    </div>
+    </section>
+
+    <!-- Banner Section taken from https://www.markuptag.com/bootstrap-5-carousel-banner-at-header/ -->
+    <section id="banner">
+      <div id="carousel-news" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="https://www.markuptag.com/images/slider-img-1.jpg" class="d-block w-100" alt="Profesor enseñando">
+            <div class="carousel-caption d-none d-md-block">
+              <h3>Profesorado</h3>
+              <p>El profesorado calificado como personal de primera categoría es quién podría enseñarte.</p>
+              <a href="#" class="btn btn-success">Leer más</a>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="https://www.markuptag.com/images/slider-img-3.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h3>Cultura</h3>
+              <p>Cultura diversa que integra todas las costumbres y tradiciones para una experiencia inclusiva.</p>
+              <a href="#" class="btn btn-success">Leer más</a>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="https://www.markuptag.com/images/slider-img-2.jpg" class="d-block w-100" alt="Chica estudiando">
+            <div class="carousel-caption d-none d-md-block">
+              <h3>Espacios</h3>
+              <p>Con espacios óptimos para estudiar y relajarse al mismo tiempo.</p>
+              <a href="#" class="btn btn-success">Leer más</a>
+            </div>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carousel-news" role="button" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carousel-news" role="button" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </a>
+      </div>
+    </section>
+    <!-- End Banner Section -->
 
     <!-- Información resumida -->
     <div class="container shadow my-5 border">
-        <div class="row">
-            <div class="col-md-4 col-sm-6 bg-light text-center border-end border-bottom py-5 px-3">
-                <i class="bi bi-people text-success fs-1"></i>
-                <h4 class="mb-3 fw-normal text-uppercase">Comunidad</h4>
-                <p class="text-secondary">Tenemos una comunidad amistosa y solidaria que te ayudará a construir tu futuro gracias a la educación del ser y el saber.</p>
-            </div>
-            <div class="col-md-4 col-sm-6 bg-light text-center border-end border-bottom py-5 px-3">
-                <i class="bi bi-images text-success fs-1"></i>
-                <h4 class="mb-3 fw-normal text-uppercase">Variedad</h4>
-                <p class="text-secondary">Somos una universidad con una cultura diversa, con estudiantes y profesores de diferentes etnias, creencias, alineaciones políticas, entre otras características./p>
-            </div>
-            <div class="col-md-4 col-sm-6 bg-light text-center border-bottom py-5 px-3">
-                <i class="bi bi-shop text-success fs-1"></i>
-                <h4 class="mb-3 fw-normal text-uppercase">Accesibilidad</h4>
-                <p class="text-secondary">Con excelentese oportunidades de ingreso que buscan auxiliar a quienes por motivos económicos no podrían normalmente acceder a educación de calidad.</p>
-            </div>
-            <div class="col-md-4 col-sm-6 bg-light text-center border-end py-5 px-3">
-                <i class="bi bi-pencil-square text-success fs-1"></i>
-                <h4 class="mb-3 fw-normal text-uppercase">Aprendizaje</h4>
-                <p class="text-secondary">Creyentes del aprendizaje dinámico, poseemos personal altamente capacitado para brindar conocimiento de manera didáctica y eficiente.</p>
-            </div>
-            <div class="col-md-4 col-sm-6 bg-light text-center border-end py-5 px-3">
-                <i class="bi bi-briefcase text-success fs-1"></i>
-                <h4 class="mb-3 fw-normal text-uppercase">Empleos</h4>
-                <p class="text-secondary">Al ser una de las mejores Universidades del país, se tiene reconomiento en la industria y gracias a este prestigio se distinguen nuestros estudiantes.</p>
-            </div>
-            <div class="col-md-4 col-sm-6 bg-light text-center py-5 px-3">
-                <i class="bi bi-book text-success fs-1"></i>
-                <h4 class="mb-3 fw-normal text-uppercase">Modernidad</h4>
-                <p class="text-secondary">Con cursos presenciales, semipresenciales y virtuales que hacen uso de las más recientes tecnologías para educar y así crear profesionales integrales.</p>
-            </div>
+      <div class="row">
+        <div class="col-md-4 col-sm-6 bg-light text-center border-end border-bottom py-5 px-3">
+          <i class="bi bi-people text-success fs-1"></i>
+          <h4 class="mb-3 fw-normal text-uppercase">Comunidad</h4>
+          <p class="text-secondary">Tenemos una comunidad amistosa y solidaria que te ayudará a construir tu futuro gracias a la educación del ser y el saber.</p>
         </div>
+        <div class="col-md-4 col-sm-6 bg-light text-center border-end border-bottom py-5 px-3">
+          <i class="bi bi-images text-success fs-1"></i>
+          <h4 class="mb-3 fw-normal text-uppercase">Variedad</h4>
+          <p class="text-secondary">Somos una universidad con una cultura diversa, con estudiantes y profesores de diferentes etnias, creencias, alineaciones políticas, entre otras características./p>
+        </div>
+        <div class="col-md-4 col-sm-6 bg-light text-center border-bottom py-5 px-3">
+          <i class="bi bi-shop text-success fs-1"></i>
+          <h4 class="mb-3 fw-normal text-uppercase">Accesibilidad</h4>
+          <p class="text-secondary">Con excelentese oportunidades de ingreso que buscan auxiliar a quienes por motivos económicos no podrían normalmente acceder a educación de calidad.</p>
+        </div>
+        <div class="col-md-4 col-sm-6 bg-light text-center border-end py-5 px-3">
+          <i class="bi bi-pencil-square text-success fs-1"></i>
+          <h4 class="mb-3 fw-normal text-uppercase">Aprendizaje</h4>
+          <p class="text-secondary">Creyentes del aprendizaje dinámico, poseemos personal altamente capacitado para brindar conocimiento de manera didáctica y eficiente.</p>
+        </div>
+        <div class="col-md-4 col-sm-6 bg-light text-center border-end py-5 px-3">
+          <i class="bi bi-briefcase text-success fs-1"></i>
+          <h4 class="mb-3 fw-normal text-uppercase">Empleos</h4>
+          <p class="text-secondary">Al ser una de las mejores Universidades del país, se tiene reconomiento en la industria y gracias a este prestigio se distinguen nuestros estudiantes.</p>
+        </div>
+        <div class="col-md-4 col-sm-6 bg-light text-center py-5 px-3">
+          <i class="bi bi-book text-success fs-1"></i>
+          <h4 class="mb-3 fw-normal text-uppercase">Modernidad</h4>
+          <p class="text-secondary">Con cursos presenciales, semipresenciales y virtuales que hacen uso de las más recientes tecnologías para educar y así crear profesionales integrales.</p>
+        </div>
+      </div>
     </div>
-    
+
     <!-- Registro -->
     <section class="h-100 bg-dark" id="register">
       <div class="container py-5 h-100">
@@ -161,7 +207,7 @@
                 <div class="col-xl-6 d-none d-xl-block">
                   <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/img4.webp"
                        alt="Five students registering" class="img-fluid"
-                       style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;" />
+                                                       style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;" />
                 </div>
                 <div class="col-xl-6">
                   <div class="card-body p-md-5 text-black">
@@ -194,19 +240,19 @@
                       <div class="form-check form-check-inline mb-0 me-4">
                         <label class="form-check-label" for="femaleGender">Mujer</label>
                         <input class="form-check-input" type="radio" name="inlineRadioOptions" id="femaleGender"
-                               value="option1" required>
+                                                                                               value="option1" required>
                       </div>
 
                       <div class="form-check form-check-inline mb-0 me-4">
                         <input class="form-check-input" type="radio" name="inlineRadioOptions" id="maleGender"
-                               value="option2" required>
+                                                                                               value="option2" required>
                         <label class="form-check-label" for="maleGender">Hombre</label>
                       </div>
 
                       <div class="form-check form-check-inline mb-0">
                         <label class="form-check-label" for="otherGender">Otro</label>
                         <input class="form-check-input" type="radio" name="inlineRadioOptions" id="otherGender"
-                               value="option3" required>
+                                                                                               value="option3" required>
                       </div>
 
                     </div>
@@ -244,9 +290,64 @@
       </div>
     </section>
 
-    <div class="mt-5 p-4 bg-dark text-white text-center">
-      <p>Footer</p>
-    </div>
+    <footer class="bg-light pt-5 mt-5" id="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6 col-md-3">
+            <div class="widget-title">
+              <h3 class="mb-4 fs-5 text-secondary text-uppercase">Atención al ciudadano</h3>
+            </div>
+            <ul class="list-inline">
+              <li><a class="link-success" href="https://udea.edu.co/wps/portal/udea/web/inicio/institucional/atencion-ciudadano/canales-atencion/presencial">Atención presencial</a></li>
+              <li><a class="link-success" href="https://udea.edu.co/wps/portal/udea/web/inicio/institucional/atencion-ciudadano/canales-atencion/telefonica">Atención telefónica</a></li>
+              <li><a class="link-success" href="https://udea.edu.co/wps/portal/udea/web/inicio/institucional/atencion-ciudadano/canales-atencion/virtual">Atención virtual</a></li>
+          </div>
+          <div class="col-sm-6 col-md-3">
+            <div class="widget-title">
+              <h3 class="mb-4 fs-5 text-secondary text-uppercase">Redes sociales</h3>
+            </div>
+            <ul class="list-inline">
+              <li><i class="bi bi-linkedin"></i> <a class="link-success" href="https://www.linkedin.com/school/universidad-de-antioquia/?originalSubdomain=co">LinkedIn</a></li>
+              <li><i class="bi bi-youtube"></i> <a class="link-success" href="https://www.youtube.com/user/UniversidadAntioquia">YouTube</a></li>
+              <li><i class="bi bi-twitter"></i> <a class="link-success" href="https://twitter.com/UdeA">Twitter</a></li>
+              <li><i class="bi bi-facebook"></i> <a class="link-success" href="https://www.facebook.com/universidaddeantioquia/?fref=ts">Facebook</a></li>
+              <li><i class="bi bi-instagram"></i> <a class="link-success" href="https://www.instagram.com/udea/">Instagram</a></li>
+            </ul>
+          </div>
+          <div class="col-sm-6 col-md-3">
+            <div class="widget-title">
+              <h3 class="mb-4 fs-5 text-secondary text-uppercase">Servicios en línea</h3>
+            </div>
+            <ul class="list-inline">
+              <li><a class="link-success" href="https://udea.edu.co/wps/portal/udea/web/inicio/institucional/campus">Cámpus UdeA</a></li>
+              <li><a class="link-success" href="https://udea.edu.co/wps/portal/udea/web/inicio/contratacion-convocatorias">Contrataciones y convocatorias</a></li>
+              <li><a class="link-success" href="https://udea.edu.co/wps/myportal/udea/web/inicio/somos-udea/empleados/tramites-servicios-linea/generar-certificados">Generar certificados</a></li>
+              <li><a class="link-success" href="https://udearroba.udea.edu.co/home/">Ude@</a></li>
+            </ul>
+          </div>
+          <div class="col-sm-6 col-md-3">
+            <div class="widget-title">
+              <h3 class="mb-4 fs-5 text-secondary text-uppercase">Suscripción</h3>
+            </div>
+            <form class="row row-cols-lg-auto g-3 align-items-center">
+              <div class="col-12">
+                <label class="visually-hidden">Correo</label>
+                <div class="input-group">
+                  <div class="input-group-text"><i class="bi bi-envelope"></i></div>
+                  <input type="text" class="form-control" placeholder="Correo electrónico">
+                </div>
+              </div>
+              <div class="col-12">
+                <button type="submit" class="btn btn-success w-100">Suscribirse</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col-12">
+        <p class="text-center text-white py-1 mt-5 bg-secondary">© Copyright 2020 Todos los Derechos Reservados</p>
+      </div>
+    </footer>
   </body>
 </html>
 
