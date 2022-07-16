@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang=es>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="César Augusto">
+    <meta name="description" content="Laboratorio de Bootstrap">
+    <meta name="keywords" content="Laboratorio, HTML5, CSS, BS">
+    <title>Universidad de Antioquia</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <!-- Bootstrap icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <!-- Personal CSS -->
+    <link rel="stylesheet" href="../../../css/styles.css" media="screen" />
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <!-- Personal JS -->
+    <script src="../../../js/script.js"></script>
+
+  </head>
+
+  <body>
+    <!-- Encabezado -->
+    <header>
+      <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img src="../../../assets/icon/udea.png" alt="Logo" class="d-inline-block align-text-middle" 
+                                                             height="40" >
+          </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+              <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="../../../index.html">Inicio</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="../../../schools.html" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Facultades
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <li><a class="dropdown-item disabled" href="../../arts.html">Artes</a></li>
+                    <li><a class="dropdown-item disabled" href="#">Ciencias agrarias</a></li>
+                    <li><a class="dropdown-item disabled" href="../../economics.html">Ciencias económicas</a></li>
+                    <li><a class="dropdown-item disabled" href="../../sciences.html">Ciencias exactas y naturales</a></li>
+                    <li><a class="dropdown-item disabled" href="#">Ciencias farmacéuticas y alimentarias</a></li>
+                    <li><a class="dropdown-item disabled" href="../../social.html">Ciencias sociales y humanas</a></li>
+                    <li><a class="dropdown-item disabled" href="#">Comunicaciones y filología</a></li>
+                    <li><a class="dropdown-item disabled" href="#">Derecho y ciencias políticas</a></li>
+                    <li><a class="dropdown-item disabled" href="#">Educación</a></li>
+                    <li><a class="dropdown-item disabled" href="#">Enfermería</a></li>
+                    <li><a class="dropdown-item" href="../../engineering.html">Ingeniería</a></li>
+                    <li><a class="dropdown-item disabled" href="../../medicine.html">Medicina</a></li>
+                    <li><a class="dropdown-item disabled" href="#">Odontología</a></li>
+                    <li><a class="dropdown-item disabled" href="#">Salud pública</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle active" href="../../engineering.html" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Facultad de ingeniería
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <li><a class="dropdown-item disabled" href="#">Bioingeniería</a></li>
+                    <li><a class="dropdown-item disabled" href="#">Ingeniería aeroespacial</a></li>
+                    <li><a class="dropdown-item disabled" href="#">Ingeniería agroindustrial</a></li>
+                    <li><a class="dropdown-item disabled" href="#">Ingeniería ambiental</a></li>
+                    <li><a class="dropdown-item disabled" href="#">Ingeniería bioquímica</a></li>
+                    <li><a class="dropdown-item disabled" href="#">Ingeniería civil</a></li>
+                    <li><a class="dropdown-item disabled" href="#">Ingeniería energética</a></li>
+                    <li><a class="dropdown-item disabled" href="#">Ingeniería eléctrica</a></li>
+                    <li><a class="dropdown-item disabled" href="#">Ingeniería electrónica</a></li>
+                    <li><a class="dropdown-item disabled" href="#">Ingeniería industrial</a></li>
+                    <li><a class="dropdown-item disabled" href="#">Ingeniería de materiales</a></li>
+                    <li><a class="dropdown-item disabled" href="#">Ingeniería mecánica</a></li>
+                    <li><a class="dropdown-item disabled" href="#">Ingeniería oceanográfica</a></li>
+                    <li><a class="dropdown-item disabled" href="#">Ingeniería química</a></li>
+                    <li><a class="dropdown-item disabled" href="#">Ingeniería sanitaria</a></li>
+                    <li><a class="dropdown-item disabled" href="#">Ingeniería de sistemas</a></li>
+                    <li><a class="dropdown-item active" href="#">Ingeniería de telecomunicaciones</a></li>
+                    <li><a class="dropdown-item disabled" href="#">Ingeniería urbana</a></li>
+                    <li><a class="dropdown-item disabled" href="#">Tecnología biomédica</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#telecomms">Telecomunicaciones</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#pensum">Pénsum</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#interesting-courses">Cursos destacados</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#footer">Contáctanos</a>
+                </li>
+              </ul>
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                  <button type="button" class="btn btn-success mx-auto" data-bs-toggle="modal" data-bs-target="#ModalForm">
+                    Acceder
+                  </button>
+                  <a href="#register" class="btn btn-success mx-auto">
+                    Registro
+                  </a>
+                </li>
+              </ul>
+            </div>
+        </div>
+      </nav>
+    </header>
+    <!-- Fin Encabezado -->
+
+    <!-- Modal Form -->
+    <div class="modal fade" id="ModalForm" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <!-- Login Form -->
+          <form action="">
+            <div class="modal-header">
+              <h5 class="modal-title">Acceder</h5>
+              <button type="button" class="btn-close" id="close-login" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="mb-3">
+                <label for="Username">Nombre de usuario<span class="text-danger">*</span></label>
+                <input type="text" name="username" class="form-control" id="Username" placeholder="Ingrese nombre de usuario">
+              </div>
+
+              <div class="mb-3">
+                <label for="Password">Contraseña<span class="text-danger">*</span></label>
+                <input type="password" name="password" class="form-control" id="Password" placeholder="Ingrese contraseña">
+              </div>
+              <div class="mb-3">
+                <input class="form-check-input" type="checkbox" value="" id="remember" required>
+                <label class="form-check-label" for="remember">Recordar mis datos</label>
+                <a href="#" class="float-end">Olvidé mi contraseña</a>
+              </div>
+            </div>
+            <div class="modal-footer pt-4">                  
+              <button type="button" class="btn btn-success mx-auto w-100">Ingresar</button>
+            </div>
+            <p class="text-center">¿Aún no estás registrado? <a href="#register">Registrarse</a></p> 
+          </form>
+          <!-- End Login Form -->
+        </div>
+      </div>
+    </div>
+    <!-- End Modal Form -->
+    
+    <!-- Fundamentos de electrónica digital -->
+    <section class="container shadow my-5">
+      <h2 class="pb-2 pt-4 border-bottom">Fundamentos de electrónica digital</h2>
+      <img src="../../../assets/img/schools/engineering/telecommunications/digitals/logic_gates.jpg" class="d-block mx-auto">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 py-5">
+        <div class="col d-flex align-items-start">
+          <i class="bi bi-plus-circle me-2"></i>
+          <div>
+            <h4 class="fw-bold mb-0">Compuertas lógicas</h4>
+            <p>
+              Las compuertas lógicas son elementos de electrónica digital que interpretan
+              de manera binaria entradas lógicas y les aplican operaciones lógicas como
+              AND, OR, y NOT. Compuertas más complejas puedan construirse a partir de estas
+              tres.
+            </p>
+          </div>
+        </div>
+        <div class="col d-flex align-items-start">
+          <i class="bi bi-puzzle me-2"></i>
+          <div>
+            <h4 class="fw-bold mb-0">Lógica combinacional</h4>
+            <p>
+              La lógica combinacional se implementa cuando las compuertas lógicas tienen una
+              formación donde no hayan retroalimentaciones, son útiles para imponer condiciones
+              en un circuito digital o para realizar operaciones aritméticas.
+            </p>
+          </div>
+        </div>
+        <div class="col d-flex align-items-start">
+          <i class="bi bi-stopwatch me-2"></i>
+          <div>
+            <h4 class="fw-bold mb-0">Lógica secuencial</h4>
+            <p>
+              La lógica secuencial es considerada como tal cuando un ensamble digital tiene
+              retroalimentaciones, lo que provoca que se puedan almacenar estados y por ende
+              éstos empiecen a depender de una secuencia de eventos.
+            </p>
+          </div>
+        </div>
+        <div class="col d-flex align-items-start">
+          <i class="bi bi-arrow-clockwise me-2"></i>
+          <div>
+            <h4 class="fw-bold mb-0">Máquinas de estado finito</h4>
+            <p>
+              Las máquinas de estado finito son autómatas capaces de ejecutar instrucciones
+              ordenadas de manera secuencial en lo que vendría siendo un ciclo infinito, esto
+              permite un funcionamiento cíclico para tareas repetitivas pero que requieran condiciones
+              combinacionales aparte del factor sincrónico.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section> 
+    <!-- Fin Fundamentos de electrónica digital -->
+
+    <!-- Pie de página -->
+    <footer class="bg-light pt-5 mt-5" id="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6 col-md-3">
+            <div class="widget-title">
+              <h3 class="mb-4 fs-5 text-secondary text-uppercase">Atención al ciudadano</h3>
+            </div>
+            <ul class="list-inline">
+              <li><a class="link-success" href="https://udea.edu.co/wps/portal/udea/web/inicio/institucional/atencion-ciudadano/canales-atencion/presencial">Atención presencial</a></li>
+              <li><a class="link-success" href="https://udea.edu.co/wps/portal/udea/web/inicio/institucional/atencion-ciudadano/canales-atencion/telefonica">Atención telefónica</a></li>
+              <li><a class="link-success" href="https://udea.edu.co/wps/portal/udea/web/inicio/institucional/atencion-ciudadano/canales-atencion/virtual">Atención virtual</a></li>
+          </div>
+          <div class="col-sm-6 col-md-3">
+            <div class="widget-title">
+              <h3 class="mb-4 fs-5 text-secondary text-uppercase">Redes sociales</h3>
+            </div>
+            <ul class="list-inline">
+              <li><i class="bi bi-linkedin"></i> <a class="link-success" href="https://www.linkedin.com/school/universidad-de-antioquia/?originalSubdomain=co">LinkedIn</a></li>
+              <li><i class="bi bi-youtube"></i> <a class="link-success" href="https://www.youtube.com/user/UniversidadAntioquia">YouTube</a></li>
+              <li><i class="bi bi-twitter"></i> <a class="link-success" href="https://twitter.com/UdeA">Twitter</a></li>
+              <li><i class="bi bi-facebook"></i> <a class="link-success" href="https://www.facebook.com/universidaddeantioquia/?fref=ts">Facebook</a></li>
+              <li><i class="bi bi-instagram"></i> <a class="link-success" href="https://www.instagram.com/udea/">Instagram</a></li>
+            </ul>
+          </div>
+          <div class="col-sm-6 col-md-3">
+            <div class="widget-title">
+              <h3 class="mb-4 fs-5 text-secondary text-uppercase">Servicios en línea</h3>
+            </div>
+            <ul class="list-inline">
+              <li><a class="link-success" href="https://udea.edu.co/wps/portal/udea/web/inicio/institucional/campus">Cámpus UdeA</a></li>
+              <li><a class="link-success" href="https://udea.edu.co/wps/portal/udea/web/inicio/contratacion-convocatorias">Contrataciones y convocatorias</a></li>
+              <li><a class="link-success" href="https://udea.edu.co/wps/myportal/udea/web/inicio/somos-udea/empleados/tramites-servicios-linea/generar-certificados">Generar certificados</a></li>
+              <li><a class="link-success" href="https://udearroba.udea.edu.co/home/">Ude@</a></li>
+            </ul>
+          </div>
+          <div class="col-sm-6 col-md-3">
+            <div class="widget-title">
+              <h3 class="mb-4 fs-5 text-secondary text-uppercase">Suscripción</h3>
+            </div>
+            <form class="row row-cols-lg-auto g-3 align-items-center">
+              <div class="col-12">
+                <label class="visually-hidden">Correo</label>
+                <div class="input-group">
+                  <div class="input-group-text"><i class="bi bi-envelope"></i></div>
+                  <input type="text" class="form-control" placeholder="Correo electrónico">
+                </div>
+              </div>
+              <div class="col-12">
+                <button type="submit" class="btn btn-success w-100">Suscribirse</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col-12">
+        <p class="text-center text-white py-1 mt-5 bg-secondary">© Copyright 2020 Todos los Derechos Reservados</p>
+      </div>
+    </footer>
+    <!-- Fin Pie de página -->
+  </body>
+</html>
+
