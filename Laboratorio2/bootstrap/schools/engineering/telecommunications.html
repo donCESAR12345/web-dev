@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang=es>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="César Augusto">
+    <meta name="description" content="Laboratorio de Bootstrap">
+    <meta name="keywords" content="Laboratorio, HTML5, CSS, BS">
+    <title>Universidad de Antioquia</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <!-- Bootstrap icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <!-- Personal CSS -->
+    <link rel="stylesheet" href="../../css/styles.css" media="screen" />
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <!-- Personal JS -->
+    <script src="../../js/script.js"></script>
+
+  </head>
+
+  <body>
+    <!-- Encabezado -->
+    <header>
+      <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img src="../../assets/icon/udea.png" alt="Logo" class="d-inline-block align-text-middle" 
+                                                             height="40" >
+          </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+              <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="../../index.html">Inicio</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="../../schools.html" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Facultades
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <li><a class="dropdown-item" href="../arts.html">Artes</a></li>
+                    <li><a class="dropdown-item disabled" href="#">Ciencias agrarias</a></li>
+                    <li><a class="dropdown-item" href="../economics.html">Ciencias económicas</a></li>
+                    <li><a class="dropdown-item" href="../sciences.html">Ciencias exactas y naturales</a></li>
+                    <li><a class="dropdown-item disabled" href="#">Ciencias farmacéuticas y alimentarias</a></li>
+                    <li><a class="dropdown-item" href="../social.html">Ciencias sociales y humanas</a></li>
+                    <li><a class="dropdown-item disabled" href="#">Comunicaciones y filología</a></li>
+                    <li><a class="dropdown-item disabled" href="#">Derecho y ciencias políticas</a></li>
+                    <li><a class="dropdown-item disabled" href="#">Educación</a></li>
+                    <li><a class="dropdown-item disabled" href="#">Enfermería</a></li>
+                    <li><a class="dropdown-item" href="../engineering.html">Ingeniería</a></li>
+                    <li><a class="dropdown-item" href="../medicine.html">Medicina</a></li>
+                    <li><a class="dropdown-item disabled" href="#">Odontología</a></li>
+                    <li><a class="dropdown-item disabled" href="#">Salud pública</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle active" href="../engineering.html" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Facultad de ingeniería
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <li><a class="dropdown-item disabled" href="#">Bioingeniería</a></li>
+                    <li><a class="dropdown-item disabled" href="#">Ingeniería aeroespacial</a></li>
+                    <li><a class="dropdown-item disabled" href="#">Ingeniería agroindustrial</a></li>
+                    <li><a class="dropdown-item disabled" href="#">Ingeniería ambiental</a></li>
+                    <li><a class="dropdown-item disabled" href="#">Ingeniería bioquímica</a></li>
+                    <li><a class="dropdown-item disabled" href="#">Ingeniería civil</a></li>
+                    <li><a class="dropdown-item disabled" href="#">Ingeniería energética</a></li>
+                    <li><a class="dropdown-item disabled" href="#">Ingeniería eléctrica</a></li>
+                    <li><a class="dropdown-item disabled" href="#">Ingeniería electrónica</a></li>
+                    <li><a class="dropdown-item disabled" href="#">Ingeniería industrial</a></li>
+                    <li><a class="dropdown-item disabled" href="#">Ingeniería de materiales</a></li>
+                    <li><a class="dropdown-item disabled" href="#">Ingeniería mecánica</a></li>
+                    <li><a class="dropdown-item disabled" href="#">Ingeniería oceanográfica</a></li>
+                    <li><a class="dropdown-item disabled" href="#">Ingeniería química</a></li>
+                    <li><a class="dropdown-item disabled" href="#">Ingeniería sanitaria</a></li>
+                    <li><a class="dropdown-item disabled" href="#">Ingeniería de sistemas</a></li>
+                    <li><a class="dropdown-item active" href="#">Ingeniería de telecomunicaciones</a></li>
+                    <li><a class="dropdown-item disabled" href="#">Ingeniería urbana</a></li>
+                    <li><a class="dropdown-item disabled" href="#">Tecnología biomédica</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#footer">Contáctanos</a>
+                </li>
+              </ul>
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                  <button type="button" class="btn btn-success mx-auto" data-bs-toggle="modal" data-bs-target="#ModalForm">
+                    Acceder
+                  </button>
+                  <a href="#register" class="btn btn-success mx-auto">
+                    Registro
+                  </a>
+                </li>
+              </ul>
+            </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Modal Form -->
+    <div class="modal fade" id="ModalForm" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <!-- Login Form -->
+          <form action="">
+            <div class="modal-header">
+              <h5 class="modal-title">Acceder</h5>
+              <button type="button" class="btn-close" id="close-login" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="mb-3">
+                <label for="Username">Nombre de usuario<span class="text-danger">*</span></label>
+                <input type="text" name="username" class="form-control" id="Username" placeholder="Ingrese nombre de usuario">
+              </div>
+
+              <div class="mb-3">
+                <label for="Password">Contraseña<span class="text-danger">*</span></label>
+                <input type="password" name="password" class="form-control" id="Password" placeholder="Ingrese contraseña">
+              </div>
+              <div class="mb-3">
+                <input class="form-check-input" type="checkbox" value="" id="remember" required>
+                <label class="form-check-label" for="remember">Recordar mis datos</label>
+                <a href="#" class="float-end">Olvidé mi contraseña</a>
+              </div>
+            </div>
+            <div class="modal-footer pt-4">                  
+              <button type="button" class="btn btn-success mx-auto w-100">Ingresar</button>
+            </div>
+            <p class="text-center">¿Aún no estás registrado? <a href="#register">Registrarse</a></p> 
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Información tomada de https://udea.edu.co/wps/wcm/connect/udea/52a02212-9118-444a-836d-99119df29ace/PEP-Ingenier%C3%ADaTelecomunicaciones2018.pdf?MOD=AJPERES&CVID=mCWUKqX -->
+    <section class="py-5 bg-light">
+      <h2 class="text-center mb-5">Ingeniería en telecomunicaciones</h2>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="accordion accordion-flush" id="telecommunications-info">
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#content-accordion-1">
+                    Historia del programa
+                  </button>
+                </h2>
+                <div id="content-accordion-1" class="accordion-collapse collapse show" data-bs-parent="#telecommunications-info" aria-expanded="false">
+                  <div class="accordion-body">
+                    <p>
+                      En la Universidad de Antioquia el programa de Ingeniería
+                      de Telecomunicaciones se crea en dos modalidades, virtual
+                      y presencial, en septiembre de 2002 mediante los acuerdos
+                      académicos No. 233 y 231, respectivamente 
+                      <a href="https://normativa.udea.edu.co" class="link-success">[1]</a>. 
+                      Para su creación, se tiene en cuenta que la universidad
+                      pública debía contribuir con nuevas propuestas académicas
+                      apoyadas en las nuevas metodologías de la educación,
+                      orientadas al desarrollo de disciplinas que, como la
+                      Ingeniería de Telecomunicaciones, son esenciales para el
+                      desarrollo del sector productivo y el país.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#content-accordion-2">
+                      Pertinencia social y científica
+                  </button>
+                </h2>
+                <div id="content-accordion-2" class="accordion-collapse collapse" data-bs-parent="#telecommunications-info">
+                  <div class="accordion-body">
+                    <p>
+                      Las Tecnologías de la Información y Comunicaciones (TIC) en
+                      Colombia y en el mundo, cumplen un papel fundamental, pues
+                      se estructuran como motor para el cambio y desarrollo
+                      social, político y económico. Así mismo, se consideran como
+                      una herramienta para disminuir la desigualdad social, ya
+                      que permite que el acceso a la información para todas sus
+                      esferas, propiciando el establecimiento de una sociedad
+                      informada, conectada e integrada al entorno global, de ahí
+                      que la ONU ha reconocido el acceso a los beneficios de las
+                      TIC como uno de los objetivos de desarrollo del Milenio.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#content-accordion-3">
+                    Misión
+                  </button>
+                </h2>
+                <div id="content-accordion-3" class="accordion-collapse collapse" data-bs-parent="#telecommunications-info">
+                  <div class="accordion-body">
+                    <p>
+                      Considerando la correspondencia estratégica entre la razón
+                      de ser del Programa y la Facultad en la que se encuentra
+                      inmerso, la Ingeniería de Telecomunicaciones de la UdeA
+                      acoge como propia la misión de la Facultad de Ingeniería de
+                      “Formar ingenieros, integrales y competentes, para un mundo
+                      globalizado; desarrollar la investigación, la educación
+                      continua y la consultoría profesional orientadas a la
+                      innovación y gestión tecnológica, para contribuir, en un
+                      ambiente de convivencia, al desarrollo sostenible, a la
+                      transformación de las condiciones sociales y al
+                      mejoramiento de la calidad de vida de la región y del país,
+                      en armonía con los principios filosóficos de la Universidad
+                      de Antioquia.”
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#content-accordion-4">
+                    Visión
+                  </button>
+                </h2>
+                <div id="content-accordion-4" class="accordion-collapse collapse" data-bs-parent="#telecommunications-info">
+                  <div class="accordion-body">
+                    <p>
+                      Para el año 2025, el Programa de Ingeniería de
+                      Telecomunicaciones de la Universidad de Antioquia será
+                      reconocido como un referente a nivel nacional e
+                      internacional en la formación integral de ingenieros con
+                      criterios de alta calidad y con una alta producción
+                      científica en el campo.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Tomado de https://udea.edu.co/wps/portal/udea/web/inicio/unidades-academicas/ingenieria/estudiar-facultad/pregrados/ingenieria-telecomunicaciones -->
+          <div class="col-md-6">
+            <p>
+            El programa de Ingeniería de Telecomunicaciones, está adscrito al
+            Departamento de Ingeniería Electrónica y Telecomunicaciones. El
+            funcionamiento y la vida académica del programa de Ingeniería de
+            Telecomunicaciones, se rigen por las normas internas que regulan
+            los diferentes estamentos y actividades de la Universidad de
+            Antioquia.
+            <p>
+            En la Universidad de Antioquia el programa de Ingeniería de
+            Telecomunicaciones se crea en dos modalidades, virtual y
+            presencial, en el mes de septiembre del año 2002, mediante los
+            acuerdos académicos No. 233 y 231, respectivamente. Para su
+            creación, se tuvo en cuenta que la universidad pública debía
+            contribuir con nuevas propuestas académicas apoyadas en las nuevas
+            metodologías de la educación, orientadas al desarrollo de
+            disciplinas que, como la Ingeniería de Telecomunicaciones, son
+            esenciales para el desarrollo del sector productivo y el país.
+            </p>
+            <p>
+            El Programa se enmarca en los objetivos de la Universidad, buscando
+            la excelencia académica, la innovación pedagógica, la
+            transformación curricular y la ampliación de cobertura.Su plan de
+            estudios se diseña garantizando la formación de un ciudadano ético,
+            consciente, autónomo, comprometido con el país y con la región. Los
+            lineamientos curriculares buscan igualmente la formación
+            cualificada de los ingenieros mediante la resolución de problemas a
+            través de la investigación, con el fin de participar en las
+            transformaciones sociales, el desarrollo sostenible del país y la
+            búsqueda científica del conocimiento.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Plan de estudios -->
+      <h2 class="text-center">Plan de estudios</h2>
+      <iframe src="" height="100%" width="100%"></iframe>
+    </section>
+
+
+    <footer class="bg-light pt-5 mt-5" id="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6 col-md-3">
+            <div class="widget-title">
+              <h3 class="mb-4 fs-5 text-secondary text-uppercase">Atención al ciudadano</h3>
+            </div>
+            <ul class="list-inline">
+              <li><a class="link-success" href="https://udea.edu.co/wps/portal/udea/web/inicio/institucional/atencion-ciudadano/canales-atencion/presencial">Atención presencial</a></li>
+              <li><a class="link-success" href="https://udea.edu.co/wps/portal/udea/web/inicio/institucional/atencion-ciudadano/canales-atencion/telefonica">Atención telefónica</a></li>
+              <li><a class="link-success" href="https://udea.edu.co/wps/portal/udea/web/inicio/institucional/atencion-ciudadano/canales-atencion/virtual">Atención virtual</a></li>
+          </div>
+          <div class="col-sm-6 col-md-3">
+            <div class="widget-title">
+              <h3 class="mb-4 fs-5 text-secondary text-uppercase">Redes sociales</h3>
+            </div>
+            <ul class="list-inline">
+              <li><i class="bi bi-linkedin"></i> <a class="link-success" href="https://www.linkedin.com/school/universidad-de-antioquia/?originalSubdomain=co">LinkedIn</a></li>
+              <li><i class="bi bi-youtube"></i> <a class="link-success" href="https://www.youtube.com/user/UniversidadAntioquia">YouTube</a></li>
+              <li><i class="bi bi-twitter"></i> <a class="link-success" href="https://twitter.com/UdeA">Twitter</a></li>
+              <li><i class="bi bi-facebook"></i> <a class="link-success" href="https://www.facebook.com/universidaddeantioquia/?fref=ts">Facebook</a></li>
+              <li><i class="bi bi-instagram"></i> <a class="link-success" href="https://www.instagram.com/udea/">Instagram</a></li>
+            </ul>
+          </div>
+          <div class="col-sm-6 col-md-3">
+            <div class="widget-title">
+              <h3 class="mb-4 fs-5 text-secondary text-uppercase">Servicios en línea</h3>
+            </div>
+            <ul class="list-inline">
+              <li><a class="link-success" href="https://udea.edu.co/wps/portal/udea/web/inicio/institucional/campus">Cámpus UdeA</a></li>
+              <li><a class="link-success" href="https://udea.edu.co/wps/portal/udea/web/inicio/contratacion-convocatorias">Contrataciones y convocatorias</a></li>
+              <li><a class="link-success" href="https://udea.edu.co/wps/myportal/udea/web/inicio/somos-udea/empleados/tramites-servicios-linea/generar-certificados">Generar certificados</a></li>
+              <li><a class="link-success" href="https://udearroba.udea.edu.co/home/">Ude@</a></li>
+            </ul>
+          </div>
+          <div class="col-sm-6 col-md-3">
+            <div class="widget-title">
+              <h3 class="mb-4 fs-5 text-secondary text-uppercase">Suscripción</h3>
+            </div>
+            <form class="row row-cols-lg-auto g-3 align-items-center">
+              <div class="col-12">
+                <label class="visually-hidden">Correo</label>
+                <div class="input-group">
+                  <div class="input-group-text"><i class="bi bi-envelope"></i></div>
+                  <input type="text" class="form-control" placeholder="Correo electrónico">
+                </div>
+              </div>
+              <div class="col-12">
+                <button type="submit" class="btn btn-success w-100">Suscribirse</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col-12">
+        <p class="text-center text-white py-1 mt-5 bg-secondary">© Copyright 2020 Todos los Derechos Reservados</p>
+      </div>
+    </footer>
+  </body>
+</html>
+
