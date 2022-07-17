@@ -1,7 +1,7 @@
 function is_even(n)
 {   
-    if(n != null) return(n % 2 == 0 ? "par" : "impar");
-    else return "indefinido";
+    if(!isNaN(n)) return(n % 2 == 0 ? "par" : "impar");
+    else return "inválido";
 }
 
 while(true)
