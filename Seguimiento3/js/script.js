@@ -14,9 +14,8 @@ function where_penultimate_tag()
 
 function how_many_links_to(link)
 {
-    const links = document.getElementsByTagName("a");
     let number_of_links_to_link = 0;
-    for(const a of links)
+    for(const a of document.getElementsByTagName("a"))
     {
         if(a.hasAttribute("href"))
         {
@@ -37,11 +36,11 @@ function number_of_y_in_the_nth_x(x, y, nth)
 }
 
 // Segundo ejercicio
-function create_a_title()
+function create_a_title(text)
 {
     // Creamos el elemento título y le agregamos contenido
     var title = document.createElement("h1");
-    const title_text = document.createTextNode("Título asombroso");
+    const title_text = document.createTextNode(text);
     title.appendChild(title_text);
 
     // Ubicamos el primer párrafo del cuerpo y metemos el
@@ -52,7 +51,7 @@ function create_a_title()
 
 function create_a_paragraph()
 {
-    // Creamos el elemento párrafo y le agregamos contenido
+    // Creamos el elemento párrafo y le agregamos contenido (Lorem)
     var paragraph = document.createElement("p");
     const lorem = document.createTextNode("Mauris sollicitudin, est vel tempus fringilla, mauris ante euismod augue, in condimentum felis est sit amet purus. Sed quis magna nec nulla blandit commodo. Curabitur imperdiet consectetur imperdiet. Phasellus fringilla ipsum vel sapien sodales rutrum. Suspendisse vel eros vulputate, lobortis urna id, consectetur velit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse potenti. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eget rutrum dui, semper porttitor turpis. Praesent varius arcu sed vehicula cursus. Integer viverra augue vel leo ultrices, sit amet dictum nisl vulputate. Maecenas in purus ultricies, imperdiet lacus nec, sagittis sapien. Maecenas bibendum risus nec augue sagittis posuere.");
     paragraph.appendChild(lorem);
@@ -86,5 +85,16 @@ function add_elements_to_list(list_name, list_elements)
         last_input = document.body.getElementsByTagName("input");
         last_input = last_input[last_input.length - 1];
         document.body.insertBefore(sport_text, last_input);
+    }
+}
+
+function select_all_checkboxes()
+{
+    for(let input of document.getElementsByTagName("input"))
+    {
+        if(input.hasAttribute("type"))
+        {
+            if(input.type == "checkbox") input.setAttribute("checked", "");
+        }
     }
 }
