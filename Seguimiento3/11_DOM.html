@@ -50,10 +50,15 @@
     </p>
     <!-- Futbol y luego Cats? -->
     <!-- Futbol:  <input name="deporte" type="checkbox" value="Cats"> -->
-    Futbol:  <input name="deporte" type="checkbox" value="Soccer">
+    Futbol:  <input name="deporte" type="checkbox" value="Futbol">
     <!-- Voley y luego Dogs? -->
     <!-- Voley:   <input name="deporte" type="checkbox" value="Dogs"> -->
-    Voley:   <input name="deporte" type="checkbox" value="Volley">
+    Volley:   <input name="deporte" type="checkbox" value="Volley">
+    <!-- Botones para crear elementos mediante funciones de JS -->
+    <br><br>
+    <button onclick="create_a_title()" id="title_button">CREAR TÍTULO</button>
+    <button onclick="create_a_paragraph()" id="paragraph_button">CREAR PÁRRAFO</button>
+    <button onclick="add_elements_to_list('deporte', ['Basket', 'Golf', 'Atletismo'])" id="list_button">AÑADIR ELEMENTOS A LISTA</button>
   </body>
 
   <!-- Ponemos acá los llamados a las funciones para
