@@ -18,7 +18,7 @@
                         <label for="b-date">Fecha de nacimiento:</label>
                     </td>
                     <td>
-                        <input name="b-date" type="date" required>
+                        <input name="b-date" type="date" max="<?php echo date("Y-m-d"); ?>" required>
                     </td>
                     <td>
                         <label for="dni">DNI:</label>
@@ -102,12 +102,12 @@
                         <label for="languages">Lenguajes:</label>
                     </td>
                     <td>
-                        <input name="languages" type="checkbox" value="c" required> C
-                        <input name="languages" type="checkbox" value="cpp" required> C++
-                        <input name="languages" type="checkbox" value="c-sharp" required> C#
-                        <input name="languages" type="checkbox" value="java" required> Java
-                        <input name="languages" type="checkbox" value="js" required> JavaScript
-                        <input name="languages" type="checkbox" value="python" required> Python
+                        <input name="languages" type="checkbox" value="c"> C
+                        <input name="languages" type="checkbox" value="cpp"> C++
+                        <input name="languages" type="checkbox" value="c-sharp"> C#
+                        <input name="languages" type="checkbox" value="java"> Java
+                        <input name="languages" type="checkbox" value="js"> JavaScript
+                        <input name="languages" type="checkbox" value="python"> Python
                     </td>
                 </tr>
                 <tr>
