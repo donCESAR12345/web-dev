@@ -12,7 +12,7 @@
                         <label for="name">Nombre:</label>
                     </td>
                     <td>
-                        <input name="name" type="text" required>
+                        <input name="name" type="text" class="no-numbers" required>
                     </td>
                     <td>
                         <label for="b-date">Fecha de nacimiento:</label>
@@ -24,7 +24,7 @@
                         <label for="dni">DNI:</label>
                     </td>
                     <td>
-                        <input name="dni" type="tel" required>
+                        <input name="dni" type="tel" class="only-numbers" minlength="8" required>
                     </td>
                 </tr>
                 <tr>
@@ -32,7 +32,7 @@
                         <label for="l-name">Apellidos:</label>
                     </td>
                     <td>
-                        <input name="l-name" type="text" required>
+                        <input name="l-name" type="text" class="no-numbers" required>
                     </td>
                 </tr>
                 <tr>
@@ -48,13 +48,13 @@
                         <label for="zip-code">Código postal:</label>
                     </td>
                     <td>
-                        <input name="zip-code" type="tel" required>
+                        <input name="zip-code" type="tel" class="only-numbers" required>
                     </td>
                     <td>
                         <label for="city">Ciudad:</label>
                     </td>
                     <td>
-                        <input name="city" type="text" required>
+                        <input name="city" type="text" class="no-numbers" required>
                     </td>
                 </tr>
                 <tr>
@@ -62,13 +62,13 @@
                         <label for="state">Provincia:</label>
                     </td>
                     <td>
-                        <input name="state" type="text" required>
+                        <input name="state" type="text" class="no-numbers" required>
                     </td>
                     <td>
                         <label for="phone">Teléfono:</label>
                     </td>
                     <td>
-                        <input name="phone" type="text" class="number-input" required>
+                        <input name="phone" type="tel" class="only-numbers" required>
                     </td>
                 </tr>
                 <tr>
@@ -85,7 +85,6 @@
                             <option value="5">Estrato 5</option>
                             <option value="6">Estrato 6</option>
                         </select>
-                        Escoja una opción
                     </td>
                 </tr>
                 <tr>
@@ -116,7 +115,7 @@
                         <label for="comments">Comentarios:</label>
                     </td>
                     <td>
-                        <textarea name="comments" type="textarea"></textarea>
+                        <textarea name="comments" type="textarea" cols="50" rows="5" placeholder="Comentarios..."></textarea>
                     </td>
                 </tr>
                 <tr>

@@ -1,52 +1,43 @@
 window.onload = function()
 {
-    let data = document.forms[0].elements;
+  let data = document.forms[0].elements;
 
-    // Restricción de nombres y apellidos
-    for(let i = 0; i < data.length; i++)
-    {
-        if(data[i].name == name || data[i].name == l-name)
-        {
-            data[i].onkeypress = restrict_name;
-        }
-    }
-
-    for(let i = 0; i < data.length; i++)
-    {
-        data[i].on = validate;
-    }
-}
-
-function restrict_name(event)
-{
-    let valid_characters = range(a, z) + range(A, Z) +  ;
-    console.log(event.charCode);
-    return(valid_characters.indexOf(String.fromCharCode(event.charCode)) != -1);
-}
-
-function validate()
-{
-    let name_regex = /^[\w'\-,.][^0-9_!¡?÷?¿/\+=@#$%ˆ&*(){}|~<>;:[\]]{2,}$/i;
-
-}
-
-function* iterate(a, b)
-{
-  for (let i = a; i <= b; i += 1)
+  // Aplicar la debida restricción a cada entrada de información
+  for(let i = 0; i < data.length; i++)
   {
-    yield i
+    // Restringir entradas no numéricas
+    if(data[i].classList.contains("no-numbers"))
+    {
+      data[i].onkeypress = restrict_no_numbers;
+    }
+    else if(data[i].classList.contains("only-numbers"))
+    { 
+      data[i].onkeypress = restrict_only_numbers;
+    }
   }
 }
 
-function range(a, b)
+function restrict_no_numbers(event)
 {
-    if(typeof a === 'string')
-    {
-        let result = [...iterate(a.charCodeAt(), b.charCodeAt())].map(n => String.fromCharCode(n));
-        return result;
-    }
-    else
-    {
-        return [...iterate(a, b)];
-    }
+  // Se declara la regex de nombres permitidos
+  const valid_regex = /^(?! +)[^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]+$/i;
+  // Se valida el char code ingresado
+  let char_code = (typeof event.which == "undefined") ? event.keyCode : event.which;
+  // Se concatena el valor recién ingresado con el valor anterior
+  let actual_value = this.value + String.fromCharCode(char_code);
+  // console.log(actual_value);
+  return(valid_regex.test(actual_value));
 }
+
+function restrict_only_numbers(event)
+{
+  // Se declara la regex de nombres permitidos
+  const valid_regex = /^(?! +)[^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]+$/i;
+  // Se valida el char code ingresado
+  let char_code = (typeof event.which == "undefined") ? event.keyCode : event.which;
+  // Se concatena el valor recién ingresado con el valor anterior
+  let actual_value = this.value + String.fromCharCode(char_code);
+  // console.log(actual_value);
+  return(valid_regex.test(actual_value));
+}
+
