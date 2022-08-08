@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <script src="./js/script.js"></script>
+    </head>
+    <body>
+        <form action="">
+            <table>
+                <tr>
+                    <td>
+                        <label for="name">Nombre:</label>
+                    </td>
+                    <td>
+                        <input name="name" type="text" required>
+                    </td>
+                    <td>
+                        <label for="b-date">Fecha de nacimiento:</label>
+                    </td>
+                    <td>
+                        <input name="b-date" type="date" required>
+                    </td>
+                    <td>
+                        <label for="dni">DNI:</label>
+                    </td>
+                    <td>
+                        <input name="dni" type="tel" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="l-name">Apellidos:</label>
+                    </td>
+                    <td>
+                        <input name="l-name" type="text" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="address">Dirección:</label>
+                    </td>
+                    <td>
+                        <input name="address" type="text" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="zip-code">Código postal:</label>
+                    </td>
+                    <td>
+                        <input name="zip-code" type="tel" required>
+                    </td>
+                    <td>
+                        <label for="city">Ciudad:</label>
+                    </td>
+                    <td>
+                        <input name="city" type="text" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="state">Provincia:</label>
+                    </td>
+                    <td>
+                        <input name="state" type="text" required>
+                    </td>
+                    <td>
+                        <label for="phone">Teléfono:</label>
+                    </td>
+                    <td>
+                        <input name="phone" type="text" class="number-input" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="stratum">Estrato:</label>
+                    </td>
+                    <td>
+                        <select name="stratum">
+                            <option value="" disabled selected>-- Seleccione una opción --</option>
+                            <option value="1">Estrato 1</option>
+                            <option value="2">Estrato 2</option>
+                            <option value="3">Estrato 3</option>
+                            <option value="4">Estrato 4</option>
+                            <option value="5">Estrato 5</option>
+                            <option value="6">Estrato 6</option>
+                        </select>
+                        Escoja una opción
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="gender">Género:</label>
+                    </td>
+                    <td>
+                        <input name="gender" type="radio" value="male" required> Masculino
+                        <input name="gender" type="radio" value="female" required> Femenino
+                        <input name="gender" type="radio" value="other" required> Otro
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="languages">Lenguajes:</label>
+                    </td>
+                    <td>
+                        <input name="languages" type="checkbox" value="c" required> C
+                        <input name="languages" type="checkbox" value="cpp" required> C++
+                        <input name="languages" type="checkbox" value="c-sharp" required> C#
+                        <input name="languages" type="checkbox" value="java" required> Java
+                        <input name="languages" type="checkbox" value="js" required> JavaScript
+                        <input name="languages" type="checkbox" value="python" required> Python
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="comments">Comentarios:</label>
+                    </td>
+                    <td>
+                        <textarea name="comments" type="textarea"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="submit"><strong>Pulse aquí:</strong></label>
+                    </td>
+                    <td>
+                        <input name="submit" type="submit" value="Enviar datos">
+                        <input name="clear" type="reset" value="Borrar los datos">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>
