@@ -18,7 +18,7 @@
                         <label for="b-date">Fecha de nacimiento:</label>
                     </td>
                     <td>
-                        <input name="b-date" type="date" max="<?php echo date("Y-m-d"); ?>" required>
+                        <input name="b-date" type="date" class="date" required>
                     </td>
                     <td>
                         <label for="dni">DNI:</label>
@@ -40,7 +40,7 @@
                         <label for="address">Dirección:</label>
                     </td>
                     <td>
-                        <input name="address" type="text" required>
+                        <input name="address" type="text" class="address" required>
                     </td>
                 </tr>
                 <tr>
@@ -76,7 +76,7 @@
                         <label for="stratum">Estrato:</label>
                     </td>
                     <td>
-                        <select name="stratum">
+                        <select name="stratum" required>
                             <option value="" disabled selected>-- Seleccione una opción --</option>
                             <option value="1">Estrato 1</option>
                             <option value="2">Estrato 2</option>
