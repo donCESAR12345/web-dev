@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="César Augusto">
+    <meta name="description" content="Calculadora">
+    <meta name="keywords" content="Laboratorio, HTML5, CSS, JS">
+    <title>Calculadora</title>
+    <!-- Personal CSS -->
+    <link rel="stylesheet" href="./css/styles.css" media="screen" />
+    <!-- Personal JS -->
+    <script src="./js/script.js"></script>
+  </head>
+
+  <body>
+    <div id="history"></div>
+    <div id="input"></div>
+    <!-- First row -->
+    <div class="buttons">
+      <!-- Rad or Deg toggle switch -->
+      <label class="toggle">
+        <input type="checkbox">
+        <span class="slider"></span>
+        <span class="labels" rad="Rad" deg="Deg"></span>
+      </label>
+
+      <!-- Factorial -->
+      <input id="factorial" class="operation" 
+             type="button" value="x!" />
+
+      <!-- Open parenthesis -->
+      <input id="open_parenthesis" class="operation" 
+             type="button" value="(" />
+      <!-- Close parenthesis -->
+      <input id="close_parenthesis" class="operation" 
+             type="button" value=")" />
+
+      <!-- Modulo operator -->
+      <input id="modulo" class="operation" 
+             type="button" value="%" />
+
+      <!-- AC -->
+      <input id="ac" class="operation" 
+             type="button" value="AC" />
+    </div>
+
+    <!-- Second row -->
+    <div class="buttons">
+      <!-- Inv -->
+      <input id="inverse" class="modifier" 
+             type="button" value="Inv" />
+
+      <!-- Sin -->
+      <input id="sin" class="operation" 
+             type="button" value="sin" />
+      <!-- Natural Logarithm -->
+      <input id="ln" class="operation" 
+             type="button" value="ln" />
+
+      <!-- 7 -->
+      <input id="7" class="number" 
+             type="button" value="7" />
+      <!-- 8 -->
+      <input id="8" class="number" 
+             type="button" value="8" />
+      <!-- 9 -->
+      <input id="9" class="number" 
+             type="button" value="9" />
+
+      <!-- Division operator -->
+      <input id="division" class="operation" 
+             type="button" value="÷" />
+    </div>
+    <!-- Third row -->
+    <div class="buttons">
+      <!-- Pi -->
+      <input id="pi" class="operation" 
+             type="button" value="π" />
+
+      <!-- cos -->
+      <input id="cos" class="operation" 
+             type="button" value="cos" />
+      <!-- Logarithm -->
+      <input id="log" class="operation" 
+             type="button" value="log" />
+
+      <!-- 4 -->
+      <input id="4" class="number" 
+             type="button" value="4" />
+      <!-- 5 -->
+      <input id="5" class="number" 
+             type="button" value="5" />
+      <!-- 6 -->
+      <input id="6" class="number" 
+             type="button" value="6" />
+
+      <!-- Multiplication operator -->
+      <input id="multiplication" class="operation" 
+             type="button" value="×" />
+    </div>
+    <!-- Fourth row -->
+    <div class="buttons">
+      <!-- e -->
+      <input id="e" class="operation" 
+             type="button" value="e" />
+
+      <!-- tan -->
+      <input id="tan" class="operation" 
+             type="button" value="tan" />
+      <!-- Square root -->
+      <input id="sqrt" class="operation" 
+             type="button" value="√" />
+
+      <!-- 1 -->
+      <input id="1" class="number" 
+             type="button" value="1" />
+      <!-- 2 -->
+      <input id="2" class="number" 
+             type="button" value="2" />
+      <!-- 3 -->
+      <input id="3" class="number" 
+             type="button" value="3" />
+
+      <!-- Substraction operator -->
+      <input id="substract" class="operation" 
+             type="button" value="-" />
+    </div>
+    <!-- Fifth row -->
+    <div class="buttons">
+      <!-- Answer -->
+      <input id="ans" class="operation" 
+             type="button" value="Ans" />
+
+      <!-- Exponential -->
+      <input id="exp" class="operation" 
+             type="button" value="exp" />
+      <!-- Power -->
+      <input id="power" class="operation" 
+             type="button" value="xʸ" />
+
+      <!-- 0 -->
+      <input id="0" class="number" 
+             type="button" value="0" />
+      <!-- . -->
+      <input id="." class="number" 
+             type="button" value="." />
+      <!-- = -->
+      <input id="=" class="equals" 
+             type="button" value="=" />
+
+      <!-- Addition operator -->
+      <input id="add" class="operation" 
+             type="button" value="+" />
+    </div>
+  </body>
+</html>
