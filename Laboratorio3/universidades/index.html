@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang=es>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="César Augusto">
+    <meta name="description" content="Gobernación de Antioquia">
+    <meta name="keywords" content="Laboratorio, HTML5, CSS, JS">
+    <title>Gobernación de Antioquia</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <!-- Bootstrap icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <!-- Personal CSS -->
+    <link rel="stylesheet" href="./css/styles.css" media="screen" />
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <!-- Personal JS -->
+    <script src="./js/main.js"></script>
+
+  </head>
+
+  <body>
+    <!-- Encabezado -->
+    <header>
+      <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img src="./assets/icon/udea.png" alt="Logo" class="d-inline-block align-text-middle" 
+                                                         height="40" >
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav mx-auto">
+              <li class="nav-item">
+                <h1 class="">Universidades en Antioquia</h1>
+              </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <button type="button" class="btn btn-success mx-auto" disabled>
+                  Acceder
+                </button>
+                <button type="button" class="btn btn-success mx-auto" disabled>
+                  Registro
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- Fin Encabezado -->
+
+    <div>
+      <select class="form-select" id="university-select"
+              name="universities">
+        Universidades
+        <option value="eafit">Universidad EAFIT</option>
+        <option value="udea">Universidad de Antioquia</option>
+        <option value="udem">Universidad de Medellín</option>
+        <option value="upb">Universidad Pontificia Bolivarian</option>
+        <option value="uniminuto">Corporación Universitaria Minuto de Dios</option>
+        </a>
+      </select>
+    </div>
+
+    <div id="map"></div>
+
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"
+      defer
+    ></script>
+    <!-- Pie de página -->
+    <footer class="bg-light pt-5 mt-5" id="footer">
+      <div class="container text-center">
+        <div class="widget-title">
+          <h3 class="mb-4 fs-5 text-secondary text-uppercase">Redes sociales</h3>
+        </div>
+        <ul class="list-inline">
+          <li><i class="bi bi-facebook"></i> <a class="link-success" href="https://www.facebook.com/GobAntioquia/">Facebook</a></li>
+          <li><i class="bi bi-twitter"></i> <a class="link-success" href="https://twitter.com/GobAntioquia">Twitter</a></li>
+          <li><i class="bi bi-instagram"></i> <a class="link-success" href="https://www.instagram.com/gobantioquia/">Instagram</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="text-center text-white py-1 mt-5 bg-secondary">© Copyright 2022 Todos los Derechos Reservados</p>
+      </div>
+    </footer>
+    <!-- Fin Pie de página -->
+  </body>
+</html>
+

@@ -130,6 +130,16 @@ td
   color: #7D8288;
 }
 
+/* Inverse functions content */
+#sin-btn.inverse { content: "sin⁻¹"; }
+#ln-btn.inverse { content: "eˣ"; }
+#cos-btn.inverse { content: "cos⁻¹"; }
+#log-btn.inverse { content: "10ˣ"; }
+#tan-btn.inverse { content: "tan⁻¹"; }
+#sqrt-btn.inverse { content: "x²"; }
+#ans-btn.inverse { content: "Rnd"; }
+#pow-btn.inverse { content: "ʸ√x"; }
+
 @media screen and (max-width: 900px)
 {
   #sep { display: none; }
