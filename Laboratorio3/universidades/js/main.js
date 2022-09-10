@@ -5,6 +5,9 @@ let map;
 let markers = [];
 let eafit_markers = [];
 let udea_markers = [];
+let udem_markers = [];
+let upb_markers = [];
+let uniminuto_markers = [];
 
 window.onload = function() 
 {
@@ -22,27 +25,26 @@ window.init_map = function(position)
 {
   let user_lat = position.coords.latitude;
   let user_lng = position.coords.longitude;
-  let coord = new google.maps.LatLng(user_lat, user_lng);
+  let user_coords = new google.maps.LatLng(user_lat, user_lng);
 
   let map_options = 
     {
       zoom : 9,
-      center: coord,
+      center: user_coords,
       mapTypeId: google.maps.MapTypeId.ROADMAP
     };
 
   map = new google.maps.Map(document.getElementById("map"), map_options);
 
   // Crear marcadores de EAFIT
-  let eafit_coords = 
+  const eafit_icon_url = "https://raw.githubusercontent.com/donCESAR12345/web-dev/00d3028b7156c420fb17358dc9d183883ef1a56a/Laboratorio3/universidades/assets/icons/eafit_icon.svg";
+  const eafit_coords = 
   [
     {
       lat : 6.199072529524611,
       lng : -75.57871015758644
     }
   ];
-  
-  const eafit_icon_url = "https://svgur.com/i/mXz.svg";
   let eafit_icon = new google.maps.MarkerImage(
     eafit_icon_url,
     null,
@@ -53,7 +55,8 @@ window.init_map = function(position)
   add_markers(eafit_coords, eafit_markers, eafit_icon);
 
   // Crear marcadores de la UdeA
-  let udea_coords = 
+  const udea_icon_url = "https://raw.githubusercontent.com/donCESAR12345/web-dev/00d3028b7156c420fb17358dc9d183883ef1a56a/Laboratorio3/universidades/assets/icons/udea_icon.svg";
+  const udea_coords = 
   [
       {
         lat: 6.267820727224462,
@@ -80,16 +83,32 @@ window.init_map = function(position)
         lng: -75.82649687362516
       }
   ];
-    
-  const udea_icon_url = "https://svgur.com/i/mZ9.svg";
   let udea_icon = new google.maps.MarkerImage(
     udea_icon_url,
     null,
     null,
     null,
     new google.maps.Size(48, 48)
-  )
+  );
   add_markers(udea_coords, udea_markers, udea_icon);
+
+  // Crear marcadores de la UdeM
+  const udem_icon_url = "https://raw.githubusercontent.com/donCESAR12345/web-dev/00d3028b7156c420fb17358dc9d183883ef1a56a/Laboratorio3/universidades/assets/icons/udem_icon.svg";
+  const udem_coords = 
+  [
+      {
+        lat: 6.231522954173981,
+        lgn: -75.6101902827443
+      }
+  ];
+  let udem_icon = new google.maps.MarkerImage(
+    udem_icon_url,
+    null,
+    null,
+    null,
+    new google.maps.Size(48, 48)
+  )
+  add_markers(udem_coords, udem_markers, udem_icon);
 }
 
 function add_markers(coords, markers, icon)
