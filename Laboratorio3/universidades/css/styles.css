@@ -15,10 +15,21 @@
  */
 html, body {
   height: 100%;
+  font-family: Roboto, sans-serif;
   padding: 0;
 }
 
-select
+select, label
 {
   display: block;
+  margin: auto;
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+label
+{
+  font-size: 2rem;
+  font-weight: bold;
 }
