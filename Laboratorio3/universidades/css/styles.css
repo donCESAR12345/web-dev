@@ -1,7 +1,4 @@
-body 
-{
-  margin-top: 100px;
-}
+* { box-sizing: border-box; }
 
 /* 
  * Always set the map height explicitly to define the size of the div element
@@ -19,4 +16,9 @@ body
 html, body {
   height: 100%;
   padding: 0;
+}
+
+select
+{
+  display: block;
 }

@@ -1,13 +1,10 @@
+// Variable global del mapa
 let map;
 
-let eafit_coords = [];
+// Variables globales generales
+let markers = [];
 let eafit_markers = [];
-const eafit_icon = "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Logo_EAFIT.svg/320px-Logo_EAFIT.svg.png";
-// const eafit_polyline = 
-// [
-//   [6.197517748197423, -75.57850639417443],
-//   [6.19820770356412, -75.57815513049803],
-// ];
+let udea_markers = [];
 
 window.onload = function() 
 {
@@ -23,24 +20,76 @@ window.onload = function()
 
 window.init_map = function(position)
 {
-  let lat = position.coords.latitude;
-  let lng = position.coords.longitude;
-  let coord = new google.maps.LatLng(lat, lng);
+  let user_lat = position.coords.latitude;
+  let user_lng = position.coords.longitude;
+  let coord = new google.maps.LatLng(user_lat, user_lng);
 
   let map_options = 
     {
-      zoom : 8,
+      zoom : 9,
       center: coord,
       mapTypeId: google.maps.MapTypeId.ROADMAP
     };
 
   map = new google.maps.Map(document.getElementById("map"), map_options);
 
-  eafit_coords.push({ 
-    lat : 6.199072529524611,
-    lng : -75.57871015758644
-  });
+  // Crear marcadores de EAFIT
+  let eafit_coords = 
+  [
+    {
+      lat : 6.199072529524611,
+      lng : -75.57871015758644
+    }
+  ];
+  
+  const eafit_icon_url = "https://svgur.com/i/mXz.svg";
+  let eafit_icon = new google.maps.MarkerImage(
+    eafit_icon_url,
+    null,
+    null,
+    null,
+    new google.maps.Size(48, 48)
+  )
   add_markers(eafit_coords, eafit_markers, eafit_icon);
+
+  // Crear marcadores de la UdeA
+  let udea_coords = 
+  [
+      {
+        lat: 6.267820727224462,
+        lng: -75.56885433374535
+      },
+      {
+        lat: 6.261415884020201,
+        lng: -75.5663551368828
+      },
+      {
+        lat: 6.272569355695053, 
+        lng: -75.58761478699007
+      },
+      {
+        lat: 6.198139320828839, 
+        lng: -75.5842191219998
+      },
+      {
+        lat: 6.105618571649276, 
+        lng: -75.38758194108358
+      },
+      {
+        lat: 6.555055302878294, 
+        lng: -75.82649687362516
+      }
+  ];
+    
+  const udea_icon_url = "https://svgur.com/i/mZ9.svg";
+  let udea_icon = new google.maps.MarkerImage(
+    udea_icon_url,
+    null,
+    null,
+    null,
+    new google.maps.Size(48, 48)
+  )
+  add_markers(udea_coords, udea_markers, udea_icon);
 }
 
 function add_markers(coords, markers, icon)
@@ -50,12 +99,14 @@ function add_markers(coords, markers, icon)
     let marker_options = 
       {
         position: coords[index],
-        label: "EAFIT",
-        icon: icon
+        icon: icon,
+        optimized: true
       };
     let marker = new google.maps.Marker(marker_options);
+    marker.setMap(map);
     markers.push(marker);
   }
+  markers.push(new markerClusterer.MarkerClusterer({markers, map}));
 }
 
 function display_error()
