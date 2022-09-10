@@ -93,12 +93,12 @@ window.init_map = function(position)
   add_markers(udea_coords, udea_markers, udea_icon);
 
   // Crear marcadores de la UdeM
-  const udem_icon_url = "https://raw.githubusercontent.com/donCESAR12345/web-dev/00d3028b7156c420fb17358dc9d183883ef1a56a/Laboratorio3/universidades/assets/icons/udem_icon.svg";
+  const udem_icon_url = "https://raw.githubusercontent.com/donCESAR12345/web-dev/ac125f656da9424a7ac698f3684d54ca1dd6f30f/Laboratorio3/universidades/assets/icons/udem_icon.svg";
   const udem_coords = 
   [
       {
         lat: 6.231522954173981,
-        lgn: -75.6101902827443
+        lng: -75.6101902827443
       }
   ];
   let udem_icon = new google.maps.MarkerImage(
@@ -109,6 +109,66 @@ window.init_map = function(position)
     new google.maps.Size(48, 48)
   )
   add_markers(udem_coords, udem_markers, udem_icon);
+
+  // Crear marcadores de la Uniminuto
+  const uniminuto_icon_url = "https://raw.githubusercontent.com/donCESAR12345/web-dev/ac125f656da9424a7ac698f3684d54ca1dd6f30f/Laboratorio3/universidades/assets/icons/uniminuto_icon.svg";
+  const uniminuto_coords = 
+  [
+      {
+        lat: 6.250149457155128,
+        lng: -75.56632219999646
+      },
+      {
+        lat: 6.171290036221311, 
+        lng: -75.60666721282595
+      },
+      {
+        lat: 6.311026008605729, 
+        lng: -75.55451337500229
+      }
+  ];
+  let uniminuto_icon = new google.maps.MarkerImage(
+    uniminuto_icon_url,
+    null,
+    null,
+    null,
+    new google.maps.Size(48, 48)
+  )
+  add_markers(uniminuto_coords, uniminuto_markers, uniminuto_icon);
+
+  // Crear marcadores de la UPB
+  const upb_icon_url = "https://raw.githubusercontent.com/donCESAR12345/web-dev/ac125f656da9424a7ac698f3684d54ca1dd6f30f/Laboratorio3/universidades/assets/icons/upb_icon.svg";
+  const upb_coords = 
+  [
+      {
+        lat: 6.242365947279352, 
+        lng: -75.58988220974942
+      },
+      {
+        lat: 6.277641254837518, 
+        lng: -75.5833287125053
+      },
+      {
+        lat: 6.207742376159124, 
+        lng: -75.57318323679442
+      },
+      {
+        lat: 6.12401498407729, 
+        lng: -75.4212748043453
+      },
+      {
+        lat: 6.1714722008978455, 
+        lng: -75.32882437603197
+      }
+  ];
+  let upb_icon = new google.maps.MarkerImage(
+    upb_icon_url,
+    null,
+    null,
+    null,
+    new google.maps.Size(48, 48)
+  )
+  add_markers(upb_coords, upb_markers, upb_icon);
 }
 
 function add_markers(coords, markers, icon)
