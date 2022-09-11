@@ -13,23 +13,30 @@
 /* 
  * Optional: Makes the sample page fill the window. 
  */
-html, body {
+html, body 
+{
   height: 100%;
   font-family: Roboto, sans-serif;
   padding: 0;
 }
 
+table, td
+{
+  margin: auto;
+  text-align: center;
+}
 select, label
 {
   display: block;
+  width: 50%;
   margin: auto;
   text-align: center;
-  font-size: 1.5rem;
-  margin-bottom: 20px;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
 }
 
 label
 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: bold;
 }

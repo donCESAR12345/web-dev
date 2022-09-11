@@ -17,9 +17,11 @@ let uniminuto_markers = [];
 
 class University
 {
+  careers = [];
   markers = [];
   polygons = [];
   // cluster = null;
+  long_name = null;
   infowindow = null;
   color = null;
 
@@ -74,6 +76,7 @@ class University
 
   add_interactions(info)
   {
+    this.long_name = info['long_name'];
     // Create InfoWindow
     const content_str = 
       '<div id="content">' +
@@ -149,6 +152,7 @@ let UPB = new University("UPB", "#000000");
 window.onload = function() 
 {
   university_selector = document.getElementById("university-select");
+  career_select = document.getElementById("career-select");
   university_selector.onchange = update_markers;
 
   if(navigator.geolocation)
@@ -169,7 +173,7 @@ window.init_map = function(position)
 
   let map_options = 
     {
-      zoom : 9,
+      zoom : 10,
       center: user_coords,
       mapTypeId: google.maps.MapTypeId.ROADMAP
     };
@@ -203,7 +207,18 @@ window.init_map = function(position)
     reference: "https://es.wikipedia.org/wiki/Universidad_EAFIT",
     link: "https://www.eafit.edu.co/"
   };
-
+  const eafit_careers =
+  [
+    "Administración de negocios", "Contaduría pública",
+    "Derecho", "Ingeniería civil",
+    "Ingeniería de sistemas", "Ingeniería física", 
+    "Ingeniería matemática", "Mercadeo",
+    "Negocios internacionales", "Psicología",
+  ];
+  for(let i in eafit_careers)
+  {
+    EAFIT.careers.push(eafit_careers[i]);
+  }
   EAFIT.add_markers(eafit_marker_data);
   EAFIT.add_interactions(eafit_info);
 
@@ -256,6 +271,18 @@ window.init_map = function(position)
     reference: "https://es.wikipedia.org/wiki/Universidad_de_Antioquia",
     link: "https://www.udea.edu.co/"
   };
+  const udea_careers =
+  [
+    "Artes plásticas", "Astronomía",
+    "Biología", "Contaduría Pública",
+    "Ingeniería electrónica", "Ingeniería de telecomunicaciones",
+    "Medicina", "Música",
+    "Sociología", "Zootecnia"
+  ];
+  for(let i in udea_careers)
+  {
+    UdeA.careers.push(udea_careers[i]);
+  }
   UdeA.add_markers(udea_marker_data);
   UdeA.add_interactions(udea_info);
 
@@ -287,6 +314,18 @@ window.init_map = function(position)
     reference: "https://es.wikipedia.org/wiki/Universidad_de_Medellín",
     link: "https://www.udemedellin.edu.co/"
   };
+  const udem_careers =
+  [
+    "Comunicación y entretenimiento digital", "Computación científica",
+    "Economía", "Ingeniería civil",
+    "Ingeniería de sistemas", "Ingeniería de telecomunicaciones",
+    "Ingeniería financiera", "Investigación criminal", 
+    "Psicología", "Mercadeo"
+  ];
+  for(let i in udem_careers)
+  {
+    UdeM.careers.push(udem_careers[i]);
+  }
   UdeM.add_markers(udem_marker_data);
   UdeM.add_interactions(udem_info);
 
@@ -296,16 +335,16 @@ window.init_map = function(position)
     coords: 
     [
       {
-        lat: 6.250149457155128,
-        lng: -75.56632219999646
+        lat: 6.311026008605729, 
+        lng: -75.55451337500229
       },
       {
         lat: 6.171290036221311, 
         lng: -75.60666721282595
       },
       {
-        lat: 6.311026008605729, 
-        lng: -75.55451337500229
+        lat: 6.250149457155128,
+        lng: -75.56632219999646
       }
     ],
     icon_url: "https://raw.githubusercontent.com/donCESAR12345/web-dev/ac125f656da9424a7ac698f3684d54ca1dd6f30f/Laboratorio3/universidades/assets/icons/uniminuto_icon.svg"
@@ -329,6 +368,18 @@ window.init_map = function(position)
     reference: "https://es.wikipedia.org/wiki/Corporación_Universitaria_Minuto_de_Dios",
     link: "https://www.uniminuto.edu/"
   };
+  const uniminuto_careers =
+  [
+    "Administración de empresas", "Administración en seguridad y salud en el trabajo",
+    "Ingeniería de software", "Ingeniería industrial", 
+    "Licenciatura en educación física, recreación y deportes", "Licenciatura en educación infantil",
+    "Licenciatura en humanidades y lengua castellana", "Periodismo",
+    "Psicología", "Trabajo social"
+  ];
+  for(let i in uniminuto_careers)
+  {
+    Uniminuto.careers.push(uniminuto_careers[i]);
+  }
   Uniminuto.add_markers(uniminuto_marker_data);
   Uniminuto.add_interactions(uniminuto_info);
 
@@ -382,6 +433,18 @@ window.init_map = function(position)
     reference: "https://es.wikipedia.org/wiki/Universidad_Pontificia_Bolivariana",
     link: "https://www.upb.edu.co/"
   };
+  const upb_careers =
+  [
+    "Arquitectura", "Ciencias políticas",
+    "Diseño gráfico", "Enfermería",
+    "Filosofía", "Ingeniería ambiental",
+    "Ingeniería en nanotecnología", "Ingeniería química",
+    "Medicina", "Teología"
+  ];
+  for(let i in upb_careers)
+  {
+    UPB.careers.push(upb_careers[i]);
+  }
   UPB.add_markers(upb_marker_data);
   UPB.add_interactions(upb_info);
 }
@@ -389,6 +452,7 @@ window.init_map = function(position)
 function update_markers()
 {
   let value = this.value;
+  let selected_university;
   let universities =
   [
     EAFIT, UdeA, UdeM, Uniminuto, UPB
@@ -397,11 +461,36 @@ function update_markers()
   for(let i in universities)
   {
     let university = universities[i];
-    let status = value == university.name.toLowerCase() || value == "all" ? map : null;
+    if(university.name.toLowerCase() == value)
+    {
+      selected_university = university;
+    }
+    let status = university == selected_university || value == "all" ? map : null;
     for(let j in university.markers)
     {
       university.markers[j].setMap(status);
       university.polygons[j].setMap(status);
+    }
+  }
+  let careers = career_select.getElementsByTagName("option");
+  if(value == "all")
+  {
+    careers[0].innerHTML = "Seleccione una universidad";
+    career_select.selectedIndex = 0;
+    career_select.disabled = true;
+    map.setCenter(user_coords);
+    map.setZoom(10);
+  }
+  else
+  {
+    careers[0].innerHTML = selected_university.long_name;
+    career_select.selectedIndex = 0;
+    career_select.disabled = false;
+    map.setCenter(selected_university.markers[0].getPosition());
+    map.setZoom(15);
+    for(let i = 0; i < selected_university.careers.length; i++)
+    {
+      careers[i + 1].innerHTML = selected_university.careers[i];
     }
   }
 }
