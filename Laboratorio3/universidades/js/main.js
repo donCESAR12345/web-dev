@@ -137,7 +137,7 @@ class University
       // Add event listener foro opening university website
       this.markers[i].addListener("dblclick", () => 
       {
-        window.location.href = info['link'];
+        window.open(info['link'], '_blank');
       });
     }
   }
