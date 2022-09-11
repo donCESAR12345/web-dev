@@ -15,23 +15,18 @@ let udem_markers = [];
 let upb_markers = [];
 let uniminuto_markers = [];
 
-// Variables globales de polilíneas
-let eafit_polylines = [];
-let udea_polylines = [];
-let udem_polylines = [];
-let upb_polylines = [];
-let uniminuto_polylines = [];
-
 class University
 {
   markers = [];
-  polylines = [];
-  cluster = null;
+  polygons = [];
+  // cluster = null;
   infowindow = null;
+  color = null;
 
-  constructor(name)
+  constructor(name, color)
   {
     this.name = name;
+    this.color = color;
   }
 
   add_markers(marker_data)
@@ -44,22 +39,37 @@ class University
       null,
       new google.maps.Size(48, 48)
     );
-    // Create markers for every coords
+    // Create markers and polygons for every coords
     for(let index in marker_data['coords'])
     {
       let marker_options = 
-        {
-          position: marker_data['coords'][index],
-          icon: icon,
-          optimized: true
-        };
+      {
+        position: marker_data['coords'][index],
+        icon: icon,
+        optimized: true
+      };
+      let circle_options =
+      {
+        strokeColor: "#000000",
+        strokeOpacity: 1,
+        strokeWeight: 2,
+        fillColor: this.color,
+        fillOpacity: 0.5,
+        center: marker_data['coords'][index],
+        radius: 500
+      };
+
       let marker = new google.maps.Marker(marker_options);
+      let circle = new google.maps.Circle(circle_options);
       marker.setMap(map);
+      circle.setMap(map);
+
       this.markers.push(marker);
+      this.polygons.push(circle);
     }
     // Assign cluster into object
-    let markers = this.markers;
-    this.cluster = new markerClusterer.MarkerClusterer({map, markers});
+    // let markers = this.markers;
+    // this.cluster = new markerClusterer.MarkerClusterer({map, markers});
   }
 
   add_interactions(info)
@@ -130,11 +140,11 @@ class University
   }
 }
 
-let EAFIT = new University("EAFIT");
-let UdeA = new University("UdeA");
-let UdeM = new University("UdeM");
-let Uniminuto = new University("Uniminuto");
-let UPB = new University("UPB");
+let EAFIT = new University("EAFIT", "#1F2C6E");
+let UdeA = new University("UdeA", "#07612C");
+let UdeM = new University("UdeM", "#ED1C24");
+let Uniminuto = new University("Uniminuto", "#FFCE00");
+let UPB = new University("UPB", "#000000");
 
 window.onload = function() 
 {
