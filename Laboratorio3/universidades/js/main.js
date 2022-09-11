@@ -148,8 +148,8 @@ let UPB = new University("UPB", "#000000");
 
 window.onload = function() 
 {
-  university_selector = document.getElementById("university_select");
-  // university_selector.onchange = update_markers;
+  university_selector = document.getElementById("university-select");
+  university_selector.onchange = update_markers;
 
   if(navigator.geolocation)
   {
@@ -384,6 +384,26 @@ window.init_map = function(position)
   };
   UPB.add_markers(upb_marker_data);
   UPB.add_interactions(upb_info);
+}
+
+function update_markers()
+{
+  let value = this.value;
+  let universities =
+  [
+    EAFIT, UdeA, UdeM, Uniminuto, UPB
+  ];
+
+  for(let i in universities)
+  {
+    let university = universities[i];
+    let status = value == university.name.toLowerCase() || value == "all" ? map : null;
+    for(let j in university.markers)
+    {
+      university.markers[j].setMap(status);
+      university.polygons[j].setMap(status);
+    }
+  }
 }
 
 function display_error()
