@@ -3,10 +3,12 @@ let main_input;
 let post_input;
 let inverse_functions = false;
 let angle_units = "rad"; 
+let last_ans = "0";
+let ac_button;
 let inv_button;
 let ang_button;
 let ans_button;
-let ac_button;
+let equals_button;
 // Registro para inicializar botones que escriben
 const buttons_reg = 
 {
@@ -113,12 +115,26 @@ class InvButton
 
 class AnsButton
 {
-  last_ans = "0";
   constructor(dom, button)
   {
     this.dom = dom;
     this.button = button.split(' ');
     this.invertible = this.button.length > 1;
+  }
+}
+
+class EqualsButton
+{
+  constructor(dom)
+  {
+    this.dom = dom;
+    this.dom.addEventListener("click", this.equals);
+  }
+  
+  equals()
+  {
+    last_ans = math.evaluate(main_input); 
+    main_input.innerHTML = last_ans;
   }
 }
 
@@ -274,6 +290,7 @@ window.onload = function()
   inv_button = new InvButton(document.getElementById("inv-btn"));
   ang_button = new AngButton(document.getElementById("ang-btn"));
   ans_button = new AnsButton(document.getElementById("ans-btn"), "Ans Rnd");
+  equals_button = new EqualsButton(document.getElementById("equals-btn"));
   
   for(let id in buttons_reg)
   {
