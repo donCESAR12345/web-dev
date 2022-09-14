@@ -65,8 +65,8 @@ class AcButton
 
   clear_input()
   {
-    main_input.innerHTML = "0";
-    post_input.innerHTML = "";
+    main_input.innerHTML = "";
+    post_input.innerHTML = "0";
   }
 }
 
@@ -130,7 +130,7 @@ class AnsButton
   constructor(dom, button)
   {
     this.dom = dom;
-    this.button = button.split(' ');
+    this.button = button.split(" ");
     this.invertible = this.button.length > 1;
     this.dom.addEventListener("click", this.pressed)
   }
@@ -149,9 +149,10 @@ class AnsButton
       const last_digit = input[input.length - 1];
 
       // Si la entrada está vacía reemplazarla
-      if(input == "0")
+      if(input == "" && buffer == "0")
       {
         main_input.innerHTML = write;
+        post_input.innerHTML = "";
         return input;
       }
       if(buffer.length > 0)
@@ -176,7 +177,7 @@ class AnsButton
          number_regex.test(last_digit) ||
          last_digit == ")")
       {
-        main_input.innerHTML = input + '×' + write;
+        main_input.innerHTML = input + "×" + write;
       }
       // Si el último dígito es abrir paréntesis, permitirlo
       if(last_digit == "(")
@@ -217,12 +218,12 @@ class EqualsButton
       input += buffer;
 
       // Naturalizar la entrada para poder procesarla
-      let processable_input = input.replace(/×/g, '*');
-      processable_input = processable_input.replace(/÷/g, '/');
-      processable_input = processable_input.replace(/π/g, 'pi');
-      processable_input = processable_input.replace(/²/g, '^2');
-      processable_input = processable_input.replace(/√/g, 'sqrt');
-      processable_input = processable_input.replace(/₁₀/g, '10');
+      let processable_input = input.replace(/×/g, "*");
+      processable_input = processable_input.replace(/÷/g, "/");
+      processable_input = processable_input.replace(/π/g, "pi");
+      processable_input = processable_input.replace(/²/g, "^2");
+      processable_input = processable_input.replace(/√/g, "sqrt");
+      processable_input = processable_input.replace(/₁₀/g, "10");
 
       // Reemplazar funciones inversas trigonométricas
       const inv_regex = /(sin|ln|cos|log|tan)⁻¹(\(.*\))/g;
@@ -232,10 +233,10 @@ class EqualsButton
       }
 
       // Reemplazar los logaritmos naturales por su función en math.js
-      processable_input = processable_input.replace(/ln/g, 'log');
+      processable_input = processable_input.replace(/ln/g, "log");
 
       // Añadir las unidades de grados de ser necesario
-      const deg_regex = /(sin\(|cos\(|tan\()(.*(?<! deg))\)/g;
+      const deg_regex = /(^[a]sin\(|^[a]cos(?<!a)\(|^[a]tan(?!a)\()(.*?(?<! deg))\)/g;
       while(deg_regex.test(processable_input) && angle_units == "deg")
       {
         processable_input = processable_input.replace(deg_regex, `$1$2 deg)`);
@@ -273,23 +274,23 @@ class Button
   {
     var me = this;
     this.dom = dom;
-    this.writes = writes.split(' ');
-    this.button = button.split(' ');
+    this.writes = writes.split(" ");
+    this.button = button.split(" ");
     this.invertible = this.button.length > 1;
 
     this.val_op = function(input, buffer, char)
     {
       const last_digit = input[input.length - 1];
 
-      if(input == "0")
+      // Si la entrada está vacía se sobreescribe
+      if(input == "" && buffer == "0")
       {
-        post_input.innerHTML = ')';
+        post_input.innerHTML = ")";
         return char;
       }
       // Si hay un punto decimal no se permite
       if(last_digit != ".")
       {
-        // Si la entrada está vacía reemplazarla
         if(buffer.length > 0)
         {
           // No permitir paréntesis cuando se tiene la E
@@ -302,28 +303,24 @@ class Button
           if(operation_regex.test(buffer[0]))
           {
             let operation = buffer[0];
-            post_input.innerHTML = ')' + buffer.slice(1);
+            post_input.innerHTML = ")" + buffer.slice(1);
             return input + operation + char;
           }
-          // Si el último digito es multiplicable
-          if(number_regex.test(last_digit) || const_regex.test(last_digit))
-          {
-              post_input.innerHTML = ')' + buffer;
-              return input + '×' + char; 
-          }
-          if(last_digit == char)
-          {
-            post_input.innerHTML = ")" + buffer;
-            return input + char;
-          }
         }
-        // Si el último digito es multiplicable
-        if(number_regex.test(last_digit) || const_regex.test(last_digit))
+        // Si el último digito es abrir paréntesis o signo menos, se permite
+        if(last_digit == char || last_digit == "-")
         {
-            post_input.innerHTML = ')';
-            return input + '×' + char; 
+          post_input.innerHTML = ")" + buffer;
+          return input + char;
+        }
+        // Si el último digito es multiplicable, se multiplica
+        if(number_regex.test(last_digit) || const_regex.test(last_digit) || last_digit == ")")
+        {
+            post_input.innerHTML = ")" + buffer;
+            return input + "×" + char; 
         }
       }
+      // Por defecto rechaza
       return input;
     }
 
@@ -333,13 +330,14 @@ class Button
 
       if(buffer.length > 0)
       {
+        // Si hay un factorial pendiente se aplica y se cierra
         if(buffer[0] == "!")
         {
           post_input.innerHTML = buffer.slice(buffer.indexOf(char) + 1);
           return input + "!" + char;
         }
         // Si hay un paréntesis por cerrar, no se está cerrando
-        // inmediatamente o dejando una operación pendiente, permitir
+        // inmediatamente o dejando una operación pendiente, se cierra 
         if(buffer.indexOf(char) != -1 && last_digit != "(" &&
           !operation_regex.test(last_digit))
         {
@@ -347,6 +345,7 @@ class Button
           return input + char;
         }
       }
+      // Por defecto rechaza
       return input;
     }
 
@@ -355,10 +354,12 @@ class Button
       const last_digit = input[input.length - 1];
 
       // Si la entrada está "vacía" se sobreescribe
-      if(input == "0")
+      if(input == "" && buffer == "0")
       {
+        post_input.innerHTML = "";
         return char;
       }
+
       if(buffer.length > 0)
       {
         // El factorial opera hacia atrás, por lo que
@@ -368,7 +369,6 @@ class Button
         {
           post_input.innerHTML = buffer.slice(1);
           return input + "!×" + char;
-          
         }
         // Si en el buffer hay una operación pendiente,
         // se añade a la entrada y se pone el número
@@ -396,10 +396,12 @@ class Button
       const last_digit = input[input.length - 1];
 
       // Si la entrada está vacía reemplazarla
-      if(input == "0")
+      if(input == "" && buffer == "0")
       {
+        post_input.innerHTML = "0";
         return char;
       }
+
       if(buffer.length > 0)
       {
         // Si se va a aplicar una operación, ponerla
@@ -413,46 +415,57 @@ class Button
       }
       // Si el último dígito es un número o una constante
       // o un abrir paréntesis, multiplicar por la constante
-      if(const_regex.test(last_digit) ||
-         number_regex.test(last_digit) ||
+      if(number_regex.test(last_digit) ||
+         const_regex.test(last_digit) ||
          last_digit == ")")
       {
-        return input + '×' + char;
+        return input + "×" + char;
       }
-      // Si el último dígito es abrir paréntesis, permitirlo
+      // Si el último dígito es abrir paréntesis, poner la constante
       if(last_digit == "(")
       {
         return input + char;
       }
+      // Por defecto rechaza
       return input;
     }
 
     this.val_dot = function(input, buffer, char)
     {
       const last_digit = input[input.length - 1];
-      // Si hay una operación pendiente no se permite
-      if(last_number_regex.test(input) && 
-         !operation_regex.test(buffer))
+      // Si hay una operación pendiente o recién se abrió 
+      // paréntesis no se permite
+      if(input != "")
       {
-        const last_number = input.match(last_number_regex)[0];
-        // Si ya hay un punto en el último número o es una constante
-        // no se permite
-        if(last_number.indexOf(".") == -1 && !const_regex.test(last_digit) &&
-           last_number.indexOf("E") == -1 && !operation_regex.test(last_digit))
+        if(last_number_regex.test(input) && 
+           !operation_regex.test(buffer) && last_digit != "(")
         {
-          return input + char;
+          const last_number = input.match(last_number_regex)[0];
+          // Si ya hay un punto en el último número o es una constante,
+          // o es un exponente (E) no se permite
+          if(last_number.indexOf(".") == -1 && !const_regex.test(last_digit) &&
+             last_number.indexOf("E") == -1 && !operation_regex.test(last_digit))
+          {
+            return input + char;
+          }
         }
       }
+      // Por defecto rechaza
       return input;
     }
 
     this.val_opr = function(input, buffer, char)
     {
       const last_digit = input[input.length - 1];
-      // Comparar si sobreescribir la operación
-      if(input == "0" && char == "-")
+      // Si está vacío y es menos reemplaza
+      if(input == "" && buffer == "0")
       {
-        return char;
+        if(char == "-")
+        {
+          post_input.innerHTML = "";
+          return char;
+        }
+        return input;
       }
       // Si no hay un punto, abrir paréntesis, o menos
       if(last_digit != "." && last_digit != "-" && 
@@ -473,29 +486,34 @@ class Button
           if(buffer[0] == "!")
           {
             post_input.innerHTML = char + buffer.slice(1);
-            return input + '!';
+            return input + "!";
           }
           // Si hay otra operación
           if(operation_regex.test(buffer[0]))
           {
+            // Si había un E y se usa el menos, se acepta
             if(char == "-" && buffer[0] == "E")
             {
               post_input.innerHTML = buffer.slice(1);
               return input + "E" + char; 
             }
-            // Y no es el menos, se sobreescribe
+            // Si pongo un menos, se aplica la operación
+            // se abre paréntesis y se pone el negativo
             if(char == "-" && buffer[0] != "-")
             {
               let operation = buffer[0];
               post_input.innerHTML = ")" + buffer.slice(1);
               return input + operation + "(" + char;
             }
+            // Por defecto sobreescribe la operación
             post_input.innerHTML = char + buffer.slice(1);
             return input;
           }
         }
+        // Si no había operación pendiente se pone
         post_input.innerHTML = char + buffer;
       }
+      // Por defecto rechaza
       return input;
     }
 
@@ -503,76 +521,85 @@ class Button
     {
       const last_digit = input[input.length - 1];
       // Si la entrada está vacía se sobreescribe
-      if(input == "0")
+      if(input == "" && buffer == "0")
       {
+        // Siempre y cuando no sea una operación de potencia
+        // sin base
         if(char[0] != "^" && char != "²")
         {
-          post_input.innerHTML = ')';
+          post_input.innerHTML = ")";
           return char
         }
+        // Si era una operación sin base, rechaza
         return input;
+      }
+
+      if(buffer.length > 0)
+      {
+        // Si es una potencia sin base...
+        if(char[0] == "^" || char == "²")
+        {
+          // Y la operación pendiente es un factorial, se permite 
+          if(buffer[0] == "!")
+          {
+            post_input.innerHTML = ")" + buffer.slice(1);
+            return input + "!" + char;
+          }
+          // Caso contrario se rechaza
+          return input;
+        }
+        // Si es después de una operación se permite
+        if(operation_regex.test(buffer[0]))
+        {
+          // Siempre y cuando no sea una potencia sin base, o el E
+          if(char != "²" && char[0] != "^" && buffer[0] != "E")
+          {
+            let operation = buffer[0];
+            post_input.innerHTML = ")" + buffer.slice(1);
+            return input + operation + char;
+          }
+          // Si era una de estas, rechaza
+          return input;
+        }
+      }
+      // Si es después de abrir paréntesis o después de
+      // un signo negativo se permite, siempre que no
+      // sea una potencia sin base
+      if((last_digit == "(" || last_digit == "-") &&
+          char[0] != "^" && char != "²")
+      {
+        post_input.innerHTML = ")" + buffer;
+        return input + char;
       }
       // Si es después de un paréntesis se permite
       if(last_digit == ")")
       {
-        if(char[0] == "^")
+        // Si es potencia sin base genérica se añade
+        // paréntesis al buffer
+        if(char[0] == "^" || char == "²")
         {
-          post_input.innerHTML = ")" + buffer;
+          post_input.innerHTML = char == "²" ? "" : ")" + buffer;
           return input + char;
         }
-        if(char == "²")
-        {
-          return input + char;
-        }
-      }
-      // Si es inmediatamente después de un número
-      // se añade el símbolo de multiplicar
-      if(buffer.length > 0)
-      {
-        // Si la operación pendiente es el factorial
-        if(buffer[0] == "!")
-        {
-          post_input.innerHTML = ")" + buffer.slice(1);
-          return input + '!×' + char;
-        }
-        // Si es después de una operación y no es una potencia sin
-        // base se permite
-        if(operation_regex.test(buffer[0]) && char[0] == "^")
-        {
-          if(buffer[0] != "E")
-          {
-            let operation = buffer[0];
-            post_input.innerHTML = ')' + buffer.slice(1);
-            return input + operation + char;
-          }
-          return input;
-        }
-        // Si es después de abrir paréntesis o después de
-        // un signo negativo se permite
-        if((last_digit == "(" || last_digit == "-") &&
-            char[0] != "^" && char != "²")
-        {
-          post_input.innerHTML = ")" + buffer;
-          return input + char;
-        }
+        // Por defecto entrega la multiplicación
+        post_input.innerHTML = ")" + buffer;
+        return input + "×" + char;
       }
       // Si lo último fue un número/constante
       if(number_regex.test(last_digit) || const_regex.test(last_digit))
       {
         // Si la operación es una potencia sin base
-        if(char[0] == "^")
+        if(char[0] == "^" || char == "²")
         {
-          post_input.innerHTML = ")" + buffer;
+          post_input.innerHTML = char == "²" ? "" : ")" + buffer;
           return input + char;
         }
-        // Si es elevar al cuadrado
-        if(char == "²")
-        {
-          return input + char;
-        }
+        // En caso de no ser una potencia sin base, se multiplica
+        // por esta operación
         post_input.innerHTML = ")" + buffer;
-        return input + '×' + char;
+        return input + "×" + char;
       }
+      // Por defecto rechaza
       return input;
     }
 
@@ -639,7 +666,7 @@ class Button
         main_input.innerHTML = me.validate(write);
       }
     }
-    this.dom.addEventListener('click', this.write_to_input);
+    this.dom.addEventListener("click", this.write_to_input);
   }
 }
 
@@ -657,8 +684,8 @@ window.onload = function()
   for(let id in buttons_reg)
   {
     let dom = document.getElementById(`${id}-btn`);
-    let writes = buttons_reg[id]['writes'];
-    let button = buttons_reg[id]['button'];
+    let writes = buttons_reg[id]["writes"];
+    let button = buttons_reg[id]["button"];
     buttons.push(new Button(dom, writes, button)); 
   }
 }
