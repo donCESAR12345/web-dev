@@ -513,10 +513,17 @@ class Button
         return input;
       }
       // Si es después de un paréntesis se permite
-      if(last_digit == ")" && char[0] == "^")
+      if(last_digit == ")")
       {
-        post_input.innerHTML = ")" + buffer;
-        return input + char;
+        if(char[0] == "^")
+        {
+          post_input.innerHTML = ")" + buffer;
+          return input + char;
+        }
+        if(char == "²")
+        {
+          return input + char;
+        }
       }
       // Si es inmediatamente después de un número
       // se añade el símbolo de multiplicar
