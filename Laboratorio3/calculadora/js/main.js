@@ -119,7 +119,36 @@ class AnsButton
   {
     this.dom = dom;
     this.button = button.split(' ');
+    this.writes = this.button;
     this.invertible = this.button.length > 1;
+
+    this.dom.addEventListener("click", this.pressed)
+  }
+  pressed()
+  {
+    let input = main_input.innerHTML;
+    let buffer = post_input.innerHTML;
+    const last_digit = input[input.length - 1];
+    const number_regex = /\d/;
+    const operation_regex = /[+×÷^%!-]/;
+    if(input == "0")
+    {
+      main_input.innerHTML = last_ans;
+    }
+    if(buffer.length > 0)
+    {
+      if(buffer[0] == "!")
+      {
+        post_input.innerHTML = buffer.slice(1);
+        main_input.innerHTML = input + "!×" + last_ans;
+      }
+      if(operation_regex.test(buffer[0]))
+      {
+        let operation = buffer[0];
+        post_input.innerHTML = buffer.slice(1);
+        main_input.innerHTML = input + operation + last_ans;
+      }
+    }
   }
 }
 
@@ -133,8 +162,25 @@ class EqualsButton
   
   equals()
   {
-    last_ans = math.evaluate(main_input); 
+    let input = main_input.innerHTML;
+    let buffer = post_input.innerHTML;
+    const operation_regex = /[+×÷%!-]/;
+    if(operation_regex.test(buffer[0]))
+    {
+      if(buffer[0] == "!")
+      {
+        input += buffer[0];
+      }
+      buffer = buffer.slice(1);
+    }
+    input += buffer;
+    let processable_input = input.replace(/×/g, '*');
+    processable_input = processable_input.replace(/÷/g, '/');
+    processable_input = processable_input.replace(/π/g, 'pi');
+    last_ans = math.evaluate(processable_input); 
+    last_operation.innerHTML = input + " = " + last_ans;
     main_input.innerHTML = last_ans;
+    post_input.innerHTML = "";
   }
 }
 
@@ -148,125 +194,299 @@ class Button
     this.button = button.split(' ');
     this.invertible = this.button.length > 1;
 
+    this.val_op = function(input, buffer, char)
+    {
+      const last_digit = input[input.length - 1];
+      const number_regex = /\d/;
+      const const_regex = /[πe]/;
+      const operation_regex = /[+×÷%!-]/;
+
+      // Si hay un punto decimal no se permite
+      if(last_digit != ".")
+      {
+        // Si la entrada está vacía reemplazarla
+        if(input == "0")
+        {
+          post_input.innerHTML = ')';
+          return char;
+        }
+        if(buffer.length > 0)
+        {
+          // Si hay una operación pendiente se aplica antes del
+          // paréntesis
+          if(operation_regex.test(buffer[0]))
+          {
+            let operation = buffer[0];
+            post_input.innerHTML = ')' + buffer.slice(1);
+            return input + operation + char;
+          }
+          // Si el último digito es multiplicable
+          if(number_regex.test(last_digit) || const_regex.test(last_digit))
+          {
+              post_input.innerHTML = ')' + buffer.slice(1);
+              return input + '×' + char; 
+          }
+        }
+        // Si el último digito es multiplicable
+        if(number_regex.test(last_digit) || const_regex.test(last_digit))
+        {
+            post_input.innerHTML = ')';
+            return input + '×' + char; 
+        }
+      }
+      return input;
+    }
+
+    this.val_cp = function(input, buffer, char)
+    {
+      const operation_regex = /[+×÷%!-]/;
+
+      const last_digit = input[input.length - 1];
+      if(buffer.length > 0)
+      {
+        // Si hay un paréntesis por cerrar, no se está cerrando
+        // inmediatamente o dejando una operación pendiente, permitir
+        if(buffer.indexOf(char) != -1 && last_digit != "(" &&
+          !operation_regex.test(last_digit))
+        {
+          post_input.innerHTML = buffer.slice(buffer.indexOf(char) + 1);
+          return input + char;
+        }
+      }
+      return input;
+    }
+
+    this.val_num = function(input, buffer, char)
+    {
+      const const_regex = /[πe]/;
+      const operation_regex = /[+×÷%!-]/;
+
+      const last_digit = input[input.length - 1];
+      // Si la entrada está "vacía" se sobreescribe
+      if(input == "0")
+      {
+        return char;
+      }
+      if(buffer.length > 0)
+      {
+        // El factorial opera hacia atrás, por lo que
+        // si intentamos poner un número después es
+        // necesario multiplicar
+        if(buffer[0] == "!")
+        {
+          post_input.innerHTML = buffer.slice(1);
+          return input + "!×" + char;
+          
+        }
+        // Si en el buffer hay una operación pendiente,
+        // se añade a la entrada y se pone el número
+        if(operation_regex.test(buffer[0]))
+        {
+          let operation = buffer[0];
+          post_input.innerHTML = buffer.slice(1);
+          return input + operation + char;
+        }
+      }
+      // Si el último digito es una constante o un
+      // cierre de paréntesis, se multiplica por el
+      // número recién ingresado
+      if(const_regex.test(last_digit) || 
+         last_digit == ")")
+      {
+        return input + "×" + char;
+      }
+      // Por defecto entrega el número
+      return input + char;
+    }
+
+    this.val_const = function(input, buffer, char)
+    {
+      const number_regex = /\d/;
+      const const_regex = /[πe]/;
+      const operation_regex = /[+×÷%!-]/;
+
+      const last_digit = input[input.length - 1];
+      // Si la entrada está vacía reemplazarla
+      if(input == "0")
+      {
+        return char;
+      }
+      if(buffer.length > 0)
+      {
+        // Si se va a aplicar una operación, ponerla
+        // antes de la constante
+        if(operation_regex.test(buffer[0]))
+        {
+          let operation = buffer[0];
+          post_input.innerHTML = buffer.slice(1);
+          return input + operation + char;
+        }
+      }
+      // Si el último dígito es un número o una constante
+      // o un abrir paréntesis, multiplicar por la constante
+      if(const_regex.test(last_digit) ||
+         number_regex.test(last_digit) ||
+         last_digit == ")")
+      {
+        return input + '×' + char;
+      }
+      // Si el último dígito es abrir paréntesis, permitirlo
+      if(last_digit == "(")
+      {
+        return input + char;
+      }
+      return input;
+    }
+
+    this.val_dot = function(input, buffer, char)
+    {
+      const const_regex = /[πe]/;
+      const operation_regex = /[+×÷%!-]/;
+      const last_number_regex = /[\.\d]*(?!.*\d)/;
+
+      const last_digit = input[input.length - 1];
+      // Si en el último número ya hay un punto no se permite
+      if(last_number_regex.test(input) && 
+         !operation_regex.test(buffer))
+      {
+        const last_number = input.match(last_number_regex)[0];
+        if(last_number.indexOf(".") == -1 && !const_regex.test(last_digit))
+        {
+          return input + char;
+        }
+      }
+      return input;
+    }
+
+    this.val_opr = function(input, buffer, char)
+    {
+      const operation_regex = /[+×÷%!-]/;
+
+      const last_digit = input[input.length - 1];
+      // Comparar si sobreescribir la operación
+      if(input == "0" && char == "-")
+      {
+        return char;
+      }
+      if(last_digit != "." && last_digit != "-" && 
+        (last_digit != "(" || (char == "-")))
+      {
+        if(buffer.length > 0)
+        {
+          if(buffer[0] == "+" && char == "-")
+          {
+            post_input.innerHTML = buffer.slice(1);
+            return input + char;
+          }
+          if(buffer[0] == "!")
+          {
+            post_input.innerHTML = char + buffer.slice(1);
+            return input + '!';
+          }
+          if(operation_regex.test(buffer[0]))
+          {
+            if(char == "-" && buffer[0] != "-")
+            {
+              let operation = buffer[0];
+              post_input.innerHTML = ")" + buffer.slice(1);
+              return input + operation + "(" + char;
+            }
+            post_input.innerHTML = char + buffer.slice(1);
+            return input;
+          }
+        }
+        post_input.innerHTML = char + buffer;
+        return input;
+      }
+    }
+
+    this.val_complex_opr = function(input, buffer, char)
+    {
+      const number_regex = /\d/;
+      const const_regex = /[πe]/;
+      const operation_regex = /[+×÷%!-]/;
+
+      const last_digit = input[input.length - 1];
+      // Si es inmediatamente después de un número
+      // se añade el símbolo de multiplicar
+      if(buffer.length > 0)
+      {
+        // Si es después de una operación se permite
+        if(buffer[0] == "!")
+        {
+          post_input.innerHTML = ")" + buffer.slice(1);
+          return input + '!×' + char;
+        }
+        if(operation_regex.test(buffer[0]))
+        {
+          post_input.innerHTML = ')' + buffer.slice(1);
+          return input + char;
+        }
+      }
+      if(number_regex.test(last_digit) || const_regex.test(last_digit))
+      {
+        post_input.innerHTML = ")" + buffer;
+        return input + '×' + char;
+      }
+      return input;
+    }
+
     this.validate = function(char)
     {
-      let actual_input = main_input.innerHTML;
+      let input = main_input.innerHTML;
       let buffer = post_input.innerHTML;
 
       const number_regex = /\d/;
       const const_regex = /[πe]/;
-      const operation_regex = /[+-×÷^%!]/;
+      const operation_regex = /[+×÷%!-]/;
+      const complex_op_regex = /\b(?:sin|ln|cos|log|tan|√|\^|²)\b/;
       const last_number_regex = /[\.\d]*(?!.*\d)/;
 
-      const last_digit = actual_input[actual_input.length - 1];
+      const last_digit = input[input.length - 1];
 
-      // Testear paréntesis
+      // Testear abrir paréntesis
       if(char == "(")
       {
-        if(last_digit != ".")
-        {
-          if(buffer.length > 0)
-          {
-            if(operation_regex.test(buffer[0]))
-            {
-              let operation = buffer[0];
-              post_input.innerHTML = ')' + buffer.slice(1);
-              return actual_input + operation + char;
-            }
-          }
-
-        }
-        return actual_input;
+        return this.val_op(input, buffer, char);
       }
+
+      // Testear cerrar paréntesis
       if(char == ")")
       {
-        if(buffer.length > 0)
-        {
-          if(buffer.indexOf(char) != -1)
-          {
-            post_input.innerHTML = buffer.slice(buffer.indexOf(char) + 1);
-            return actual_input + char;
-          }
-        }
+        return this.val_cp(input, buffer, char);
       }
-      // Testear entrada numérica
+
+      // Testear números
       if(number_regex.test(char))
       {
-        if(actual_input == "0")
-        {
-          return char;
-        }
-        if(last_digit == "-")
-        {
-          return actual_input + char;
-        }
-        if(buffer.length > 0)
-        {
-          if(operation_regex.test(buffer[0]))
-          {
-            let operation = buffer[0];
-            post_input.innerHTML = buffer.slice(1);
-            return actual_input + operation + char;
-          }
-        }
-        return actual_input + char;
+        return this.val_num(input, buffer, char);
       }
+      
+      // Testear entrada de constantes
+      if(const_regex.test(char))
+      {
+        return this.val_const(input, buffer, char);
+      }
+      
       // Testear entrada de punto decimal
       if(char == ".")
       {
-        if(last_number_regex.test(actual_input) && 
-           !operation_regex.test(buffer))
-        {
-          const last_number = actual_input.match(last_number_regex)[0];
-          if(last_number.indexOf(".") == -1)
-          {
-            return actual_input + char;
-          }
-        }
-        return actual_input;
+        return this.val_dot(input, buffer, char);
       }
+
       // Testear entrada de operaciones
-      else if((operation_regex.test(char) && actual_input != "0") ||
+      if((operation_regex.test(char) && input != "0") ||
               char == "-")
       {
-        // Comparar si sobreescribir la operación
-        if(actual_input == "0" && char == "-")
-        {
-          return char;
-        }
-        if(last_digit != "." && last_digit != "-")
-        {
-          if(buffer.length > 0)
-          {
-            if(buffer[0] == "+" && char == "-")
-            {
-              post_input.innerHTML = buffer.slice(1);
-              return actual_input + char;
-            }
-            if(operation_regex.test(buffer[0]))
-            {
-              if(char == "-" && buffer[0] != "-")
-              {
-                let operation = buffer[0];
-                post_input.innerHTML = ")" + buffer.slice(1);
-                return actual_input + operation + "(" + char;
-              }
-              post_input.innerHTML = char + buffer.slice(1);
-              return actual_input;
-            }
-          }
-          post_input.innerHTML = char + buffer;
-          return actual_input;
-        }
+        return this.val_opr(input, buffer, char);
       }
-      // Testear menos como signo
-      // if(operation_regex.test(buffer[0]))
-      // {
-      //     let operation = buffer[0];
-      //     post_input.innerHTML = buffer.slice(1);
-      //     return operation + char;
-      // }
-      return actual_input;
+
+      // Testear entrada de operaciones complejas
+      if(complex_op_regex.test(char))
+      {
+        return this.val_complex_opr(input, buffer, char);
+      }
+      return input;
     }
 
     this.write_to_input = function()
@@ -284,8 +504,9 @@ class Button
 
 window.onload = function()
 {
-  main_input = document.getElementById("main-input")
-  post_input = document.getElementById("post-input")
+  main_input = document.getElementById("main-input");
+  post_input = document.getElementById("post-input");
+  last_operation = document.getElementById("last-operation");
   ac_button = new AcButton(document.getElementById("ac-btn"));
   inv_button = new InvButton(document.getElementById("inv-btn"));
   ang_button = new AngButton(document.getElementById("ang-btn"));
