@@ -398,7 +398,7 @@ class Button
       // Si la entrada está vacía reemplazarla
       if(input == "" && buffer == "0")
       {
-        post_input.innerHTML = "0";
+        post_input.innerHTML = "";
         return char;
       }
 
@@ -421,8 +421,9 @@ class Button
       {
         return input + "×" + char;
       }
-      // Si el último dígito es abrir paréntesis, poner la constante
-      if(last_digit == "(")
+      // Si el último dígito es abrir paréntesis o el signo menos,
+      // poner la constante
+      if(last_digit == "(" || last_digit == "-")
       {
         return input + char;
       }
