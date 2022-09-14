@@ -226,7 +226,7 @@ class EqualsButton
       processable_input = processable_input.replace(/₁₀/g, "10");
 
       // Reemplazar funciones inversas trigonométricas
-      const inv_regex = /(sin|ln|cos|log|tan)⁻¹(\(.*\))/g;
+      const inv_regex = /(sin|cos|tan)⁻¹(\(.*\))/g;
       while(processable_input.indexOf("¹") != -1)
       {
         processable_input = processable_input.replace(inv_regex, `a$1$2`);
@@ -236,7 +236,7 @@ class EqualsButton
       processable_input = processable_input.replace(/ln/g, "log");
 
       // Añadir las unidades de grados de ser necesario
-      const deg_regex = /(^[a]sin\(|^[a]cos(?<!a)\(|^[a]tan(?!a)\()(.*?(?<! deg))\)/g;
+      const deg_regex = /((?<!a)sin\(|(?<!a)cos\(|(?<!a)tan\()(.*?(?<! deg))\)/gm;
       while(deg_regex.test(processable_input) && angle_units == "deg")
       {
         processable_input = processable_input.replace(deg_regex, `$1$2 deg)`);
