@@ -535,8 +535,9 @@ class Button
           post_input.innerHTML = ")" + buffer.slice(1);
           return input + '!×' + char;
         }
-        // Si es después de una operación se permite
-        if(operation_regex.test(buffer[0]))
+        // Si es después de una operación y no es una potencia sin
+        // base se permite
+        if(operation_regex.test(buffer[0]) && char[0] == "^")
         {
           if(buffer[0] != "E")
           {
