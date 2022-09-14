@@ -152,11 +152,16 @@ class AnsButton
       if(input == "0")
       {
         main_input.innerHTML = write;
+        return input;
       }
       if(buffer.length > 0)
       {
         // Si se va a aplicar una operación, ponerla
         // antes del contenido
+        if(last_digit == "(")
+        {
+          main_input.innerHTML = input + write;
+        }
         if(operation_regex.test(buffer[0]) && buffer[0] != "E")
         {
           let operation = buffer[0];
@@ -210,6 +215,7 @@ class EqualsButton
         buffer = buffer.slice(1);
       }
       input += buffer;
+
       // Naturalizar la entrada para poder procesarla
       let processable_input = input.replace(/×/g, '*');
       processable_input = processable_input.replace(/÷/g, '/');
@@ -224,15 +230,18 @@ class EqualsButton
       {
         processable_input = processable_input.replace(inv_regex, `a$1$2`);
       }
+
       // Reemplazar los logaritmos naturales por su función en math.js
       processable_input = processable_input.replace(/ln/g, 'log');
-      // Añadir las unidades de grados o radianes
+
+      // Añadir las unidades de grados de ser necesario
       const deg_regex = /(sin\(|cos\(|tan\()(.*(?<! deg))\)/g;
       while(deg_regex.test(processable_input) && angle_units == "deg")
       {
         processable_input = processable_input.replace(deg_regex, `$1$2 deg)`);
       }
-
+      
+      // Evaluar y formatear
       last_ans = math.evaluate(processable_input); 
       if(math.Infinity == last_ans)
       {
@@ -249,6 +258,7 @@ class EqualsButton
           last_ans = "Ans ∉ ℝ";
         }
       }
+
       // Escribir los datos evaluados en la calculadora
       last_operation.innerHTML = input + " = " + last_ans;
       main_input.innerHTML = last_ans;
@@ -282,6 +292,7 @@ class Button
         // Si la entrada está vacía reemplazarla
         if(buffer.length > 0)
         {
+          // No permitir paréntesis cuando se tiene la E
           if(buffer[0] == "E")
           {
             return input;
@@ -297,7 +308,7 @@ class Button
           // Si el último digito es multiplicable
           if(number_regex.test(last_digit) || const_regex.test(last_digit))
           {
-              post_input.innerHTML = ')' + buffer.slice(1);
+              post_input.innerHTML = ')' + buffer;
               return input + '×' + char; 
           }
           if(last_digit == char)
@@ -322,6 +333,11 @@ class Button
 
       if(buffer.length > 0)
       {
+        if(buffer[0] == "!")
+        {
+          post_input.innerHTML = buffer.slice(buffer.indexOf(char) + 1);
+          return input + "!" + char;
+        }
         // Si hay un paréntesis por cerrar, no se está cerrando
         // inmediatamente o dejando una operación pendiente, permitir
         if(buffer.indexOf(char) != -1 && last_digit != "(" &&
@@ -496,6 +512,12 @@ class Button
         }
         return input;
       }
+      // Si es después de un paréntesis se permite
+      if(last_digit == ")" && char[0] == "^")
+      {
+        post_input.innerHTML = ")" + buffer;
+        return input + char;
+      }
       // Si es inmediatamente después de un número
       // se añade el símbolo de multiplicar
       if(buffer.length > 0)
@@ -526,7 +548,7 @@ class Button
           return input + char;
         }
       }
-      // Si recién hubo un paréntesis
+      // Si lo último fue un número/constante
       if(number_regex.test(last_digit) || const_regex.test(last_digit))
       {
         // Si la operación es una potencia sin base
