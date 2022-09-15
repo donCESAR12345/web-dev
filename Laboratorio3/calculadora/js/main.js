@@ -236,10 +236,10 @@ class EqualsButton
       processable_input = processable_input.replace(/ln/g, "log");
 
       // Añadir las unidades de grados de ser necesario
-      const deg_regex = /((?<!a)sin\(|(?<!a)cos\(|(?<!a)tan\()(.*?(?<! deg))\)/gm;
+      const deg_regex = /((?<!a)sin|(?<!a)cos|(?<!a)tan)\(((?!.*deg).*?)\)/gm;
       while(deg_regex.test(processable_input) && angle_units == "deg")
       {
-        processable_input = processable_input.replace(deg_regex, `$1$2 deg)`);
+        processable_input = processable_input.replace(deg_regex, `$1($2 deg)`);
       }
       
       // Evaluar y formatear
