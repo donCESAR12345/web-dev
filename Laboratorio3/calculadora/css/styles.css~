@@ -1,0 +1,151 @@
+*
+{
+  font-size: 1.5rem;
+  box-sizing: border-box;
+}
+
+html
+{
+  background-color: #202124;
+}
+
+body
+{
+  background-color: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+#calculator
+{
+  width: 100%;
+  padding: 0;
+}
+
+#history
+{
+  display: inline-block;
+  height: 1.5rem;
+  width: 100%;
+  margin: 10px 0 10px 0;
+  padding: 4px;
+}
+
+#input
+{
+  width: 100%;
+  margin: 10px 0 10px 0;
+  padding: 4px;
+  border-radius: 10px;
+  border: 1px solid gray;
+  background-color: inherit;
+  text-align: right;
+  padding-right: 20px;
+}
+
+#main-input
+{
+  color: #DDDFE2;
+}
+
+#post-input
+{
+  color: #9D9FA2;
+}
+
+.keys
+{
+  display: flex;
+}
+
+#num-keys, #fn-keys
+{
+  display: table-cell;
+}
+
+td
+{
+  width: 200px;
+}
+
+.button
+{
+  height: 20%;
+  margin: 3px;
+  padding: 5px;
+  color: #DDDFE2;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.function
+{
+  background-color: #5F6368;
+}
+
+.function:hover
+{
+  background-color: #70757A;
+}
+
+.number
+{
+  background-color: #3C4043;
+}
+
+.number:hover
+{
+  background-color: #424548;
+}
+
+#equals-btn
+{
+  background-color: #8AB4F8;
+  color: #202124;
+}
+
+#equals-btn:hover
+{
+  background-color: #AECBFA;
+}
+
+#rad, #sep, #deg
+{
+  display: inline-block;
+  padding: 0;
+}
+
+#rad, #deg
+{
+  width: 45%;
+}
+
+#sep
+{
+  width: 3%;
+  color: white;
+}
+
+.not-selected
+{
+  color: #7D8288;
+}
+
+.button 
+{
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@media screen and (max-width: 900px)
+{
+  #sep { display: none; }
+}
